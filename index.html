@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" type="text/css" rel="stylesheet">
 	<title>Assignments</title>
-	<link href="style.css" rel="stylesheet">
 </head>
+
 <body>
 
 	<div class="container">
-		
-		<h1> Leapfrog Assignments </h2>
 
-		<h3> Dristi Dugar </h3>
-		<h3> Batch: 40th, (Group K) </h3>
-		<h3> Roll No.: 41 </h3>
+		<div class="header">
+			<h1> Leapfrog Assignments </h1>
 
-		<h2> Assignments </h2>
+			<h3> Dristi Dugar </h3>
+			<h3> Batch: 40th, (Group K) </h3>
+			<h3> Roll No.: 41 </h3>
 
-		<table>
-			<thead>
-				<tr>
-					<th> Assignment Title </th>
-					<th> Source Code </th>
-					<th> Host Link </th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr> 
-					<td> Design </td>
-					<td> Design Code </td>
-					<td> Design Link </td>
-				</tr>
-				<tr> 
-					<td> JavaScript </td>
-					<td> JavaScript Code </td>
-					<td> JavaScript Link </td>
-				</tr>
-			</tbody>
-		</table>
+			<h2> Assignments </h2>
+		</div>
+
+		<div class="table">
+			<table>
+				<thead>
+					<tr>
+						<th> Assignment Title </th>
+						<th> Source Code </th>
+						<th> Host Link </th>
+					</tr>
+				</thead>
+				<tbody id="table_data"> </tbody>
+			</table>
+		</div>
 
 	</div>
 
+	<script src="fill_data.js"> </script>
 </body>
+
 </html>

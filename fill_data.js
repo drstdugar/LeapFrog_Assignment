@@ -1,12 +1,12 @@
 const data = [
   {
     title: "GitHub Assignment 2",
-    code: "https://github.com/drstdugar/LeapFrog_Assignment/blob/master/index.html",
+    code: "https://github.com/drstdugar/LeapFrog_Assignment",
     demo: "https://drstdugar.github.io/LeapFrog_Assignment/",
   },
   {
     title: "Tutangle",
-    code: "https://github.com/drstdugar/LeapFrog_Assignment/blob/master/index.html",
+    code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Tutangle_Design",
     demo: "Design/Tutangle_Design/index.html",
   },
 ];

@@ -124,15 +124,10 @@ button {
 }
 
 .sidebar_heading_text {
-  position: absolute;
-  left: 11px;
-  top: 10px;
-}
-
-.sidebar_heading {
+  padding-left: 11px;
+  padding-top: 10px;
   width: 192px;
   height: 42px;
-  position: relative;
 }
 
 .searches_text,
@@ -199,15 +194,10 @@ section {
 }
 
 .right_sidebar_heading_text {
-  position: absolute;
-  left: 11px;
-  top: 10px;
-}
-
-.right_sidebar_heading {
+  padding-left: 11px;
+  padding-top: 10px;
   width: 176px;
   height: 42px;
-  position: relative;
 }
 
 .profile_text,

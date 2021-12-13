@@ -81,14 +81,11 @@ nav {
   background-color: #f5f5f5;
 }
 
-.sidebar_heading {
-  background-color: #2fc1da;
-}
-
 .sidebar_heading_text {
   font-size: 16px;
   color: #fefdfe;
   font-weight: bold;
+  background-color: #2fc1da;
 }
 
 .searches_text {
@@ -115,14 +112,11 @@ nav {
   background-color: #ffffff;
 }
 
-.right_sidebar_heading {
-  background-color: #2fc1da;
-}
-
 .right_sidebar_heading_text {
   font-size: 16px;
   color: #fefdfe;
   font-weight: bold;
+  background-color: #2fc1da;
 }
 
 .topic_link {

@@ -179,7 +179,8 @@ hr {
   color: #d5d5d5;
 }
 
-.sub_tab .active {
+.sub_tab .active,
+.sub_tab .deactive:hover {
   font-size: 10px;
   font-weight: bold;
   text-decoration: none;
@@ -197,14 +198,4 @@ hr {
   text-align: center;
   padding-top: 8px;
   background: url("../images/deactive_background.png") no-repeat;
-}
-
-.sub_tab .deactive:hover {
-  font-size: 10px;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-  text-align: center;
-  padding-top: 8px;
-  background: url("../images/active_background.png") no-repeat;
 }

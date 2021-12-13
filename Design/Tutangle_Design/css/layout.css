@@ -1,0 +1,247 @@
+.container {
+  width: 100%;
+}
+
+.main_header {
+  margin: 0 auto;
+  max-width: 938px;
+  height: 85px;
+}
+
+.main_footer {
+  margin: 0 auto;
+  max-width: 938px;
+  height: 45px;
+}
+
+.logo_container {
+  padding-top: 20px;
+  padding-bottom: 14px;
+  float: left;
+  line-height: 0px;
+}
+
+.logo {
+  height: 50px;
+}
+
+.searchbox_container {
+  float: left;
+  position: relative;
+}
+
+.search_curve_left {
+  padding-top: 39px;
+  padding-left: 24px;
+  float: left;
+}
+
+.search_curve_right {
+  padding-top: 40px;
+  float: left;
+}
+
+input {
+  width: 248px;
+  height: 20px;
+  margin-top: 40px;
+  float: left;
+}
+
+.search_cross {
+  position: absolute;
+  top: 45px;
+  left: 266px;
+}
+
+.search_icon {
+  float: left;
+  margin-top: 40px;
+  margin-left: 1px;
+}
+
+.search_button_container {
+  margin-left: 7px;
+  float: left;
+}
+
+button {
+  height: 20px;
+  width: 40px;
+  margin-top: 40px;
+  float: left;
+}
+
+.search_button_curve_left,
+.search_button_curve_right {
+  margin-top: 40px;
+  float: left;
+}
+
+.profile_container {
+  float: right;
+  padding-top: 25px;
+  padding-bottom: 22px;
+}
+
+.main_navbar {
+  margin: 0 auto;
+  width: 938px;
+  height: 40px;
+}
+
+.nav_menu_container {
+  height: 14px;
+  margin-left: 10px;
+  padding-bottom: 13px;
+  padding-top: 10px;
+  float: left;
+}
+
+.nav_menu {
+  margin-right: 30px;
+}
+
+.friend_container,
+.topic_container {
+  width: 130px;
+  height: 17px;
+  float: right;
+  margin-left: 31px;
+  margin-top: 11px;
+}
+
+.main_section {
+  max-width: 938px;
+  height: 614px;
+  margin: 31px auto;
+}
+
+.left_sidebar {
+  height: 614px;
+  float: left;
+  max-width: 192px;
+}
+
+.sidebar_heading_text {
+  position: absolute;
+  left: 11px;
+  top: 10px;
+}
+
+.sidebar_heading {
+  width: 192px;
+  height: 42px;
+  position: relative;
+}
+
+.searches_text,
+.tutorials_text {
+  width: 145px;
+  margin-top: 13px;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.icons {
+  margin-top: 14px;
+  margin-right: 14px;
+  float: right;
+}
+
+section {
+  max-width: 518px;
+  float: left;
+  margin: 0 25px;
+}
+
+.left_curve,
+.right_curve {
+  float: left;
+}
+
+.all_entries_tab {
+  float: left;
+  width: 248px;
+  height: 65px;
+  background-color: #f5f5f5;
+}
+
+.subscribed_tab {
+  float: left;
+  width: 248px;
+  height: 65px;
+  background-color: #f5f5f5;
+  margin-left: 2px;
+}
+
+.main_tab_text {
+  margin-top: 12px;
+  margin-left: 89px;
+}
+
+.sub_tab {
+  margin-top: 10px;
+  height: auto;
+  width: 238px;
+}
+
+.main_heading {
+  margin-bottom: 10px;
+}
+
+.right_sidebar {
+  float: right;
+  max-width: 176px;
+  height: 614px;
+  background-color: #f5f5f5;
+}
+
+.right_sidebar_heading_text {
+  position: absolute;
+  left: 11px;
+  top: 10px;
+}
+
+.right_sidebar_heading {
+  width: 176px;
+  height: 42px;
+  position: relative;
+}
+
+.profile_text,
+.profile_image {
+  float: left;
+  margin-right: 9px;
+}
+
+.main_list_item {
+  height: 70px;
+  margin: 15px 0px;
+}
+
+.footer_menu_container {
+  padding-top: 12px;
+  padding-left: 2px;
+  float: left;
+}
+
+.copyright {
+  float: right;
+  padding-top: 15px;
+  padding-right: 2px;
+}
+
+.sub_tab .active {
+  width: 114px;
+  height: 30px;
+  float: left;
+}
+
+.sub_tab .deactive {
+  width: 114px;
+  height: 30px;
+  float: left;
+  margin-left: 5px;
+}

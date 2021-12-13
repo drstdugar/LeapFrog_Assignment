@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+.container {
+  font-family: "Mulish", sans-serif;
+}
+
+header {
+  background-color: #7dd9e8;
+}
+
+footer {
+  background-color: #727272;
+}
+
+input {
+  background-color: #caeff7;
+  border: none;
+  font-size: 10px;
+  font-family: "Mulish", sans-serif;
+  font-weight: bold;
+}
+
+button {
+  font-family: "Mulish", sans-serif;
+  font-size: 10px;
+  border: none;
+  background-color: #274e56;
+  color: #fdfeff;
+  font-weight: bold;
+}
+
+.profile {
+  font-size: 14px;
+  font-weight: bolder;
+  color: #323232;
+  text-align: right;
+}
+
+.profile_menu {
+  font-size: 12px;
+  color: #323033;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile_menu:hover,
+.main_link:hover,
+.nav_menu:hover,
+.topic_link:hover,
+.footer_menu:hover {
+  text-decoration: underline;
+}
+
+nav {
+  background-color: #f5f5f5;
+}
+
+.nav_menu {
+  color: #323232;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.topic_text,
+.friend_text:hover {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  color: #414141;
+}
+
+.friend_text {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  color: #a0a0a0;
+}
+
+.left_sidebar {
+  background-color: #f5f5f5;
+}
+
+.sidebar_heading {
+  background-color: #2fc1da;
+}
+
+.sidebar_heading_text {
+  font-size: 16px;
+  color: #fefdfe;
+  font-weight: bold;
+}
+
+.searches_text {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.tutorials_text {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.main_heading {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.main_tab_text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.list_element:hover {
+  background-color: #ffffff;
+}
+
+.right_sidebar_heading {
+  background-color: #2fc1da;
+}
+
+.right_sidebar_heading_text {
+  font-size: 16px;
+  color: #fefdfe;
+  font-weight: bold;
+}
+
+.topic_link {
+  font-weight: bold;
+  margin: 0;
+  color: #010101;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.line1 {
+  font-weight: bolder;
+  font-size: 12px;
+  color: #2e9dae;
+}
+
+.line1_red {
+  font-weight: bolder;
+  font-size: 12px;
+  color: #d43e1b;
+}
+
+hr {
+  height: 1px;
+  border-width: 0;
+  background-color: #e7e7e7;
+}
+
+.blue {
+  margin-top: 1px;
+  height: 2px;
+  border-width: 0;
+  background-color: #2fc1da;
+}
+
+.line3,
+.line4 {
+  font-size: 12px;
+  font-weight: bold;
+  color: #616161;
+}
+
+.main_link {
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #4eafc0;
+}
+
+.subscribe {
+  color: #719622;
+}
+
+.footer_menu,
+.copyright {
+  font-size: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #d5d5d5;
+}
+
+.bullets {
+  margin: 0px 8px;
+  color: #d5d5d5;
+}
+
+.sub_tab .active {
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 8px;
+  color: #ffffff;
+  background: url("../images/active_background.png") no-repeat;
+}
+
+.sub_tab .deactive {
+  font-size: 10px;
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 8px;
+  background: url("../images/deactive_background.png") no-repeat;
+}
+
+.sub_tab .deactive:hover {
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 8px;
+  background: url("../images/active_background.png") no-repeat;
+}

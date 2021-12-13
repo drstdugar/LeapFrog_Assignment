@@ -4,6 +4,11 @@ const data = [
     code: "https://github.com/drstdugar/LeapFrog_Assignment/blob/master/index.html",
     demo: "https://drstdugar.github.io/LeapFrog_Assignment/",
   },
+  {
+    title: "Tutangle",
+    code: "https://github.com/drstdugar/LeapFrog_Assignment/blob/master/index.html",
+    demo: "Design/Tutangle_Design/index.html",
+  },
 ];
 
 loadData(data);

@@ -10,8 +10,8 @@ const data = [
     demo: "Design/Tutangle_Design/index.html",
   },
   {
-    title: "Design Assignment 1: 1A-home-search",
-    code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Tutangle_Design",
+    title: "Design Assignment 1: 1A-home-search-responsive",
+    code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Tutangle_Design_Responsive",
     demo: "Design/Tutangle_Design_Responsive/index.html",
   },
 ];

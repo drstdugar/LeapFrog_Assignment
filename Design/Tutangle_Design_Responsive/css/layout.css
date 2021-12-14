@@ -1,0 +1,362 @@
+.container {
+  width: 100%;
+}
+
+.main_header {
+  margin: 0 auto;
+  max-width: 96%;
+  height: 105px;
+  position: relative;
+}
+
+.main_footer {
+  margin: 0 auto;
+  max-width: 62%;
+  height: 45px;
+}
+
+.logo_container {
+  padding-top: 20px;
+  padding-bottom: 14px;
+  float: left;
+  line-height: 0px;
+  width: 24%;
+}
+
+.logo {
+  height: 50px;
+}
+
+.searchbox_container {
+  width: 100%;
+  margin: 0 auto;
+  float: left;
+  position: absolute;
+  top: 4.7rem;
+  size: 16px;
+}
+
+.search_curve_left {
+  float: left;
+}
+
+.search_curve_right {
+  float: left;
+}
+
+input {
+  float: left;
+  width: 68%;
+  height: 20px;
+}
+
+.search_cross {
+  position: absolute;
+  top: 0.3rem;
+  left: 67%;
+}
+
+.search_icon {
+  float: left;
+  margin-left: 1px;
+}
+
+.search_button_container {
+  float: right;
+  margin-left: 7px;
+}
+
+button {
+  float: left;
+  height: 20px;
+  width: 40px;
+}
+
+.search_button_curve_left,
+.search_button_curve_right {
+  float: left;
+}
+
+.profile_container {
+  float: right;
+  padding-top: 25px;
+  padding-bottom: 22px;
+  min-width: 15%;
+}
+
+.main_navbar {
+  margin: 0 auto;
+  width: 96%;
+  height: 140px;
+}
+
+.nav_menu_container {
+  width: 100%;
+  margin-left: 10px;
+  padding-bottom: 13px;
+  padding-top: 10px;
+  float: left;
+}
+
+.nav_menu {
+  margin: 10px auto;
+  display: block;
+}
+
+.friend_container,
+.topic_container,
+.left_sidebar,
+.sidebar_heading_text,
+.searches_text,
+.tutorials_text,
+.icons,
+.right_sidebar,
+.right_sidebar_heading_text {
+  display: none;
+}
+
+.main_section {
+  max-width: 96%;
+  height: 614px;
+  margin: 31px auto;
+}
+
+section {
+  max-width: 60%;
+  float: left;
+  margin: 0 25px;
+}
+
+.left_curve,
+.right_curve {
+  float: left;
+}
+
+.all_entries_tab {
+  float: left;
+  width: 248px;
+  height: 65px;
+  background-color: #f5f5f5;
+}
+
+.subscribed_tab {
+  float: left;
+  width: 248px;
+  height: 65px;
+  background-color: #f5f5f5;
+  margin-left: 2px;
+}
+
+.main_tab_text {
+  margin-top: 12px;
+  margin-left: 89px;
+}
+
+.sub_tab {
+  margin-top: 10px;
+  height: auto;
+  width: 238px;
+}
+
+.main_heading {
+  margin-bottom: 10px;
+}
+
+.profile_text,
+.profile_image {
+  float: left;
+  margin-right: 9px;
+}
+
+.main_list_item {
+  height: 70px;
+  margin: 15px 0px;
+}
+
+.footer_menu_container {
+  padding-top: 12px;
+  padding-left: 2px;
+  float: left;
+}
+
+.copyright {
+  float: right;
+  padding-top: 15px;
+  padding-right: 2px;
+}
+
+.sub_tab .active {
+  width: 114px;
+  height: 30px;
+  float: left;
+}
+
+.sub_tab .deactive {
+  width: 114px;
+  height: 30px;
+  float: left;
+  margin-left: 5px;
+}
+
+@media (min-width: 480px) {
+  .main_header {
+    height: 85px;
+  }
+
+  .searchbox_container {
+    width: 45%;
+    margin-left: 2.5%;
+    position: relative;
+    top: 0px;
+  }
+
+  .search_curve_left {
+    padding-top: 39px;
+  }
+
+  .search_curve_right {
+    padding-top: 40px;
+  }
+
+  input {
+    margin-top: 40px;
+    width: 55%;
+  }
+
+  .search_cross {
+    position: absolute;
+    top: 45px;
+    left: 54%;
+  }
+
+  .search_icon {
+    margin-top: 40px;
+  }
+
+  .search_button_container {
+    margin-left: 1.5%;
+    float: left;
+    width: 30%;
+  }
+
+  button {
+    height: 20px;
+    width: 80%;
+    margin-top: 40px;
+  }
+
+  .search_button_curve_left,
+  .search_button_curve_right {
+    margin-top: 40px;
+    float: left;
+  }
+
+  .nav_menu {
+    margin-right: 2%;
+    display: inline;
+  }
+
+  .main_navbar {
+    height: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .right_sidebar {
+    display: block;
+    float: right;
+    max-width: 176px;
+    height: 614px;
+    background-color: #f5f5f5;
+  }
+
+  .right_sidebar_heading_text {
+    display: block;
+    padding-left: 11px;
+    padding-top: 10px;
+    width: 176px;
+    height: 42px;
+  }
+
+  .tutorials_text {
+    width: 145px;
+    margin-top: 13px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main_header {
+    max-width: 62%;
+  }
+
+  .main_navbar {
+    margin: 0 auto;
+    width: 62%;
+    height: 40px;
+  }
+
+  .search_button_container {
+    margin-left: 1.5%;
+    float: left;
+    width: 16%;
+  }
+
+  .friend_container,
+  .topic_container {
+    display: block;
+    width: 130px;
+    height: 17px;
+    float: right;
+    margin-left: 31px;
+    margin-top: 11px;
+  }
+
+  .left_sidebar {
+    display: block;
+    height: 614px;
+    float: left;
+    width: 20%;
+  }
+
+  .sidebar_heading_text {
+    display: block;
+    padding-left: 11px;
+    padding-top: 10px;
+    width: 100%;
+    height: 42px;
+  }
+
+  .searches_text,
+  .tutorials_text {
+    display: block;
+    width: 75%;
+    margin-top: 13px;
+    margin-left: 5%;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  .icons {
+    display: block;
+    margin-top: 14px;
+    margin-right: 14px;
+    float: right;
+  }
+
+  .main_section {
+    max-width: 62%;
+    height: 614px;
+    margin: 31px auto;
+  }
+
+  .nav_menu_container {
+    width: 60%;
+    margin-left: 10px;
+    padding-bottom: 13px;
+    padding-top: 10px;
+    float: left;
+  }
+}

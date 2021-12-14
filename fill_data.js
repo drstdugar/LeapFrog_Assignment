@@ -5,7 +5,7 @@ const data = [
     demo: "https://drstdugar.github.io/LeapFrog_Assignment/",
   },
   {
-    title: "Tutangle",
+    title: "Design Assignment 1: 1A-home-search",
     code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Tutangle_Design",
     demo: "Design/Tutangle_Design/index.html",
   },

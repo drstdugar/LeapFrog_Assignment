@@ -76,7 +76,6 @@
     display: inline;
     width: 17px;
     height: 17px;
-    float: right;
     margin-left: 3%;
     margin-top: 11px;
   }
@@ -140,7 +139,6 @@
     display: inline;
     width: 130px;
     height: 17px;
-    float: right;
     margin-left: 3%;
     margin-top: 11px;
   }
@@ -173,8 +171,7 @@
     display: block;
     width: 130px;
     height: 17px;
-    float: right;
-    margin-left: 1%;
+    margin-left: 0.9%;
     margin-top: 11px;
   }
 
@@ -215,7 +212,7 @@
   }
 
   .nav_menu_container {
-    width: 65%;
+    width: 63%;
     padding-bottom: 13px;
     padding-top: 10px;
   }
@@ -227,7 +224,7 @@
   }
 
   .nav_menu {
-    margin-right: 5%;
+    margin-right: 2.5%;
   }
 
   .profile_menu_container {

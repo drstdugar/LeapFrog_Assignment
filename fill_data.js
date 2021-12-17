@@ -14,6 +14,11 @@ const data = [
     code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Tutangle_Design_Responsive",
     demo: "Design/Tutangle_Design_Responsive/index.html",
   },
+  {
+    title: "Funiro - Design Final Project",
+    code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Tutangle_Design_Responsive",
+    demo: "Design/Funiro_Final_Project_Design/index.html",
+  },
 ];
 
 loadData(data);

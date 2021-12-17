@@ -1,0 +1,375 @@
+.container {
+  width: 100%;
+}
+
+.top_header {
+  max-width: 96%;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+.logo_heading {
+  margin-right: 3%;
+  float: left;
+}
+
+.nav_bar,
+.profile_container {
+  display: none;
+}
+
+.search_box {
+  position: relative;
+  display: inline-block;
+  width: 60%;
+}
+
+.search_box img {
+  width: 1.1em;
+  height: 1.1em;
+  position: absolute;
+  top: 12px;
+  left: 8px;
+}
+
+.search_box input {
+  text-indent: 25px;
+  padding: 8px 0;
+  width: 100%;
+}
+
+.menu_icon {
+  margin-top: 0.1rem;
+  float: right;
+}
+
+.images {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.left {
+  object-fit: cover;
+  height: 250px;
+  float: left;
+  width: 25%;
+}
+
+.middle {
+  object-fit: cover;
+  height: 250px;
+  float: left;
+  width: 100%;
+}
+
+.right {
+  object-fit: cover;
+  height: 250px;
+  width: 5%;
+}
+
+.carousel_header {
+  position: relative;
+}
+
+.slider {
+  max-width: 96%;
+  margin: 0 auto;
+  margin-bottom: 17px;
+}
+
+.dots_container {
+  padding-top: 0.8%;
+  padding-left: 41%;
+  width: 80%;
+  display: inline-block;
+}
+
+.dots {
+  margin: 0 5px;
+  padding: 2px;
+}
+
+.arrow_container {
+  width: 20%;
+  float: right;
+}
+
+.arrow {
+  float: right;
+  margin-left: 10%;
+  padding: 5px;
+}
+
+.dialog_box {
+  position: absolute;
+  top: 0;
+  margin-left: 7%;
+  width: 34%;
+  padding: 4%;
+  margin-top: 15%;
+}
+
+.dialog_box h4 {
+  display: none;
+}
+
+.middle_container {
+  width: 64%;
+  margin: 0 3%;
+  display: inline;
+  float: left;
+  position: relative;
+}
+
+.image_pop {
+  position: absolute;
+  width: 39%;
+  bottom: 3%;
+  right: 5%;
+  padding: 1%;
+}
+
+.image_pop svg {
+  float: right;
+  width: 12px;
+  height: 12px;
+  padding-top: 3px;
+  padding-right: 5px;
+}
+
+.icon_banner,
+.products,
+footer {
+  max-width: 96%;
+  margin: 0 auto;
+}
+
+.icon_item {
+  display: inline-block;
+  width: 50%;
+  margin-top: 5%;
+}
+
+.float {
+  float: right;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  margin-right: 4px;
+  float: left;
+}
+
+.product_item {
+  position: relative;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.product_item img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.product_text {
+  margin: 2% 3%;
+}
+
+.price {
+  display: inline-block;
+}
+
+.strike_price {
+  float: right;
+}
+
+.image_container {
+  position: relative;
+}
+
+.discount,
+.new {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  height: 50px;
+  width: 50px;
+}
+
+.tab,
+.laptop {
+  display: none;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.options {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 4%;
+}
+
+.overlay button {
+  margin-top: 60%;
+  width: 75%;
+  padding: 4%;
+}
+
+.share {
+  float: left;
+}
+
+.like {
+  float: right;
+}
+
+.overlay_icon {
+  display: inline;
+}
+
+.overlay_text {
+  float: right;
+  margin-left: 0.2%;
+  margin-top: 1%;
+}
+
+.share,
+.like {
+  width: 35%;
+}
+
+.show_more {
+  display: block;
+  margin: 3% auto;
+  max-width: 100%;
+  padding: 1%;
+  width: 35%;
+}
+
+.tips_container {
+  max-width: 96%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.arrow_left {
+  position: absolute;
+  top: 50%;
+  left: -1.4%;
+  z-index: 1;
+}
+
+.arrow_right {
+  position: absolute;
+  top: 50%;
+  right: -1.4%;
+  z-index: 1;
+}
+
+.tab_tips_left,
+.tab_tips_right {
+  display: none;
+}
+
+.dots_container_tips {
+  width: fit-content;
+  margin: 2% auto;
+}
+
+.tips_list {
+  width: 100%;
+  margin-top: 2%;
+}
+
+.tips_item img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.tips_text {
+  margin-top: 3%;
+  margin-left: 2%;
+}
+
+.tips_item h5 {
+  width: 74%;
+}
+
+.updates {
+  margin-top: 60%;
+  text-align: center;
+}
+
+.about_info {
+  margin-left: 3%;
+  text-align: center;
+}
+
+.menu {
+  width: 30%;
+  margin-top: 3%;
+  margin-left: 3%;
+  padding: 0 5%;
+  text-align: justify;
+  float: left;
+}
+
+.account {
+  width: 30%;
+  margin-top: 3%;
+  margin-left: 3%;
+  padding: 0 5%;
+  text-align: justify;
+  float: left;
+}
+
+.connect {
+  width: 30%;
+  margin-top: 3%;
+  margin-left: 3%;
+  padding: 0 5%;
+  text-align: justify;
+  float: left;
+}
+
+.location {
+  display: inline-block;
+  margin-right: 5%;
+  width: 44%;
+}
+
+.call {
+  display: inline-block;
+  width: 30%;
+}
+
+.location img,
+.call img {
+  height: 10px;
+  width: 10px;
+  padding: 1px;
+}
+
+.side_text {
+  float: left;
+  margin-top: 0.1%;
+}
+
+.side_icon {
+  float: left;
+  margin-right: 2%;
+}

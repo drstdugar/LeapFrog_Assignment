@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
+    <link href="css/layout.css" type="text/css" rel="stylesheet">
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <link href="css/media.css" type="text/css" rel="stylesheet">
+
+    <title>Funiro</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="top_header">
+                <h1 class="logo_heading">Funiro.</h1>
+                <div class="nav_bar">
+                    <ul>
+                        <li class="menu_item">
+                            <a href="#">Products</a>
+                            <svg width="6" height="8" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="drop_down">
+                                <path d="M12.8333 1.50012L7.00001 7.33346L1.16668 1.50012" stroke="#3A3A3A"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#">Rooms</a>
+                            <svg width="6" height="8" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="drop_down">
+                                <path d="M12.8333 1.50012L7.00001 7.33346L1.16668 1.50012" stroke="#3A3A3A"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </li>
+                        <li class="menu_item"><a href="#">Inspirations</a></li>
+                    </ul>
+                </div>
+                <div class="search_box">
+                    <img src="images/search_icon.png" alt="search">
+                    <input type="text" placeholder="Search for minimalist chair">
+                </div>
+                <div class="menu_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="menu_icon">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </div>
+
+                <div class="profile_container">
+                    <img src="images/profile.png" alt="profile" class="profile_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="side_icons">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        stroke="#262F56" class="side_icons">
+                        <path
+                            d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z"
+                            stroke-width="1.8" />
+                    </svg>
+                </div>
+
+            </div>
+            <div class="carousel_header">
+                <div class="slider">
+                    <div class="dots_container">
+                        <svg width="13" height="13" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="dots">
+                            <circle cx="5.5" cy="5.5" r="5.5" fill="#D8D8D8" />
+                        </svg>
+                        <svg width="13" height="13" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="dots active">
+                            <circle cx="5.5" cy="5.5" r="5.5" fill="#D8D8D8" />
+                        </svg>
+                        <svg width="13" height="13" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="dots">
+                            <circle cx="5.5" cy="5.5" r="5.5" fill="#D8D8D8" />
+                        </svg>
+                        <svg width="13" height="13" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="dots">
+                            <circle cx="5.5" cy="5.5" r="5.5" fill="#D8D8D8" />
+                        </svg>
+                    </div>
+                    <div class="arrow_container clearfix">
+                        <svg width="20" height="20" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="arrow">
+                            <path d="M1.00012 1L8.00012 8L1.00012 15" stroke="#E89F71" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="arrow">
+                            <path d="M7.99988 1L0.999878 8L7.99988 15" stroke="#E89F71" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="images">
+                    <img src="images/left_carousel.png" alt="image" class="left">
+                    <div class="middle_container">
+                        <img src="images/middle_carousel.png" alt="image" class="middle">
+                        <div class="image_pop">
+                            <h4>
+                                Bohauss
+                            </h4>
+                            <h6>
+                                Luxury big sofa 2-seat
+                            </h6>
+                            <h5>
+                                Rp 17.000.000
+                            </h5>
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.3652 6.56003L10.3852 11.56C10.2252 11.72 10.0251 11.8 9.82515 11.8C9.62515 11.8 9.42515 11.72 9.26515 11.56C8.94515 11.24 8.94515 10.74 9.26515 10.42L12.8852 6.78003H1.20515C0.765151 6.78003 0.405151 6.42003 0.405151 5.98003C0.405151 5.54003 0.765151 5.18003 1.20515 5.18003H12.8852L9.26515 1.54004C8.94515 1.22004 8.94515 0.720034 9.26515 0.400034C9.58515 0.0800342 10.0852 0.0800342 10.4052 0.400034L15.3852 5.40003C15.6852 5.74003 15.6852 6.26003 15.3652 6.56003Z"
+                                    fill="black" class="arrow" />
+                            </svg>
+                        </div>
+                    </div>
+                    <img src="images/right_carousel.png" alt="image" class="right">
+                </div>
+                <div class="dialog_box">
+                    <h1>
+                        High-Quality Furniture Just For You
+                    </h1>
+                    <h4>
+                        Our furniture is made from selected and best quality materials that are suitable for your dream
+                        home
+                    </h4>
+                    <button>
+                        Shop Now
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <section class="icon_banner clearfix">
+            <div class="icon_item">
+                <img src="images/icon.png" alt="icon" class="icon">
+                <span class="top_text">High Quality</span> <br>
+                <span class="bottom_text">crafted from top materials</span>
+            </div>
+            <div class="icon_item float">
+                <img src="images/icon1.png" alt="icon" class="icon">
+                <span class="top_text">Warrany Protection</span> <br>
+                <span class="bottom_text">Over 2 years</span>
+            </div>
+            <div class="icon_item">
+                <img src="images/icon2.png" alt="icon" class="icon">
+                <span class="top_text">Free Shipping</span> <br>
+                <span class="bottom_text">Order over 150 $</span>
+            </div>
+            <div class="icon_item float ">
+                <img src="images/icon3.png" alt="icon" class="icon">
+                <span class="top_text">24 / 7 Support</span> <br>
+                <span class="bottom_text">Dedicated support</span>
+            </div>
+        </section>
+
+        <section class="products">
+            <h2 class="headings">Our Products</h2>
+            <div class="products_list clearfix">
+                <div class="product_item mobile">
+                    <div class="image_container">
+                        <img src="images/product_image1.png" alt="product">
+                        <h4 class="discount">-30%</h4>
+                    </div>
+                    <div class="product_text">
+                        <h5>Syltherine</h5>
+                        <h6 class="description">Stylish cafe chair</h6>
+                        <h6 class="price">Rp 2.500.000</h6>
+                        <h6 class="strike_price">Rp 2.500.000</h6>
+                    </div>
+                    <div class="overlay">
+                        <button>Add to cart</button>
+                        <div class="options">
+                            <div class="share">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="overlay_icon">
+                                    <path
+                                        d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"
+                                        fill="white" />
+                                </svg>
+                                <h6 class="overlay_text">Share</h6>
+                            </div>
+                            <div class="like">
+                                <svg width="24" height="21" viewBox="0 0 24 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" class="overlay_icon">
+                                    <path
+                                        d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z"
+                                        stroke-width="1.8" />
+                                </svg>
+                                <h6 class="overlay_text">Like</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item float mobile">
+                    <img src="images/product_image 2.png" alt="product">
+                    <div class="product_text">
+                        <h5>Leviosa</h5>
+                        <h6 class="description">Stylish cafe chair</h6>
+                        <h6 class="price">Rp 2.500.000</h6>
+                    </div>
+                    <div class="overlay">
+                        <button>Add to cart</button>
+                        <div class="options">
+                            <div class="share">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="overlay_icon">
+                                    <path
+                                        d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"
+                                        fill="white" />
+                                </svg>
+                                <h6 class="overlay_text">Share</h6>
+                            </div>
+                            <div class="like">
+                                <svg width="24" height="21" viewBox="0 0 24 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" class="overlay_icon">
+                                    <path
+                                        d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z"
+                                        stroke-width="1.8" />
+                                </svg>
+                                <h6 class="overlay_text">Like</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item tab">
+                    <div class="image_container">
+                        <img src="images/product_image 3.png" alt="product">
+                        <h4 class="discount">-50%</h4>
+                    </div>
+                    <div class="product_text">
+                        <h5>Lolito</h5>
+                        <h6 class="description">Luxury big sofa</h6>
+                        <h6 class="price">Rp 7.000.000</h6>
+                        <h6 class="strike_price">Rp 14.000.000</h6>
+                    </div>
+                    <div class="overlay">
+                        <button>Add to cart</button>
+                        <div class="options">
+                            <div class="share">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="overlay_icon">
+                                    <path
+                                        d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"
+                                        fill="white" />
+                                </svg>
+                                <h6 class="overlay_text">Share</h6>
+                            </div>
+                            <div class="like">
+                                <svg width="24" height="21" viewBox="0 0 24 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" class="overlay_icon">
+                                    <path
+                                        d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z"
+                                        stroke-width="1.8" />
+                                </svg>
+                                <h6 class="overlay_text">Like</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item tab float">
+                    <img src="images/product_image 4.png" alt="product">
+                    <div class="product_text">
+                        <h5>Respira</h5>
+                        <h6 class="description">Minimalist fan</h6>
+                        <h6 class="price">Rp 2.500.000</h6>
+                    </div>
+                    <div class="overlay">
+                        <button>Add to cart</button>
+                        <div class="options">
+                            <div class="share">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="overlay_icon">
+                                    <path
+                                        d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"
+                                        fill="white" />
+                                </svg>
+                                <h6 class="overlay_text">Share</h6>
+                            </div>
+                            <div class="like">
+                                <svg width="24" height="21" viewBox="0 0 24 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" class="overlay_icon">
+                                    <path
+                                        d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z"
+                                        stroke-width="1.8" />
+                                </svg>
+                                <h6 class="overlay_text">Like</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item laptop">
+                    <img src="images/product_image 5.png" alt="product">
+                    <div class="product_text">
+                        <h5>Grifo</h5>
+                        <h6 class="description">Night lamp</h6>
+                        <h6 class="price">Rp 1.500.000</h6>
+                    </div>
+                    <div class="overlay">
+                        <button>Add to cart</button>
+                        <div class="options">
+                            <div class="share">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="overlay_icon">
+                                    <path
+                                        d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"
+                                        fill="white" />
+                                </svg>
+                                <h6 class="overlay_text">Share</h6>
+                            </div>
+                            <div class="like">
+                                <svg width="24" height="21" viewBox="0 0 24 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" class="overlay_icon">
+                                    <path
+                                        d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z"
+                                        stroke-width="1.8" />
+                                </svg>
+                                <h6 class="overlay_text">Like</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item laptop">
+                    <div class="image_container">
+                        <img src="images/product_image 6.png" alt="product">
+                        <h4 class="new">New</h4>
+                    </div>
+                    <div class="product_text">
+                        <h5>Muggo</h5>
+                        <h6 class="description">Small mug</h6>
+                        <h6 class="price">Rp 150.000</h6>
+                    </div>
+                    <div class="overlay">
+                        <button>Add to cart</button>
+                        <div class="options">
+                            <div class="share">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="overlay_icon">
+                                    <path
+                                        d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"
+                                        fill="white" />
+                                </svg>
+                                <h6 class="overlay_text">Share</h6>
+                            </div>
+                            <div class="like">
+                                <svg width="24" height="21" viewBox="0 0 24 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" class="overlay_icon">
+                                    <path
+                                        d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z"
+                                        stroke-width="1.8" />
+                                </svg>
+                                <h6 class="overlay_text">Like</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item laptop">
+                    <div class="image_container">
+                        <img src="images/product_image 7.png" alt="product">
+                        <h4 class="discount">-50%</h4>
+                    </div>
+                    <div class="product_text">
+                        <h5>Pingky</h5>
+                        <h6 class="description">Cute bed set</h6>
+                        <h6 class="price">Rp 7.000.000</h6>
+                        <h6 class="strike_price">Rp 14.000.000</h6>
+                    </div>
+                    <div class="overlay">
+                        <button>Add to cart</button>
+                        <div class="options">
+                            <div class="share">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="overlay_icon">
+                                    <path
+                                        d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"
+                                        fill="white" />
+                                </svg>
+                                <h6 class="overlay_text">Share</h6>
+                            </div>
+                            <div class="like">
+                                <svg width="24" height="21" viewBox="0 0 24 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" class="overlay_icon">
+                                    <path
+                                        d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z"
+                                        stroke-width="1.8" />
+                                </svg>
+                                <h6 class="overlay_text">Like</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item laptop">
+                    <div class="image_container">
+                        <img src="images/product_image 8.png" alt="product">
+                        <h4 class="new">New</h4>
+                    </div>
+                    <div class="product_text">
+                        <h5>Potty</h5>
+                        <h6 class="description">Minimalist flower pot</h6>
+                        <h6 class="price">Rp 500.000</h6>
+                    </div>
+                    <div class="overlay">
+                        <button>Add to cart</button>
+                        <div class="options">
+                            <div class="share">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="overlay_icon">
+                                    <path
+                                        d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"
+                                        fill="white" />
+                                </svg>
+                                <h6 class="overlay_text">Share</h6>
+                            </div>
+                            <div class="like">
+                                <svg width="24" height="21" viewBox="0 0 24 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF" class="overlay_icon">
+                                    <path
+                                        d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z"
+                                        stroke-width="1.8" />
+                                </svg>
+                                <h6 class="overlay_text">Like</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="show_more">
+                Show More
+            </button>
+        </section>
+
+        <section class="explore_container">
+            <div class="side_text">
+                <h2>50+ Beautiful rooms inspiration</h2>
+                <h5>Our designer already made a lot of beautiful prototipe of rooms that inspire you</h5>
+                <button>Explore More</button>
+            </div>
+
+        </section>
+
+        <section class="tips_container">
+            <h2 class="headings">Tips & Tricks</h2>
+            <svg width="20" height="20" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="arrow_right">
+                <path d="M1.00012 1L8.00012 8L1.00012 15" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="arrow_left">
+                <path d="M7.99988 1L0.999878 8L7.99988 15" stroke="#E89F71" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <div class="tips_list">
+                <div class="tips_item tab_tips_left">
+                    <div>
+                        <img src="images/tips_img1.png" alt="product">
+                        <div class="tips_text">
+                            <h5>How to create a living room to love</h5>
+                            <h6 class="description">20 jan 2020</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="tips_item mobile_tips">
+                    <div>
+                        <img src="images/tips_img2.png" alt="product">
+                        <div class="tips_text">
+                            <h5>Solution for clean look working space</h5>
+                            <h6 class="description">10 jan 2020</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="tips_item tab_tips_right">
+                    <div>
+                        <img src="images/tips_img3.png" alt="product">
+                        <div class="tips_text">
+                            <h5>Make your cooking activity more fun with good setup</h5>
+                            <h6 class="description">20 jan 2020</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dots_container_tips">
+                <svg width="13" height="13" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="dots">
+                    <circle cx="5.5" cy="5.5" r="5.5" fill="#D8D8D8" />
+                </svg>
+                <svg width="13" height="13" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="dots active">
+                    <circle cx="5.5" cy="5.5" r="5.5" fill="#D8D8D8" />
+                </svg>
+                <svg width="13" height="13" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="dots">
+                    <circle cx="5.5" cy="5.5" r="5.5" fill="#D8D8D8" />
+                </svg>
+                <svg width="13" height="13" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="dots">
+                    <circle cx="5.5" cy="5.5" r="5.5" fill="#D8D8D8" />
+                </svg>
+            </div>
+        </section>
+
+        <section class="explore_container">
+
+        </section>
+
+        <footer>
+            <div class="about_info">
+                <h5 class="footer_headings clearfix">Funiro.</h6>
+                    <h6>Worldwide furniture store since 2020. We sell over 1000+ branded products on our website</h6>
+                    <div class="location">
+                        <img src="images/location.png" alt="location" class="side_icon clearfix">
+                        <h6 class="side_text">Sawojajar Malang, Indonesia</h6>
+                    </div>
+                    <div class="call clearfix">
+                        <img src="images/call.png" alt="location" class="side_icon">
+                        <h6 class="side_text">+6289 456 3455</h6>
+                    </div>
+                    <h6>www.funiro.com</h6>
+            </div>
+            <div class="menu clearfix">
+                <h5 class="footer_headings">Menu</h5>
+                <ul class="footer_links">
+                    <li><a href="#" class="link">Products</a></li>
+                    <li><a href="#" class="link">Rooms</a></li>
+                    <li><a href="#" class="link">Inspirations</a></li>
+                    <li><a href="#" class="link">About Us</a></li>
+                    <li><a href="#" class="link">Terms & Policy</a></li>
+                </ul>
+            </div>
+            <div class="account clearfix">
+                <h5 class="footer_headings">Account</h5>
+                <ul class="footer_links">
+                    <li><a href="#" class="link">My Account</a></li>
+                    <li><a href="#" class="link">Checkout</a></li>
+                    <li><a href="#" class="link">My Cart</a></li>
+                    <li><a href="#" class="link">My catalog</a></li>
+                </ul>
+            </div>
+            <div class="connect clearfix">
+                <h5 class="footer_headings">Stay Connected</h5>
+                <ul class="footer_links">
+                    <li><a href="#" class="link">Facebook</a></li>
+                    <li><a href="#" class="link">Instagram</a></li>
+                    <li><a href="#" class="link">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="updates">
+                <h5 class="footer_headings">Stay Updated</h5>
+                <div class="update_input">
+                    <input type="email" placeholder="Enter your email">
+                    <img src="images/send.png" alt="send" class="send">
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

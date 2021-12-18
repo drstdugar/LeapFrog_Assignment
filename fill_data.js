@@ -2,7 +2,7 @@ const data = [
   {
     title: "GitHub Assignment 2",
     code: "https://github.com/drstdugar/LeapFrog_Assignment",
-    demo: "https://drstdugar.github.io/LeapFrog_Assignment/",
+    demo: "index.html",
   },
   {
     title: "Design Assignment 1: 1A-home-search",
@@ -15,8 +15,8 @@ const data = [
     demo: "Design/Tutangle_Design_Responsive/index.html",
   },
   {
-    title: "Funiro - Design Final Project",
-    code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Tutangle_Design_Responsive",
+    title: "Design Final Project: Responsive",
+    code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Funiro_Final_Project_Design",
     demo: "Design/Funiro_Final_Project_Design/index.html",
   },
 ];

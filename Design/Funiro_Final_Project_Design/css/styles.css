@@ -3,6 +3,11 @@
   src: url("../fonts/Gilroy-Regular.ttf");
 }
 
+@font-face {
+  font-family: gilroy_bold;
+  src: url("../fonts/Gilroy-Bold.ttf");
+}
+
 .container {
   font-size: 62.5%;
   font-family: gilroy;
@@ -12,9 +17,14 @@ header {
   background: linear-gradient(to right, #f9f1e7 67%, #fcf8f3 33%);
 }
 
+.logo_link {
+  text-decoration: none;
+  color: black;
+}
 .logo_heading {
   font-size: 2.4em;
   font-weight: 700;
+  font-family: gilroy_bold;
 }
 
 .menu_item a {
@@ -83,10 +93,11 @@ header {
 }
 
 .dialog_box h1 {
+  font-family: gilroy_bold;
   display: inline-block;
-  font-weight: 700;
   line-height: 1.5em;
   font-size: 1em;
+  color: #3a3a3a;
 }
 
 .dialog_box button {
@@ -94,7 +105,7 @@ header {
   color: white;
   background: #e89f71;
   border: none;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.8em;
   padding: 4%;
   margin-top: 6%;
@@ -157,6 +168,7 @@ header {
   font-weight: 700;
   margin-top: 5%;
   color: #3a3a3a;
+  font-family: gilroy_bold;
 }
 
 .product_item {
@@ -169,6 +181,10 @@ header {
   color: #3a3a3a;
   position: relative;
   line-height: 140%;
+}
+
+.explore_left h2 {
+  font-family: gilroy_bold;
 }
 
 .tips_item h5 {
@@ -268,7 +284,7 @@ header {
   background: white;
   border: 1px solid #e89f71;
   color: #e89f71;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 150%;
   font-size: 0.8rem;
   font-family: gilroy;
@@ -325,7 +341,7 @@ footer {
 }
 
 .footer_headings {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.7rem;
   margin-bottom: 2.3%;
 }
@@ -397,9 +413,9 @@ footer {
 
 .explore_left button {
   font-family: gilroy;
-  font-weight: 600;
+  font-weight: 500;
   color: white;
-  padding: 2%;
+  padding: 1.5%;
   border: none;
   line-height: 1.3rem;
   font-size: 0.6rem;
@@ -414,5 +430,20 @@ footer {
   font-weight: 500;
   font-size: 0.4rem;
   line-height: 1rem;
+  color: #3a3a3a;
+}
+
+.grid_container h6 {
+  font-weight: 600;
+  text-align: center;
+  color: #616161;
+  font-size: 0.7rem;
+}
+
+.grid_container h2 {
+  font-family: gilroy_bold;
+  text-align: center;
+  margin: 2% 0;
+  font-size: 1.2rem;
   color: #3a3a3a;
 }

@@ -142,7 +142,7 @@
 .products,
 footer {
   max-width: 96%;
-  margin: 0 auto;
+  margin: 2% auto;
 }
 
 .icon_item {
@@ -310,7 +310,7 @@ footer {
 }
 
 .updates {
-  margin-top: 60%;
+  margin-top: 53%;
   text-align: center;
 }
 
@@ -457,4 +457,13 @@ footer {
   top: 50%;
   right: 3%;
   z-index: 1;
+}
+
+.tab_grid {
+  display: none;
+}
+
+.mobile_grid {
+  padding: 2% 4%;
+  width: 100%;
 }

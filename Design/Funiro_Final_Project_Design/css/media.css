@@ -208,14 +208,20 @@
   }
 
   .about_info,
+  .updates,
   .connect,
   .menu,
-  .account,
-  .updates {
+  .account {
     width: 18.2%;
     float: left;
     text-align: justify;
     margin-top: 0;
+  }
+
+  .connect,
+  .menu,
+  .account {
+    padding: 0 3%;
   }
 
   .side_icon {
@@ -228,8 +234,8 @@
   }
 
   .link {
-    font-size: 0.7rem;
-    line-height: 1.5rem;
+    font-size: 0.75rem;
+    line-height: 1.7rem;
   }
 
   .location {
@@ -251,7 +257,7 @@
   }
 
   .footer_headings {
-    font-size: 0.86rem;
+    font-size: 1rem;
     margin-bottom: 2.3%;
   }
 
@@ -324,6 +330,96 @@
     font-size: 0.5rem;
     padding-right: 35%;
     line-height: 0.7rem;
+  }
+
+  .images_grid {
+    position: relative;
+    width: 100%;
+    padding: 18% 0;
+  }
+
+  .grid_container img {
+    padding: 0%;
+    position: absolute;
+  }
+
+  .grid_button {
+    display: none;
+  }
+
+  .image1 {
+    width: 14%;
+    object-fit: cover;
+    height: 61%;
+    top: 0;
+    left: -5%;
+  }
+
+  .image2 {
+    width: 22%;
+    object-fit: cover;
+    height: 36%;
+    bottom: 1%;
+  }
+
+  .image5 {
+    width: 34%;
+    top: 12%;
+    left: 10%;
+    object-fit: cover;
+    height: 49%;
+  }
+
+  .image6 {
+    width: 21%;
+    bottom: 5%;
+    left: 23%;
+    object-fit: cover;
+    height: 32%;
+  }
+
+  .image7 {
+    width: 20%;
+    bottom: 18%;
+    left: 45%;
+    object-fit: cover;
+    height: 61%;
+  }
+
+  .image9 {
+    width: 24%;
+    bottom: 29%;
+    left: 66%;
+    object-fit: cover;
+    height: 62%;
+  }
+
+  .image8 {
+    width: 16%;
+    bottom: 6%;
+    left: 66%;
+    object-fit: cover;
+    height: 21%;
+  }
+
+  .image3 {
+    width: 9%;
+    top: 6%;
+    right: 0;
+    object-fit: cover;
+    height: 65%;
+  }
+
+  .image4 {
+    width: 17%;
+    bottom: 10%;
+    right: 0;
+    object-fit: cover;
+    height: 17%;
+  }
+
+  .tab_grid {
+    display: inline-block;
   }
 }
 
@@ -505,7 +601,7 @@
   .explore_left h2 {
     text-align: left;
     font-size: 2.1rem;
-    line-height: 3rem;
+    line-height: 2.5rem;
   }
 
   .explore_left .tab_explore {
@@ -513,8 +609,9 @@
     font-weight: 500;
     color: #616161;
     font-size: 0.8rem;
+    margin-top: 2%;
     padding-right: 35%;
-    line-height: 1rem;
+    line-height: 1.2rem;
   }
 
   .explore_left button {

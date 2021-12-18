@@ -1,6 +1,6 @@
 @font-face {
   font-family: gilroy;
-  src: url("../fonts/Gilroy-Light.otf");
+  src: url("../fonts/Gilroy-Regular.ttf");
 }
 
 .container {
@@ -28,7 +28,7 @@ header {
   color: #ffb151;
 }
 
-.drop_down:hover > .drop_down path {
+.drop_down:hover > path {
   stroke: #ffb151;
 }
 
@@ -51,13 +51,15 @@ header {
 }
 
 .dots:hover,
+.dots_explore:hover,
 .active {
   border: 1px solid #e89f71;
   border-radius: 20px;
 }
 
 .dots:hover > circle,
-.active > circle {
+.active > circle,
+.dots_explore:hover > circle {
   fill: #e89f71;
 }
 
@@ -103,7 +105,8 @@ header {
   background: #f16f1d;
 }
 
-.image_pop {
+.image_pop,
+.explore_pop {
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(12px);
 }
@@ -278,6 +281,7 @@ header {
 
 .arrow_left,
 .arrow_right,
+.arrow_right_explore,
 .arrow_left path,
 .arrow_right path {
   border-radius: 20px;
@@ -286,14 +290,23 @@ header {
   stroke: #e89f71;
 }
 
+.arrow_left,
+.arrow_right,
+.arrow_right_explore {
+  box-shadow: 0 0 5px rgba(97, 97, 97, 1);
+}
+
 .arrow_left:hover,
-.arrow_right:hover {
-  border-radius: 20px;
+.arrow_right:hover,
+.arrow_right_explore:hover {
   background: #e89f71;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(97, 97, 97, 1);
 }
 
 .arrow_left:hover > path,
-.arrow_right:hover > path {
+.arrow_right:hover > path,
+.arrow_right_explore:hover > path {
   stroke: white;
 }
 
@@ -363,4 +376,43 @@ footer {
 
 .update_input input:hover {
   border: 1px solid #ffb151;
+}
+
+.explore_container {
+  background: #fcf8f3;
+}
+
+.arrow_explore {
+  background: #e89f71;
+}
+
+.arrow_explore:hover {
+  background: #f16f1d;
+}
+
+.explore_left h2 {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.explore_left button {
+  font-family: gilroy;
+  font-weight: 600;
+  color: white;
+  padding: 2%;
+  border: none;
+  line-height: 1.3rem;
+  font-size: 0.6rem;
+  background: #e89f71;
+}
+
+.explore_left button:hover {
+  background: #f16f1d;
+}
+
+.explore_pop h6 {
+  font-weight: 500;
+  font-size: 0.4rem;
+  line-height: 1rem;
+  color: #3a3a3a;
 }

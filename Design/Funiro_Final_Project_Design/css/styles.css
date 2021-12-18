@@ -135,7 +135,7 @@ header {
 .image_pop,
 .explore_pop {
   background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(5px);
 }
 
 .image_pop h4 {
@@ -474,4 +474,14 @@ footer {
   margin: 2% 0;
   font-size: 1.2rem;
   color: #3a3a3a;
+}
+
+.line_before:after {
+  background-color: #616161;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  vertical-align: middle;
+  width: 15%;
+  margin: 0 4%;
 }

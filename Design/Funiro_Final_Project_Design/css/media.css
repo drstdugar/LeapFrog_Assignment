@@ -594,6 +594,16 @@
     font-size: 0.7rem;
     padding: 2%;
   }
+
+  .explore_pop {
+    padding: 4%;
+  }
+
+  .arrow_explore {
+    padding: 5%;
+    height: 35px;
+    width: 35px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -674,13 +684,7 @@
 
   .explore_pop h4 {
     font-size: 1.4rem;
-    line-height: 1.5rem;
-  }
-
-  .arrow_explore {
-    padding: 2%;
-    height: 20px;
-    width: 20px;
+    line-height: 1.8rem;
   }
 
   .send {

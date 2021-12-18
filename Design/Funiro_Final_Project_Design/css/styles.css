@@ -21,6 +21,7 @@ header {
   text-decoration: none;
   color: black;
 }
+
 .logo_heading {
   font-size: 2.4em;
   font-weight: 700;
@@ -36,6 +37,11 @@ header {
 
 .menu_item a:hover {
   color: #ffb151;
+  cursor: pointer;
+}
+
+.drop_down:hover {
+  cursor: pointer;
 }
 
 .drop_down:hover > path {
@@ -58,6 +64,13 @@ header {
 .menu_icon:hover,
 .profile_container .side_icons:hover {
   stroke: #ffb151;
+  cursor: pointer;
+}
+
+.profile_icon:hover {
+  cursor: pointer;
+  border: 1px solid #ffb151;
+  border-radius: 50%;
 }
 
 .dots:hover,
@@ -65,6 +78,7 @@ header {
 .active {
   border: 1px solid #e89f71;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .dots:hover > circle,
@@ -81,6 +95,7 @@ header {
 .arrow:hover {
   border-radius: 20px;
   background: #e89f71;
+  cursor: pointer;
 }
 
 .arrow:hover > path {
@@ -114,6 +129,7 @@ header {
 
 .dialog_box button:hover {
   background: #f16f1d;
+  cursor: pointer;
 }
 
 .image_pop,
@@ -142,6 +158,10 @@ header {
   color: #616161;
   font-size: 0.4rem;
   line-height: 0.3rem;
+}
+
+.image_pop svg:hover {
+  cursor: pointer;
 }
 
 .image_pop svg:hover > .arrow {
@@ -238,6 +258,7 @@ header {
 
 .product_item:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 .product_item:hover .overlay {
@@ -258,6 +279,7 @@ header {
   color: white;
   border: none;
   background: #e89f71;
+  cursor: pointer;
 }
 
 .overlay_text {
@@ -293,6 +315,7 @@ header {
 .show_more:hover {
   background: #e89f71;
   color: white;
+  cursor: pointer;
 }
 
 .arrow_left,
@@ -318,6 +341,7 @@ header {
   background: #e89f71;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(97, 97, 97, 1);
+  cursor: pointer;
 }
 
 .arrow_left:hover > path,
@@ -328,6 +352,7 @@ header {
 
 .tips_item:hover {
   box-shadow: 0 8px 15px rgba(97, 97, 97, 0.2);
+  cursor: pointer;
 }
 
 footer {
@@ -369,18 +394,19 @@ footer {
 .send {
   background: #e89f71;
   float: left;
-  padding: 2.6%;
+  padding: 1.3%;
   margin-bottom: 5%;
   font-family: gilroy;
 }
 
 .send:hover {
   background: #f16f1d;
+  cursor: pointer;
 }
 
 .update_input input {
   float: left;
-  padding: 3%;
+  padding: 1.7%;
   margin-left: 12%;
   margin-right: 2%;
   font-family: gilroy;
@@ -404,6 +430,7 @@ footer {
 
 .arrow_explore:hover {
   background: #f16f1d;
+  cursor: pointer;
 }
 
 .explore_left h2 {
@@ -424,6 +451,7 @@ footer {
 
 .explore_left button:hover {
   background: #f16f1d;
+  cursor: pointer;
 }
 
 .explore_pop h6 {

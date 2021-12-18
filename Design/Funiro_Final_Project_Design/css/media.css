@@ -70,6 +70,14 @@
   .dots_explore {
     margin: 0 6.7%;
   }
+
+  .grid_container h6 {
+    font-size: 0.7rem;
+  }
+
+  .grid_container h2 {
+    font-size: 1.3rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -212,7 +220,7 @@
   .connect,
   .menu,
   .account {
-    width: 18.2%;
+    width: 17%;
     float: left;
     text-align: justify;
     margin-top: 0;
@@ -230,7 +238,7 @@
 
   .about_info h6 {
     font-size: 0.7rem;
-    line-height: 1rem;
+    line-height: 1.1rem;
   }
 
   .link {
@@ -239,13 +247,13 @@
   }
 
   .location {
-    margin-top: 2%;
+    margin-top: 5%;
     width: 100%;
   }
 
   .call {
     width: 100%;
-    margin: 2% 0;
+    margin: 5% 0;
     display: block;
     float: none;
   }
@@ -256,14 +264,18 @@
     padding: 3%;
   }
 
+  .update_input {
+    margin-top: 4%;
+  }
+
   .footer_headings {
     font-size: 1rem;
     margin-bottom: 2.3%;
   }
 
   .send {
-    padding: 3%;
-    height: 1.65rem;
+    padding: 5%;
+    height: 1.3rem;
     margin-bottom: 5%;
   }
 
@@ -293,16 +305,17 @@
   }
 
   .first_container {
-    width: 30%;
+    width: 35%;
   }
 
   .explore_caraousel .tab_explore {
-    width: 10%;
+    width: 4%;
     display: inline;
     object-fit: cover;
     height: 300px;
     display: inline;
     float: right;
+    object-position: 0 100%;
     margin-left: 1%;
   }
 
@@ -319,7 +332,7 @@
 
   .second_container {
     float: right;
-    width: 28%;
+    width: 29%;
     margin-left: 1%;
   }
 
@@ -395,7 +408,7 @@
   }
 
   .image8 {
-    width: 16%;
+    width: 20%;
     bottom: 6%;
     left: 66%;
     object-fit: cover;
@@ -408,14 +421,23 @@
     right: 0;
     object-fit: cover;
     height: 65%;
+    object-position: 0 80%;
   }
 
   .image4 {
-    width: 17%;
+    width: 13%;
     bottom: 10%;
     right: 0;
     object-fit: cover;
     height: 17%;
+  }
+
+  .grid_container h6 {
+    font-size: 1rem;
+  }
+
+  .grid_container h2 {
+    font-size: 2rem;
   }
 
   .tab_grid {
@@ -549,6 +571,29 @@
     height: 450px;
     margin-bottom: 13%;
   }
+
+  .send {
+    padding: 3%;
+  }
+
+  .explore_left {
+    padding-top: 15%;
+  }
+
+  .explore_left .tab_explore {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
+
+  .explore_left h2 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .explore_left button {
+    font-size: 0.7rem;
+    padding: 2%;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -589,7 +634,7 @@
   }
 
   .dots_explore {
-    margin: 0 6%;
+    margin: 0 3.5%;
   }
 
   .explore_left {
@@ -636,5 +681,9 @@
     padding: 2%;
     height: 20px;
     width: 20px;
+  }
+
+  .send {
+    height: 1.5rem;
   }
 }

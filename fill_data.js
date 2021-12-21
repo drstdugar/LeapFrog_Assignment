@@ -21,7 +21,7 @@ const data = [
   },
   {
     title: "JavaScript Exercises",
-    code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Funiro_Final_Project_Design",
+    code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Exercises",
     demo: "JavaScript/Exercises/index.html",
   },
 ];

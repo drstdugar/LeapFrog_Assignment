@@ -19,6 +19,11 @@ const data = [
     code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Funiro_Final_Project_Design",
     demo: "Design/Funiro_Final_Project_Design/index.html",
   },
+  {
+    title: "JavaScript Exercises",
+    code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/Design/Funiro_Final_Project_Design",
+    demo: "JavaScript/Exercises/index.html",
+  },
 ];
 
 loadData(data);

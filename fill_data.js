@@ -20,7 +20,7 @@ const data = [
     demo: "Design/Funiro_Final_Project_Design/index.html",
   },
   {
-    title: "JavaScript Exercises",
+    title: "JavaScript Exercise",
     code: "https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Exercises",
     demo: "JavaScript/Exercises/index.html",
   },

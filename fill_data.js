@@ -26,12 +26,12 @@ const data = [
   },
   {
     title: 'Plot',
-    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Exercises',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Plot',
     demo: 'JavaScript/Plot/index.html',
   },
   {
     title: 'Bouncing Ball',
-    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Exercises',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Bouncing_Ball',
     demo: 'JavaScript/Bouncing_Ball/index.html',
   },
 ];
@@ -40,7 +40,7 @@ loadData(data);
 
 function loadData(data) {
   const table = document.getElementById('table_data');
-  data.forEach((item) => {
+  data.forEach(item => {
     let row = table.insertRow();
     let title = row.insertCell(0);
     title.innerHTML = item.title;

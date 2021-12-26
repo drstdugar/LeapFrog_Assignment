@@ -34,6 +34,21 @@ const data = [
     code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Bouncing_Ball',
     demo: 'JavaScript/Bouncing_Ball/index.html',
   },
+  {
+    title: 'Bouncing Balls Using OOP',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Bouncing_Ball_Class',
+    demo: 'JavaScript/Bouncing_Ball_Class/index.html',
+  },
+  {
+    title: 'Image Carousel',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Carousel',
+    demo: 'JavaScript/Carousel/index.html',
+  },
+  {
+    title: 'Image Carousel With Hold Times',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Carousel_Timing',
+    demo: 'JavaScript/Carousel_Timing/index.html',
+  },
 ];
 
 loadData(data);

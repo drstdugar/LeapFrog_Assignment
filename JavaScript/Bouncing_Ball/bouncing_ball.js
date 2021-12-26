@@ -8,12 +8,11 @@ ball.style.width = '80px';
 ball.style.height = '80px';
 ball.style.borderRadius = '50%';
 ball.style.background = 'brown';
-ball.style.alignSelf = 'center';
 ball.style.position = 'absolute';
-ball.style.top = '0px';
+ball.style.top = '10px';
 ball.style.left = '47%';
 
-let moving = 10;
+let moving = parseInt(ball.style.top);
 let up = true;
 
 setInterval(() => {

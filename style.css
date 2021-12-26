@@ -1,17 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
 
-html {
-  height: 100%;
+body {
+  height: 100vh;
   background: linear-gradient(
     rgb(94, 169, 255),
     rgb(142, 203, 253),
     rgb(169, 219, 253)
   );
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 table {
-  width: 50%;
+  width: 55%;
 }
 
 th {
@@ -37,7 +38,7 @@ td {
   margin-left: 6%;
   margin-top: 4%;
   color: rgb(58, 58, 58);
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 h3 {

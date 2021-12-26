@@ -163,7 +163,7 @@ class Carousel {
         this.current_pic++;
         this.dot_transition(this.current_pic, this.current_pic - 1);
       } else {
-        this.transition(true, 10);
+        this.transition(false, 10);
         this.current_pic = 0;
         this.dot_transition(this.current_pic, this.imageCount - 1);
       }

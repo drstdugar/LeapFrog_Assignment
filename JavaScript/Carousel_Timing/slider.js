@@ -14,8 +14,8 @@ class Carousel {
     this.create_Container();
     this.add_image();
 
-    this.nav_button(40, 180, 0, '(');
-    this.nav_button(40, 180, 520, ')');
+    this.nav_button(40, 180, 0, '〈');
+    this.nav_button(40, 180, 520, '〉');
 
     this.nav_dots(10, 10);
 
@@ -63,7 +63,7 @@ class Carousel {
     container.appendChild(nav_button);
 
     nav_button.addEventListener('click', () => {
-      if (symbol == '(') {
+      if (symbol == '〈') {
         if (this.current_pic != 0) {
           this.transition(true, 10);
           this.current_pic--;

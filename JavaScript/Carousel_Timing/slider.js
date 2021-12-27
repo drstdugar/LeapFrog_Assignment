@@ -2,14 +2,17 @@ const container = document.getElementById('container');
 const images = document.getElementById('images');
 
 class Carousel {
-  constructor(imageHeight, imageWidth, hold, speed) {
+  constructor(imageHeight, imageWidth, hold) {
     this.imageHeight = imageHeight;
     this.imageWidth = imageWidth;
     this.imageCount = images.children.length;
     this.current_pic = 0;
     this.dx = 0;
     this.hold = hold;
-    this.speed = speed;
+    this.offset = imageWidth % 15;
+    console.log(this.offset);
+    this.left = false;
+    self = this;
 
     this.create_Container();
     this.add_image();
@@ -19,7 +22,7 @@ class Carousel {
 
     this.nav_dots(10, 10);
 
-    this.auto_transition();
+    this.set();
   }
 
   create_Container() {
@@ -63,15 +66,18 @@ class Carousel {
     container.appendChild(nav_button);
 
     nav_button.addEventListener('click', () => {
+      this.clear();
       if (symbol == '〈') {
         if (this.current_pic != 0) {
-          this.transition(true, 10);
+          this.left = true;
+          requestAnimationFrame(this.transition);
           this.current_pic--;
           this.dot_transition(this.current_pic, this.current_pic + 1);
         }
       } else {
         if (this.current_pic != this.imageCount - 1) {
-          this.transition(false, 10);
+          this.left = false;
+          requestAnimationFrame(this.transition);
           this.current_pic++;
           this.dot_transition(this.current_pic, this.current_pic - 1);
         } else {
@@ -80,6 +86,7 @@ class Carousel {
           this.dot_transition(this.current_pic, this.imageCount - 1);
         }
       }
+      this.set();
     });
   }
 
@@ -109,42 +116,47 @@ class Carousel {
       nav_dot_container.appendChild(nav_dot);
 
       nav_dot.addEventListener('click', () => {
+        this.clear();
+        this.auto = false;
         this.dot_transition(i, this.current_pic);
         if (i > this.current_pic) {
-          this.transition(false, 10);
+          this.left = false;
+          requestAnimationFrame(this.transition);
           this.current_pic = i;
         }
         if (i < this.current_pic) {
-          this.transition(true, 10);
+          this.left = true;
+          requestAnimationFrame(this.transition);
           this.current_pic = i;
         }
+        this.set();
       });
     }
   }
 
-  transition(left, offset) {
-    if (left) {
-      if (this.current_pic != 0) {
-        const interval = setInterval(() => {
-          this.dx -= offset;
-          images.style.left = `-${this.dx}px`;
+  transition() {
+    if (self.left) {
+      if (self.dx != 0) {
+        console.log(self.dx);
+        self.dx -= self.offset;
+        images.style.left = `-${self.dx}px`;
 
-          if (this.dx <= this.current_pic * this.imageWidth)
-            clearInterval(interval);
-        }, this.offset);
+        if (self.dx > self.current_pic * self.imageWidth)
+          requestAnimationFrame(self.transition);
       }
     } else {
-      const interval = setInterval(() => {
-        if (this.current_pic != 0) {
-          this.dx += offset;
-          if (this.dx >= this.current_pic * this.imageWidth)
-            clearInterval(interval);
-        } else {
-          this.dx -= offset;
-          if (0 >= this.dx) clearInterval(interval);
-        }
-        images.style.left = `-${this.dx}px`;
-      }, this.speed);
+      if (self.current_pic != 0) {
+        console.log(self.dx);
+        self.dx += self.offset;
+
+        if (self.dx < self.current_pic * self.imageWidth)
+          requestAnimationFrame(self.transition);
+      } else {
+        self.dx -= self.offset;
+
+        if (self.dx >= 0) requestAnimationFrame(self.transition);
+      }
+      images.style.left = `-${self.dx}px`;
     }
   }
 
@@ -157,18 +169,26 @@ class Carousel {
   }
 
   auto_transition() {
-    setInterval(() => {
-      if (this.current_pic < this.imageCount - 1) {
-        this.transition(false, 10);
-        this.current_pic++;
-        this.dot_transition(this.current_pic, this.current_pic - 1);
-      } else {
-        this.transition(false, 10);
-        this.current_pic = 0;
-        this.dot_transition(this.current_pic, this.imageCount - 1);
-      }
-    }, this.hold);
+    if (this.current_pic < this.imageCount - 1) {
+      this.left = false;
+      requestAnimationFrame(this.transition);
+      this.current_pic++;
+      this.dot_transition(this.current_pic, this.current_pic - 1);
+    } else {
+      this.left = true;
+      requestAnimationFrame(this.transition);
+      this.current_pic = 0;
+      this.dot_transition(this.current_pic, this.imageCount - 1);
+    }
+  }
+
+  clear() {
+    clearInterval(this.interval);
+  }
+
+  set() {
+    this.interval = setInterval(() => this.auto_transition(), this.hold);
   }
 }
 
-create_container = new Carousel(400, 550, 4000, 10);
+create_container = new Carousel(400, 550, 4000);

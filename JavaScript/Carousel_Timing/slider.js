@@ -10,7 +10,6 @@ class Carousel {
     this.hold = hold;
     this.offset = 10;
     this.left = false;
-    self = this;
 
     this.create_Container();
     this.add_image();
@@ -68,14 +67,14 @@ class Carousel {
       if (symbol == '〈') {
         if (this.current_pic != 0) {
           this.left = true;
-          requestAnimationFrame(this.transition);
+          requestAnimationFrame(this.transition.bind(this));
           this.current_pic--;
           this.dot_transition(this.current_pic, this.current_pic + 1);
         }
       } else {
         if (this.current_pic != this.imageCount - 1) {
           this.left = false;
-          requestAnimationFrame(this.transition);
+          requestAnimationFrame(this.transition.bind(this));
           this.current_pic++;
           this.dot_transition(this.current_pic, this.current_pic - 1);
         } else {
@@ -119,12 +118,12 @@ class Carousel {
         this.dot_transition(i, this.current_pic);
         if (i > this.current_pic) {
           this.left = false;
-          requestAnimationFrame(this.transition);
+          requestAnimationFrame(this.transition.bind(this));
           this.current_pic = i;
         }
         if (i < this.current_pic) {
           this.left = true;
-          requestAnimationFrame(this.transition);
+          requestAnimationFrame(this.transition.bind(this));
           this.current_pic = i;
         }
         this.set();
@@ -133,26 +132,26 @@ class Carousel {
   }
 
   transition() {
-    if (self.left) {
-      if (self.dx != 0) {
-        self.dx -= self.offset;
-        self.images.style.left = `-${self.dx}px`;
+    if (this.left) {
+      if (this.dx != 0) {
+        this.dx -= this.offset;
+        this.images.style.left = `-${this.dx}px`;
 
-        if (self.dx > self.current_pic * self.imageWidth)
-          requestAnimationFrame(self.transition);
+        if (this.dx > this.current_pic * this.imageWidth)
+          requestAnimationFrame(this.transition.bind(this));
       }
     } else {
-      if (self.current_pic != 0) {
-        self.dx += self.offset;
+      if (this.current_pic != 0) {
+        this.dx += this.offset;
 
-        if (self.dx < self.current_pic * self.imageWidth)
-          requestAnimationFrame(self.transition);
+        if (this.dx < this.current_pic * this.imageWidth)
+          requestAnimationFrame(this.transition.bind(this));
       } else {
-        self.dx -= self.offset;
+        this.dx -= this.offset;
 
-        if (self.dx >= 0) requestAnimationFrame(self.transition);
+        if (this.dx >= 0) requestAnimationFrame(this.transition.bind(this));
       }
-      self.images.style.left = `-${self.dx}px`;
+      this.images.style.left = `-${this.dx}px`;
     }
   }
 
@@ -167,12 +166,12 @@ class Carousel {
   auto_transition() {
     if (this.current_pic < this.imageCount - 1) {
       this.left = false;
-      requestAnimationFrame(this.transition);
+      requestAnimationFrame(this.transition.bind(this));
       this.current_pic++;
       this.dot_transition(this.current_pic, this.current_pic - 1);
     } else {
       this.left = true;
-      requestAnimationFrame(this.transition);
+      requestAnimationFrame(this.transition.bind(this));
       this.current_pic = 0;
       this.dot_transition(this.current_pic, this.imageCount - 1);
     }

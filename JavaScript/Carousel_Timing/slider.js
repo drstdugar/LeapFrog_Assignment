@@ -188,7 +188,7 @@ class Carousel {
 }
 
 let carousel1 = new Carousel(
-  document.getElementById('container1'),
-  document.getElementById('images1'),
+  document.getElementById('container'),
+  document.getElementById('images'),
   4000
 );

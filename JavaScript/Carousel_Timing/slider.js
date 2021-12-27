@@ -156,8 +156,9 @@ class Carousel {
   }
 
   dot_transition(current, prev) {
-    const curr_dot = document.querySelector(`.dot${current}`);
-    const prev_dot = document.querySelector(`.dot${prev}`);
+    let id = this.container.getAttribute('id');
+    const curr_dot = document.querySelector(`#${id} .dot${current}`);
+    const prev_dot = document.querySelector(`#${id} .dot${prev}`);
 
     prev_dot.style.background = 'grey';
     curr_dot.style.background = 'white';
@@ -187,7 +188,12 @@ class Carousel {
 }
 
 let carousel1 = new Carousel(
-  document.getElementById('container'),
-  document.getElementById('images'),
+  document.getElementById('container1'),
+  document.getElementById('images1'),
   4000
+);
+let carousel2 = new Carousel(
+  document.getElementById('container2'),
+  document.getElementById('images2'),
+  6000
 );

@@ -136,7 +136,6 @@ class Carousel {
   transition() {
     if (self.left) {
       if (self.dx != 0) {
-        console.log(self.dx);
         self.dx -= self.offset;
         images.style.left = `-${self.dx}px`;
 
@@ -145,7 +144,6 @@ class Carousel {
       }
     } else {
       if (self.current_pic != 0) {
-        console.log(self.dx);
         self.dx += self.offset;
 
         if (self.dx < self.current_pic * self.imageWidth)

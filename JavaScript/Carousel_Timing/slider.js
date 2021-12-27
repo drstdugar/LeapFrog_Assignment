@@ -1,11 +1,10 @@
-const container = document.getElementById('container');
-const images = document.getElementById('images');
-
 class Carousel {
-  constructor(imageHeight, imageWidth, hold) {
-    this.imageHeight = imageHeight;
-    this.imageWidth = imageWidth;
-    this.imageCount = images.children.length;
+  constructor(container, images, hold) {
+    this.container = container;
+    this.images = images;
+    this.imageHeight = 400;
+    this.imageWidth = 550;
+    this.imageCount = this.images.children.length;
     this.current_pic = 0;
     this.dx = 0;
     this.hold = hold;
@@ -25,19 +24,19 @@ class Carousel {
   }
 
   create_Container() {
-    container.style.width = `${this.imageWidth}px`;
-    container.style.height = `${this.imageHeight}px`;
-    container.style.margin = '20px auto';
-    container.style.overflow = 'hidden';
-    container.style.position = 'relative';
+    this.container.style.width = `${this.imageWidth}px`;
+    this.container.style.height = `${this.imageHeight}px`;
+    this.container.style.margin = '20px auto';
+    this.container.style.overflow = 'hidden';
+    this.container.style.position = 'relative';
   }
 
   add_image() {
-    images.style.width = `${this.imageCount * this.imageWidth}px`;
-    images.style.position = 'absolute';
+    this.images.style.width = `${this.imageCount * this.imageWidth}px`;
+    this.images.style.position = 'absolute';
 
     for (let i = 0; i < this.imageCount; i++) {
-      const image = images.children[i];
+      const image = this.images.children[i];
       image.style.width = `${this.imageWidth}px`;
       image.style.height = `${this.imageHeight}px`;
       image.style.position = 'absolute';
@@ -62,7 +61,7 @@ class Carousel {
     nav_button.style.border = 'none';
     nav_button.style.cursor = 'pointer';
 
-    container.appendChild(nav_button);
+    this.container.appendChild(nav_button);
 
     nav_button.addEventListener('click', () => {
       this.clear();
@@ -98,7 +97,7 @@ class Carousel {
     nav_dot_container.style.position = 'absolute';
     nav_dot_container.style.left = '42%';
 
-    container.appendChild(nav_dot_container);
+    this.container.appendChild(nav_dot_container);
 
     for (let i = 0; i < this.imageCount; i++) {
       const nav_dot = document.createElement('div');
@@ -137,7 +136,7 @@ class Carousel {
     if (self.left) {
       if (self.dx != 0) {
         self.dx -= self.offset;
-        images.style.left = `-${self.dx}px`;
+        self.images.style.left = `-${self.dx}px`;
 
         if (self.dx > self.current_pic * self.imageWidth)
           requestAnimationFrame(self.transition);
@@ -153,7 +152,7 @@ class Carousel {
 
         if (self.dx >= 0) requestAnimationFrame(self.transition);
       }
-      images.style.left = `-${self.dx}px`;
+      self.images.style.left = `-${self.dx}px`;
     }
   }
 
@@ -188,4 +187,8 @@ class Carousel {
   }
 }
 
-create_container = new Carousel(400, 550, 4000);
+let carousel1 = new Carousel(
+  document.getElementById('container1'),
+  document.getElementById('images1'),
+  4000
+);

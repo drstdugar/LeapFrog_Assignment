@@ -9,8 +9,7 @@ class Carousel {
     this.current_pic = 0;
     this.dx = 0;
     this.hold = hold;
-    this.offset = imageWidth % 15;
-    console.log(this.offset);
+    this.offset = 10;
     this.left = false;
     self = this;
 

@@ -65,10 +65,10 @@ class Ball {
   }
 
   resolveBallCollision(ball1, ball2) {
-    let dx = ball1.posx - ball2.posx;
-    let dy = ball1.posy - ball2.posy;
-
-    let collisionAngle = Math.atan2(dy, dx);
+    let collisionAngle = Math.atan2(
+      ball1.posy - ball2.posy,
+      ball1.posx - ball2.posx
+    );
 
     let speed1 = Math.sqrt(ball1.velx * ball1.velx + ball1.vely * ball1.vely);
     let speed2 = Math.sqrt(ball2.velx * ball2.velx + ball2.vely * ball2.vely);
@@ -130,8 +130,8 @@ function generateBall() {
   return new Ball(
     getRandomInt(radius, wallWidth - radius),
     getRandomInt(radius, wallHeight - radius),
-    getRandomInt(1, 5),
-    getRandomInt(1, 5),
+    getRandomInt(-4, 4),
+    getRandomInt(-4, 4),
     radius,
     getRandomInt(1, 10),
     getRandomColor()

@@ -5,7 +5,7 @@ const canvas = document.getElementById('canvas'),
   elemTop = canvas.offsetTop + canvas.clientTop,
   ctx = canvas.getContext('2d');
 
-const antCount = 10;
+const antCount = 15;
 const ants = [];
 
 const wallHeight = 690;
@@ -24,13 +24,13 @@ class Ant {
     this.mass = mass;
   }
 
-  drawBall() {
+  drawAnt() {
     const base_image = new Image();
     base_image.src = './images/ant.jpg';
     ctx.drawImage(base_image, this.posx, this.posy, this.size, this.size);
   }
 
-  moveBall() {
+  moveAnt() {
     this.resolveWallCollision();
     this.checkSelfCollision();
   }
@@ -63,10 +63,10 @@ class Ant {
   }
 
   resolveSelfCollision(ant1, ant2) {
-    let dx = ant1.posx - ant2.posx;
-    let dy = ant1.posy - ant2.posy;
-
-    let collisionAngle = Math.atan2(dy, dx);
+    let collisionAngle = Math.atan2(
+      ant1.posy - ant2.posy,
+      ant1.posx - ant2.posx
+    );
 
     let speed1 = Math.sqrt(ant1.velx * ant1.velx + ant1.vely * ant1.vely);
     let speed2 = Math.sqrt(ant2.velx * ant2.velx + ant2.vely * ant2.vely);
@@ -106,15 +106,15 @@ class Ant {
   }
 }
 
-function createBalls() {
+function createAnts() {
   for (let i = 0; i < antCount; i++) {
-    let ant = generateBall();
+    let ant = generateAnt();
 
     // check overlapping ants at start
     if (i != 0) {
       for (let j = 0; j < ants.length; j++) {
         if (calcDistance(ant, ants[j]) < ant.size + ants[j].size) {
-          ant = generateBall();
+          ant = generateAnt();
           j = -1;
         }
       }
@@ -123,13 +123,13 @@ function createBalls() {
   }
 }
 
-function generateBall() {
+function generateAnt() {
   let size = 40;
   return new Ant(
     getRandomInt(size, wallWidth - size),
     getRandomInt(size, wallHeight - size),
-    getRandomInt(1, 5),
-    getRandomInt(1, 5),
+    getRandomInt(-4, 4),
+    getRandomInt(-4, 4),
     size,
     getRandomInt(1, 10)
   );
@@ -149,13 +149,13 @@ function startAnimate() {
   }
 
   for (let i = 0; i < ants.length; i++) {
-    ants[i].drawBall();
-    ants[i].moveBall();
+    ants[i].drawAnt();
+    ants[i].moveAnt();
   }
   requestAnimationFrame(startAnimate);
 }
 
-createBalls();
+createAnts();
 
 canvas.addEventListener('click', function (event) {
   let x = event.pageX - elemLeft,

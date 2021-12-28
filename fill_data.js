@@ -49,6 +49,16 @@ const data = [
     code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Carousel_Timing',
     demo: 'JavaScript/Carousel_Timing/index.html',
   },
+  {
+    title: 'Box Collision',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Ball_Collision',
+    demo: 'JavaScript/Ball_Collision/index.html',
+  },
+  {
+    title: 'Ant Smasher',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Ant_Smasher',
+    demo: 'JavaScript/Ant_Smasher/index.html',
+  },
 ];
 
 loadData(data);

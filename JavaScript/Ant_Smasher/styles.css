@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  margin: 11px 51px;
+  border: 2px solid rgb(253, 201, 201);
+  background: rgb(252, 242, 242);
+}

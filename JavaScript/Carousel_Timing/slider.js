@@ -157,6 +157,7 @@ class Carousel {
 
   dot_transition(current, prev) {
     let id = this.container.getAttribute('id');
+
     const curr_dot = document.querySelector(`#${id} .dot${current}`);
     const prev_dot = document.querySelector(`#${id} .dot${prev}`);
 
@@ -192,6 +193,7 @@ let carousel1 = new Carousel(
   document.getElementById('images1'),
   4000
 );
+
 let carousel2 = new Carousel(
   document.getElementById('container2'),
   document.getElementById('images2'),

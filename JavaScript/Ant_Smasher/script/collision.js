@@ -31,14 +31,11 @@ class Ant {
   }
 
   moveBall() {
-    this.posx += this.velx;
-    this.posy += this.vely;
-
-    this.checkWallCollision();
+    this.resolveWallCollision();
     this.checkSelfCollision();
   }
 
-  checkWallCollision() {
+  resolveWallCollision() {
     if (this.posx + this.size > wallWidth) {
       this.velx = -this.velx;
       this.posx = wallWidth - this.size;
@@ -50,6 +47,9 @@ class Ant {
     } else if (this.posy < 0) {
       this.vely = -this.vely;
     }
+
+    this.posx += this.velx;
+    this.posy += this.vely;
   }
 
   checkSelfCollision() {

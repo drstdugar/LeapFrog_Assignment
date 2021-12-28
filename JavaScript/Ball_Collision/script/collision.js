@@ -31,14 +31,11 @@ class Ball {
   }
 
   moveBall() {
-    this.posx += this.velx;
-    this.posy += this.vely;
-
-    this.checkWallCollision();
+    this.resolveWallCollision();
     this.checkBallCollision();
   }
 
-  checkWallCollision() {
+  resolveWallCollision() {
     if (this.posx + this.radius > wallWidth) {
       this.velx = -this.velx;
       this.posx = wallWidth - this.radius;
@@ -52,6 +49,9 @@ class Ball {
       this.vely = -this.vely;
       this.posy = this.radius;
     }
+
+    this.posx += this.velx;
+    this.posy += this.vely;
   }
 
   checkBallCollision() {

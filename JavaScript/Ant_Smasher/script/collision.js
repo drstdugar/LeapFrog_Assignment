@@ -113,7 +113,7 @@ function createAnts() {
     // check overlapping ants at start
     if (i != 0) {
       for (let j = 0; j < ants.length; j++) {
-        if (calcDistance(ant, ants[j]) < ant.size + ants[j].size) {
+        if (calcDistance(ant, ants[j]) < ant.size) {
           ant = generateAnt();
           j = -1;
         }

@@ -78,7 +78,7 @@ class Car {
     this.posy += gameSpeed;
 
     if (this.posy > this.height + gameHeight) {
-      this.posy = -getRandomInt(150, 900);
+      this.posy = -getRandomInt(150, 1000);
 
       checkSpace();
 
@@ -105,7 +105,7 @@ class Car {
 
 function createObstacle() {
   for (let i = 0; i < laneCount; i++) {
-    let obs = new Car(false, i, -getRandomInt(150, 900, 50));
+    let obs = new Car(false, i, -getRandomInt(150, 1000, 50));
     cars.push(obs);
   }
 

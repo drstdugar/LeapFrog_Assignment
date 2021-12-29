@@ -59,6 +59,11 @@ const data = [
     code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Ant_Smasher',
     demo: 'JavaScript/Ant_Smasher/index.html',
   },
+  {
+    title: 'Car Lane Game',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Car_Lane_Game',
+    demo: 'JavaScript/Car_Lane_Game/index.html',
+  },
 ];
 
 loadData(data);

@@ -6,6 +6,7 @@ const restartBtn = document.getElementById('restart-btn');
 const startScreen = document.getElementById('game-start');
 const overScreen = document.getElementById('game-over');
 const scoreView = document.getElementById('score');
+const hScoreView = document.getElementById('high-score');
 
 const ctx = canvas.getContext('2d');
 
@@ -162,7 +163,16 @@ function startGame() {
 }
 
 function gameOver() {
+  let hscore = localStorage.getItem('highScore');
+  hScoreView.textContent = `High Score: ${hscore}`;
+  if (hscore < score) {
+    localStorage.setItem('highScore', score);
+    hScoreView.textContent = `New High Score: ${localStorage.getItem(
+      'highScore'
+    )}`;
+  }
   overScreen.style.opacity = 0.72;
+
   scoreView.textContent = `Your Score: ${score}`;
 }
 

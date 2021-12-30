@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 11px 400px;
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+canvas {
+  border: 2px solid rgb(4, 224, 4);
+  position: absolute;
+}
+
+.game-start,
+.game-over {
+  display: flex;
+  flex-direction: column;
+  width: 605px;
+  height: 695px;
+  position: absolute;
+  background: url('../assets/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.title,
+.over {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.instruction {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.replay,
+.play {
+  width: 80px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.score-board {
+  position: relative;
+}
+
+.curr-score {
+  position: absolute;
+  top: 70px;
+  right: 60px;
+}
+
+.high-score {
+  position: absolute;
+  top: 140px;
+  right: 60px;
+}
+
+.score {
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+.game-start {
+  opacity: 1;
+  z-index: 1;
+}
+
+.game-over h3 {
+  line-height: 18px;
+  padding: 5px;
+  font-size: 17px;
+}

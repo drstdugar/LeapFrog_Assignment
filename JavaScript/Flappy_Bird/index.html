@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="./css/styles.css" rel="stylesheet">
+
+    <title>Flappy Bird</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-start" id="game-start">
+            <img src="./assets/title.png" alt="title" class="title">
+            <img src="./assets/instructions.png" alt="title" class="instruction">
+            <img src="./assets/play.png" alt="title" class="play" id="play">
+        </div>
+        <canvas id="canvas"></canvas>
+        <div class="game-over" id="game-over">
+            <img src="./assets/game_over.png" alt="title" class="over">
+            <div class="score-board">
+                <img src="./assets/score.png" alt="title" class="score">
+                <h2 class="curr-score" id="curr-score">15</h2>
+                <h2 class="high-score" id="high-score">20</h2>
+            </div>
+            <img src="./assets/play.png" alt="title" class="replay" id="replay">
+        </div>
+    </div>
+
+    <script src="script/index.js" type="module"> </script>
+</body>
+
+</html>

@@ -64,6 +64,11 @@ const data = [
     code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Car_Lane_Game',
     demo: 'JavaScript/Car_Lane_Game/index.html',
   },
+  {
+    title: 'Flappy Bird Game',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Flappy_Bird',
+    demo: 'JavaScript/Flappy_Bird/index.html',
+  },
 ];
 
 loadData(data);

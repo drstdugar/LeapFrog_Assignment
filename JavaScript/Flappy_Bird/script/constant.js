@@ -3,7 +3,7 @@ const constants = {
   GAME_HEIGHT: 550,
   GAME_WIDTH: 600,
   BOTTOM_HEIGHT: 140,
-  GAME_STATE: 'Running',
+  GAME_STATE: 'Menu',
   HOLE: 150,
   BIRD_X: 20,
   BIRD_Y: 200,

@@ -136,6 +136,7 @@ restartBtn.addEventListener('click', () => {
 });
 
 startBtn.addEventListener('click', () => {
+  constants.GAME_STATE = 'Running';
   startGame();
   startScreen.style.opacity = 0;
   startScreen.style.zIndex = 0;

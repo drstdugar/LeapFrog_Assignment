@@ -36,18 +36,27 @@ class Bird {
     this.vel += this.gravity;
     this.vel *= 1;
     this.posy += this.vel;
+  }
 
+  checkCollision(pipe) {
     if (this.posy + this.size > constants.GAME_HEIGHT) {
       this.collision = true;
-      this.posy = constants.GAME_HEIGHT - this.size;
       this.vel = 0;
     }
 
     if (this.posy < 0) {
       this.collision = true;
-      this.posy = 0;
       this.vel = 0;
       this.gravity = 0;
+    }
+
+    if (
+      (this.posy <= pipe.top ||
+        this.posy + this.size >= constants.GAME_HEIGHT - pipe.bottom) &&
+      this.posx >= pipe.posx
+    ) {
+      this.posx = pipe.posx - this.size;
+      this.collision = true;
     }
   }
 }

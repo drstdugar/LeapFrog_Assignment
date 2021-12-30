@@ -46,11 +46,12 @@ function start() {
   bird[0].draw(ctx);
   bird[0].gravityEffect();
 
+  pipesMove();
+
   if (bird[0].collision) {
     gameState = 'Over';
+    checkScore();
   }
-
-  pipesMove();
 
   if (gameState != 'Over') {
     requestAnimationFrame(start);
@@ -68,23 +69,12 @@ function pipesMove() {
     pipes[i].draw(ctx);
     pipes[i].move();
 
-    checkCollision(pipes[i]);
+    bird[0].checkCollision(pipes[i]);
 
     if (pipes[i].offScreen()) {
       pipes.splice(i, 1);
       score++;
     }
-  }
-}
-
-function checkCollision(pipe) {
-  if (
-    (bird[0].posy <= pipe.top ||
-      bird[0].posy + bird[0].size >= constants.GAME_HEIGHT - pipe.bottom) &&
-    bird[0].posx >= pipe.posx
-  ) {
-    gameState = 'Over';
-    checkScore();
   }
 }
 

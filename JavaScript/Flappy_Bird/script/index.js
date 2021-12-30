@@ -79,7 +79,7 @@ function pipesMove() {
       score++;
     }
 
-    if ((score + 1) % 4 === 0) {
+    if ((score + 1) % 6 === 0) {
       pipeSpeed += 0.02;
       speed += 0.5;
     }

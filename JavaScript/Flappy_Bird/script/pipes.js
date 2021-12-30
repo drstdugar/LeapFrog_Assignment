@@ -37,8 +37,8 @@ class Pipes {
     }.bind(this);
   }
 
-  move() {
-    this.posx -= 5;
+  move(speed) {
+    this.posx -= speed;
   }
 
   offScreen() {

@@ -17,6 +17,7 @@ canvas.height = constants.SCREEN_HEIGHT;
 canvas.width = constants.GAME_WIDTH;
 
 let speed = 1;
+let pipeSpeed = 5;
 let bird = [];
 let pipes = [];
 
@@ -69,13 +70,18 @@ function start() {
 function pipesMove() {
   for (let i = 0; i < pipes.length; i++) {
     pipes[i].draw(ctx);
-    pipes[i].move();
+    pipes[i].move(pipeSpeed);
 
     bird[0].checkCollision(pipes[i]);
 
     if (pipes[i].offScreen()) {
       pipes.splice(i, 1);
       score++;
+    }
+
+    if ((score + 1) % 4 === 0) {
+      pipeSpeed += 0.02;
+      speed += 0.5;
     }
   }
 }

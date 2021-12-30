@@ -24,6 +24,8 @@ let score = 0;
 
 let gameState = 'Menu';
 
+let interval;
+
 function styleBackground() {
   canvas.style.background = "url('./assets/background.png')";
   canvas.style.backgroundRepeat = 'repeat-x';
@@ -121,8 +123,6 @@ function changeStyle() {
   canvas.style.zIndex = 1;
 }
 
-let interval = setInterval(() => createPipe(), 1100);
-
 document.addEventListener('click', () => bird[0].jump());
 
 restartBtn.addEventListener('click', () => {
@@ -136,6 +136,7 @@ restartBtn.addEventListener('click', () => {
 startBtn.addEventListener('click', () => {
   gameState = 'Running';
   startGame();
+  interval = setInterval(() => createPipe(), 1100);
   startScreen.style.opacity = 0;
   startScreen.style.zIndex = 0;
   overScreen.style.zIndex = 1;

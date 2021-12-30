@@ -1,6 +1,5 @@
 import {clearCanvas} from './utilities.js';
 import {constants} from './constant.js';
-
 class Bird {
   constructor() {
     this.posx = constants.BIRD_X;
@@ -11,6 +10,7 @@ class Bird {
     this.size = 40;
     this.flipTime = 0;
     this.flap = false;
+    this.collision = false;
   }
 
   draw(ctx) {
@@ -38,13 +38,13 @@ class Bird {
     this.posy += this.vel;
 
     if (this.posy + this.size > constants.GAME_HEIGHT) {
-      constants.GAME_STATE = 'Over';
+      this.collision = true;
       this.posy = constants.GAME_HEIGHT - this.size;
       this.vel = 0;
     }
 
     if (this.posy < 0) {
-      constants.GAME_STATE = 'Over';
+      this.collision = true;
       this.posy = 0;
       this.vel = 0;
       this.gravity = 0;

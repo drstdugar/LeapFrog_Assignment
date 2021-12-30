@@ -22,6 +22,8 @@ let pipes = [];
 
 let score = 0;
 
+let gameState = 'Menu';
+
 function styleBackground() {
   canvas.style.background = "url('./assets/background.png')";
   canvas.style.backgroundRepeat = 'repeat-x';
@@ -44,14 +46,19 @@ function start() {
   bird[0].draw(ctx);
   bird[0].gravityEffect();
 
+  if (bird[0].collision) {
+    gameState = 'Over';
+  }
+
   pipesMove();
 
-  if (constants.GAME_STATE != 'Over') {
+  if (gameState != 'Over') {
     requestAnimationFrame(start);
   } else {
-    constants.GAME_STATE = 'Menu';
+    gameState = 'Menu';
     overScreen.style.opacity = 1;
     overScreen.style.zIndex = 1;
+    canvas.style.opacity = 1;
     checkScore();
   }
 }
@@ -76,7 +83,7 @@ function checkCollision(pipe) {
       bird[0].posy + bird[0].size >= constants.GAME_HEIGHT - pipe.bottom) &&
     bird[0].posx >= pipe.posx
   ) {
-    constants.GAME_STATE = 'Over';
+    gameState = 'Over';
     checkScore();
   }
 }
@@ -88,7 +95,6 @@ function checkScore() {
     localStorage.setItem('flappyHighScore', score);
     hScoreView.textContent = `${localStorage.getItem('flappyHighScore')}`;
   }
-  console.log(score);
   scoreView.textContent = `${score}`;
 }
 
@@ -131,14 +137,14 @@ document.addEventListener('click', () => bird[0].jump());
 
 restartBtn.addEventListener('click', () => {
   clearVals();
-  constants.GAME_STATE = 'Running';
+  gameState = 'Running';
   changeStyle();
   startGame();
   interval = setInterval(() => createPipe(), 1100);
 });
 
 startBtn.addEventListener('click', () => {
-  constants.GAME_STATE = 'Running';
+  gameState = 'Running';
   startGame();
   startScreen.style.opacity = 0;
   startScreen.style.zIndex = 0;

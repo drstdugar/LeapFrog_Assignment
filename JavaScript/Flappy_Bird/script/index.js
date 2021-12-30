@@ -119,6 +119,8 @@ function clearVals() {
   clearInterval(interval);
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
   score = 0;
+  speed = 1;
+  pipeSpeed = 5;
   bird = [];
   pipes = [];
 }

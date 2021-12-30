@@ -6,7 +6,7 @@ class Bird {
     this.posy = constants.BIRD_Y;
     this.vel = 0;
     this.gravity = 0.05;
-    this.lift = -1.5;
+    this.lift = -2;
     this.size = 40;
     this.flipTime = 0;
     this.flap = false;

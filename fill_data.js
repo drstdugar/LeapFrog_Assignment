@@ -65,7 +65,7 @@ const data = [
     demo: 'JavaScript/Car_Lane_Game/index.html',
   },
   {
-    title: 'Flappy Bird Game',
+    title: 'Flappy Bird',
     code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Flappy_Bird',
     demo: 'JavaScript/Flappy_Bird/index.html',
   },

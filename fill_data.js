@@ -69,6 +69,11 @@ const data = [
     code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Flappy_Bird',
     demo: 'JavaScript/Flappy_Bird/index.html',
   },
+  {
+    title: 'Flappy Bird Fixed',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Flappy_Bird_Fixed',
+    demo: 'JavaScript/Flappy_Bird_Fixed/index.html',
+  },
 ];
 
 loadData(data);

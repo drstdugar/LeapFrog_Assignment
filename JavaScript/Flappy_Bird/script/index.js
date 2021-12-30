@@ -52,6 +52,7 @@ function start() {
     constants.GAME_STATE = 'Menu';
     overScreen.style.opacity = 1;
     overScreen.style.zIndex = 1;
+    checkScore();
   }
 }
 
@@ -87,6 +88,7 @@ function checkScore() {
     localStorage.setItem('flappyHighScore', score);
     hScoreView.textContent = `${localStorage.getItem('flappyHighScore')}`;
   }
+  console.log(score);
   scoreView.textContent = `${score}`;
 }
 

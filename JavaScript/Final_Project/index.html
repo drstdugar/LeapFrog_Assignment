@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/layout.css" rel="stylesheet">
+    <link href="./css/reset.css" rel="stylesheet">
+
+    <title>Type Away</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>Type Away</h1>
+                    </a>
+                </div>
+                <h4 class="new-para">Press Any Key to Change Paragraph</h2>
+                    <div class="switch-btn">
+                        <button id="type-mode">Typing Mode</button>
+                        <button id="game-mode">Gaming Mode</button>
+                    </div>
+            </nav>
+        </header>
+
+        <section class="paragraph-container">
+            <div class="content" id="content"></div>
+        </section>
+
+        <section class="speed-btn">
+            <h4 class="accuracy">Accuracy: 100%</h4>
+            <h4 class="speed">Speed: 0 WPM</h4>
+            <div class="btn-container">
+                <button id="change-para">Change Paragraph</button>
+            </div>
+        </section>
+
+        <section class="keyboard-container">
+            <div class="keyboard">
+                <div class="first-row">
+                    <div class="dummy1">Tab</div>
+                    <div class="keys q" id="keyq">Q</div>
+                    <div class="keys w" id="keyw">W</div>
+                    <div class="keys e" id="keye">E</div>
+                    <div class="keys r" id="keyr">R</div>
+                    <div class="keys t" id="keyt">T</div>
+                    <div class="keys y" id="keyy">Y</div>
+                    <div class="keys u" id="keyu">U</div>
+                    <div class="keys i" id="keyi">I</div>
+                    <div class="keys o" id="keyo">O</div>
+                    <div class="keys p" id="keyp">P</div>
+                    <div class="keys double bracketleft" id="bracketleft">
+                        <p>{</p>
+                        <p>[</p>
+                    </div>
+                    <div class="keys double bracketright" id="bracketright">
+                        <p>}</p>
+                        <p>]</p>
+                    </div>
+                    <div class="keys double backslash" id="backslash">
+                        <p>|</p>
+                        <p>\</p>
+                    </div>
+                </div>
+                <div class="second-row">
+                    <div class="dummy2">Caps</div>
+                    <div class="keys a" id="keya">A</div>
+                    <div class="keys s" id="keys">S</div>
+                    <div class="keys d" id="keyd">D</div>
+                    <div class="keys f" id="keyf">F</div>
+                    <div class="keys g" id="keyg">G</div>
+                    <div class="keys h" id="keyh">H</div>
+                    <div class="keys j" id="keyj">J</div>
+                    <div class="keys k" id="keyk">K</div>
+                    <div class="keys l" id="keyl">L</div>
+                    <div class="keys double semicolon" id="semicolon">
+                        <p>:</p>
+                        <p>;</p>
+                    </div>
+                    <div class="keys double quote" id="quote">
+                        <p>"</p>
+                        <p>'</p>
+                    </div>
+                    <div class="keys enter" id="enter">Enter</div>
+                </div>
+                <div class="third-row">
+                    <div class="keys shift" id="shift-left">Shift</div>
+                    <div class="keys z" id="keyz">Z</div>
+                    <div class="keys x" id="keyx">X</div>
+                    <div class="keys c" id="keyc">C</div>
+                    <div class="keys v" id="keyv">V</div>
+                    <div class="keys b" id="keyb">B</div>
+                    <div class="keys n" id="keyn">N</div>
+                    <div class="keys m" id="keym">M</div>
+                    <div class="keys double comma" id="comma">
+                        <p>&lt</p>
+                        <p>,</p>
+                    </div>
+                    <div class="keys double period" id="period">
+                        <p>></p>
+                        <p>.</p>
+                    </div>
+                    <div class="keys double slash" id="slash">
+                        <p>?</p>
+                        <p>/</p>
+                    </div>
+                    <div class="keys shift" id="shift-right">Shift</div>
+                </div>
+                <div class="fourth-row">
+                    <div class="keys space" id="space">Space</div>
+                </div>
+            </div>
+
+            <img id="left-hand" src='./assets/hand_positions/b.svg' alt="types">
+            <img id="right-hand" src='./assets/hand_positions/slash.svg' alt="types">
+        </section>
+
+    </div>
+
+    <script src="./script/index.js" type="module"></script>
+</body>
+
+</html>

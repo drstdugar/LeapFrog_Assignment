@@ -1,0 +1,114 @@
+.container {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+header {
+  background-color: #407ad6;
+}
+
+.logo a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.new-para {
+  color: rgb(250, 135, 135);
+}
+
+#type-mode,
+#game-mode {
+  border: 1px solid rgb(10, 194, 226);
+  background: none;
+  color: aliceblue;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#type-mode:hover,
+#game-mode:hover {
+  background: rgb(10, 194, 226);
+  color: aliceblue;
+}
+
+.keys {
+  border: 2px solid grey;
+  font-size: 30px;
+  border-radius: 3px;
+  color: rgb(65, 65, 65);
+  text-align: center;
+}
+
+.dummy2,
+.dummy1 {
+  border: 2px solid grey;
+  font-size: 15px;
+  border-radius: 3px;
+  color: rgb(65, 65, 65);
+  text-align: center;
+}
+
+.double {
+  font-size: 18px;
+}
+
+.paragraph-container {
+  font-size: 35px;
+  height: 38vh;
+}
+
+.content {
+  border: 1px solid grey;
+}
+
+.caps,
+.tab,
+.enter,
+.shift,
+.space {
+  font-size: 20px;
+}
+
+.letters {
+  padding: 2px 4px;
+  font-size: 30px;
+  text-align: justify;
+  border-radius: 3px;
+  text-align: center;
+  margin: 0 1px;
+}
+
+#change-para {
+  border: 1px solid aliceblue;
+  background: #407ad6;
+  color: aliceblue;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+}
+
+#change-para:hover {
+  background: #2c6acf;
+}
+
+.accuracy,
+.speed {
+  color: rgb(109, 109, 109);
+}
+
+.cursor {
+  border-bottom: 3px solid #407ad6;
+}
+
+.active {
+  background: rgba(92, 163, 245, 0.7);
+}
+
+.clicked {
+  background: rgb(163, 248, 208, 0.5);
+}
+
+#left-hand,
+#right-hand {
+  opacity: 0.6;
+}

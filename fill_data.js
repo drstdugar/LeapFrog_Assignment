@@ -74,6 +74,11 @@ const data = [
     code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Flappy_Bird_Fixed',
     demo: 'JavaScript/Flappy_Bird_Fixed/index.html',
   },
+  {
+    title: 'Final Project: Typing Tutor',
+    code: 'https://github.com/drstdugar/LeapFrog_Assignment/tree/master/JavaScript/Final_Project',
+    demo: 'JavaScript/Final_Project/index.html',
+  },
 ];
 
 loadData(data);

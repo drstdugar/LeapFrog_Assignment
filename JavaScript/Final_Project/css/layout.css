@@ -1,0 +1,138 @@
+.container {
+  width: 100%;
+}
+
+nav {
+  width: 92%;
+  margin: 0 auto;
+  padding: 1% 0;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.new-para {
+  margin-left: 25%;
+  display: none;
+}
+
+.switch-btn {
+  display: inline;
+  float: right;
+  width: 25%;
+}
+
+#type-mode,
+#game-mode {
+  padding: 1.5%;
+  margin-right: 5%;
+}
+
+.keyboard-container {
+  width: 80%;
+  margin: 2% auto;
+  position: relative;
+}
+
+.paragraph-container {
+  padding: 0 15px;
+  width: 80%;
+  margin: 2% auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.keyboard {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.third-row,
+.fourth-row,
+.second-row,
+.first-row {
+  display: inline-flex;
+}
+
+.keys {
+  margin: 3px;
+  width: 60px;
+  padding: 7px 10px;
+  display: inline-block;
+}
+
+.dummy1 {
+  width: 45px;
+  padding: 15px 0;
+  margin: 3px;
+  display: inline-block;
+}
+
+.dummy2 {
+  margin: 3px;
+  width: 60px;
+  padding: 15px 10px;
+  display: inline-block;
+}
+
+.shift {
+  width: 117px;
+  padding: 12px 10px;
+}
+
+.space {
+  margin-left: 20%;
+  width: 500px;
+}
+
+.double {
+  padding: 1px 5px;
+}
+
+.enter {
+  width: 110px;
+  padding: 12px 10px;
+}
+
+.lines {
+  margin: 10px;
+}
+
+.content {
+  text-align: center;
+}
+
+.speed-btn {
+  display: flex;
+
+  width: 80%;
+  margin: 0 auto;
+}
+
+.btn-container {
+  flex: 1;
+}
+
+#change-para {
+  padding: 1.5%;
+  margin: 0 32%;
+}
+
+.accuracy,
+.speed {
+  flex: 1;
+  padding: 0.5%;
+  text-align: center;
+}
+
+#left-hand,
+#right-hand {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  left: 0;
+}

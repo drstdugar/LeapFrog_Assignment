@@ -1,4 +1,4 @@
-import {Content} from './paragraph.js';
+import {Content} from './typing mode/paragraph.js';
 import {
   match,
   clickEffect,
@@ -6,10 +6,13 @@ import {
   cursor,
   showHint,
   claculateAccuracy,
-} from './keyboard_utility.js';
+} from './typing mode/keyboard_utility.js';
+import {calcSpeed} from './utilities.js';
 
 const content = document.getElementById('content');
 const changePara = document.getElementById('change-para');
+const gameMode = document.getElementById('game-mode');
+const balloonBtn = document.getElementById('balloon-btn');
 
 const audio = new Audio('./assets/audio/key-click.wav');
 
@@ -19,10 +22,22 @@ contents.createContent();
 let para = contents.para;
 let index = 0;
 let correct = 0;
-
-cursor(index, para.length);
+let wordCount = 0;
+let startTime;
 
 changePara.addEventListener('click', () => resetVals());
+
+gameMode.addEventListener(
+  'click',
+  () => (document.querySelector('.overlay').style.display = 'flex')
+);
+
+balloonBtn.addEventListener('click', () => {
+  document.querySelector('.overlay').style.display = 'none';
+  location.href = './balloons.html';
+});
+
+cursor(index, para.length);
 
 showHint(para, index, contents);
 
@@ -34,9 +49,16 @@ document.addEventListener('keypress', e => {
 
   if (index === para.length) {
     resetVals();
-
     document.querySelector('.new-para').style.display = 'none';
     return;
+  }
+
+  if (para[index] === ' ') {
+    wordCount++;
+    document.querySelector('.speed').textContent = `Speed: ${calcSpeed(
+      startTime,
+      wordCount
+    )} WPM`;
   }
 
   showHint(para, index + 1, contents);
@@ -52,6 +74,7 @@ document.addEventListener('keypress', e => {
   }
 
   if (match(para[index], pressedVal, index)) correct++;
+
   index++;
   cursor(index, para.length);
 
@@ -59,14 +82,15 @@ document.addEventListener('keypress', e => {
     document.querySelector('.new-para').style.display = 'inline-block';
   }
 
-  document.querySelector(
-    '.accuracy'
-  ).textContent = `Accuracy: ${claculateAccuracy(correct, index)}%`;
+  if (index == 1) startTime = new Date();
+
+  claculateAccuracy(correct, index);
 });
 
 function resetVals() {
   [para, index] = changeContent(contents);
   correct = 0;
+  wordCount = 0;
 
   let activeList = document.querySelectorAll('.active');
   activeList.forEach(element => element.classList.remove('active'));
@@ -75,4 +99,5 @@ function resetVals() {
   cursor(index, para.length);
 
   document.querySelector('.accuracy').textContent = 'Accuracy: 100%';
+  document.querySelector('.speed').textContent = 'Speed: 0 WPM';
 }

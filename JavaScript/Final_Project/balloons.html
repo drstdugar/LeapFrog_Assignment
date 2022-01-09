@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/layout.css" rel="stylesheet">
+    <link href="./css/reset.css" rel="stylesheet">
+
+    <title>Balloons</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>TypeAway</h1>
+                    </a>
+                </div>
+                <h4 class="new-para">Press Any Key to Change Paragraph</h2>
+                    <div class="switch-btn">
+                        <button id="type-mode">Typing Mode</button>
+                        <button id="game-mode">Gaming Mode</button>
+                    </div>
+            </nav>
+        </header>
+
+        <div class="game">
+            <canvas id="balloon-game"></canvas>
+        </div>
+
+        <div class="overlay">
+            <div class="balloons">
+                <img class="screenshot-balloon" src="./assets/balloon-images/balloons_SS.png" alt="balloons">
+                <button id="balloon-btn">Balloons</button>
+            </div>
+            <div class="snowballs">
+                <button id="snowball-btn">Snowballs</button>
+            </div>
+        </div>
+
+        <div class="speed-overlay">
+            <button id="easy-btn">Easy</button>
+            <button id="medium-btn">Medium</button>
+            <button id="hard-btn">Hard</button>
+        </div>
+
+        <!-- <div class="overlay">
+            <div class="balloons">
+                <img class="screenshot-balloon" src="./assets/balloon-images/balloons_SS.png" alt="balloons">
+                <button id="balloon-btn">Balloons</button>
+            </div>
+            <div class="snowballs">
+                <button id="snowball-btn">Snowballs</button>
+            </div>
+        </div> -->
+    </div>
+
+    <script src="./script/balloons/balloon_game.js" type="module"></script>
+</body>
+
+</html>

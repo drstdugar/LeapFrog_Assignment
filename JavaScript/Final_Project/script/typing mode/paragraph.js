@@ -1,8 +1,8 @@
 import {paragraphs} from './content.js';
-import {constants} from './constants.js';
-import {getRandomInt} from './utilities.js';
+import {constants} from '../constants.js';
+import {getRandomInt} from '../utilities.js';
 
-class Content {
+export class Content {
   constructor(content) {
     this.content = content;
     this.para = paragraphs[getRandomInt(1, 6)];
@@ -78,5 +78,3 @@ class Content {
     this.newLine = [];
   }
 }
-
-export {Content};

@@ -1,15 +1,15 @@
-import {constants} from './constants.js';
+import {constants} from '../constants.js';
 
 const leftHand = document.getElementById('left-hand');
 const rightHand = document.getElementById('right-hand');
 
-function clickEffect(element) {
+export function clickEffect(element) {
   element.classList.add('clicked');
 
   setTimeout(() => element.classList.remove('clicked'), 300);
 }
 
-function match(letter1, letter2, index) {
+export function match(letter1, letter2, index) {
   if (letter1 === letter2) {
     correctBg(index);
     return true;
@@ -28,13 +28,13 @@ function wrongBg(index) {
     'rgba(255, 0, 0, 0.4)';
 }
 
-function changeContent(content) {
+export function changeContent(content) {
   content.paragraphChange();
   document.querySelector('.new-para').style.display = 'none';
   return [content.para, 0];
 }
 
-function cursor(index, length) {
+export function cursor(index, length) {
   if (index < length) {
     let currId = '#letter' + (index + 1);
     let prevId;
@@ -48,7 +48,13 @@ function cursor(index, length) {
   }
 }
 
-function showHint(para, index, content) {
+export function claculateAccuracy(correct, typed) {
+  document.querySelector('.accuracy').textContent = `Accuracy: ${Math.floor(
+    (correct / typed) * 100
+  )}%`;
+}
+
+export function showHint(para, index, content) {
   let prevChar;
   let prevShiftKey, currShiftKey;
   if (index != 0) {
@@ -141,10 +147,6 @@ function checkShift(letter) {
   }
 }
 
-function claculateAccuracy(correct, typed) {
-  return Math.floor((correct / typed) * 100);
-}
-
 function moveHand(currChar) {
   if (constants.LEFT.includes(currChar)) {
     leftHand.setAttribute('src', `./assets/hand_positions/${currChar}.svg`);
@@ -154,5 +156,3 @@ function moveHand(currChar) {
     rightHand.setAttribute('src', `./assets/hand_positions/${currChar}.svg`);
   }
 }
-
-export {cursor, match, clickEffect, changeContent, showHint, claculateAccuracy};

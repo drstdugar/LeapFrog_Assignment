@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  position: relative;
 }
 
 nav {
@@ -20,7 +21,7 @@ nav {
 .switch-btn {
   display: inline;
   float: right;
-  width: 25%;
+  width: 15%;
 }
 
 #type-mode,
@@ -135,4 +136,61 @@ nav {
   top: 0;
   display: inline-block;
   left: 0;
+}
+
+.overlay {
+  width: 100%;
+  height: 97.3%;
+  position: absolute;
+  top: 8.5%;
+  left: 0;
+  display: none;
+  align-items: center;
+}
+
+.speed-overlay {
+  width: 100%;
+  height: 94%;
+  position: absolute;
+  top: 8.3%;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.snowballs,
+.balloons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.game {
+  width: 96%;
+  margin: 1% auto;
+  display: flex;
+}
+
+#balloon-game {
+  margin: 0 auto;
+}
+
+.screenshot-balloon {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#balloon-btn,
+#snowball-btn {
+  width: 10%;
+  margin: 1% auto;
+  padding: 1%;
+}
+
+#easy-btn,
+#medium-btn,
+#hard-btn {
+  width: 5%;
+  margin: 1% auto;
+  padding: 0.3%;
 }

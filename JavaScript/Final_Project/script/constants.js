@@ -1,4 +1,4 @@
-const constants = {
+export const constants = {
   LINE_SIZE: 48,
   SHIFT_RIGHT: [
     'Q',
@@ -55,6 +55,6 @@ const constants = {
     'v',
     'b',
   ],
+  GAME_HEIGHT: 630,
+  GAME_WIDTH: 1400,
 };
-
-export {constants};

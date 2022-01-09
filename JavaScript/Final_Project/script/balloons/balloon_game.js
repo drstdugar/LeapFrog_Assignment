@@ -158,20 +158,6 @@ function jump() {
     clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
 
     balloons.forEach((balloon, index) => {
-      // slide();
-      // function slide() {
-      //   balloon.posx -= 5;
-
-      //   if (index === 0) {
-      //     char.posx = balloon.posx + 15;
-
-      //     balloon.draw(ctx, char);
-      //   } else {
-      //     balloon.draw(ctx);
-      //   }
-
-      //   if (balloon.posx > (index + 1) * 160) requestAnimationFrame(slide);
-      // }
       balloon.posx = (index + 1) * 220;
     });
 

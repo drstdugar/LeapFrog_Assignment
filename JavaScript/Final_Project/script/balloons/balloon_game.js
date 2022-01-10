@@ -38,7 +38,7 @@ let balloons = [];
 let startTime;
 let gameSpeed;
 let animationId;
-let char;
+let character;
 
 canvas.width = constants.GAME_WIDTH;
 canvas.height = constants.GAME_HEIGHT;
@@ -82,15 +82,16 @@ reloadBtn.addEventListener('click', () => {
   resetVals();
 });
 
-setBackground(canvas);
+setBackground(canvas, false);
 
 function start() {
-  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-
   letters = generateLetters();
+
+  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
+  setBackground(canvas, true);
   balloons = createBalloons(gameSpeed, letters);
 
-  char = new Character(
+  character = new Character(
     balloons[0].posx + 15,
     balloons[0].posy + 80,
     120,
@@ -99,7 +100,7 @@ function start() {
     gameSpeed
   );
 
-  drawBalloons(ctx, balloons, char);
+  drawBalloons(ctx, balloons, character);
 }
 
 document.addEventListener('keypress', e => {
@@ -137,42 +138,51 @@ document.addEventListener('keypress', e => {
 
 function jump() {
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-  char.stay = false;
+  character.stay = false;
 
   percent += 0.05;
-  char.jumps(
-    {x: balloons[0].posx + 15, y: balloons[0].posy + 80},
-    {x: balloons[1].posx + 15, y: balloons[1].posy + 80},
+  character.jumps(
+    {x: balloons[0].posx + 8, y: balloons[0].posy + 80},
+    {x: balloons[1].posx + 8, y: balloons[1].posy + 80},
     percent
   );
 
-  char.draw(ctx);
-  drawBalloons(ctx, balloons);
+  character.draw(ctx);
+  shift();
 
-  if (char.posx < balloons[1].posx + 15) {
+  if (character.posx < balloons[1].posx + 8) {
     requestAnimationFrame(jump);
   } else {
-    percent = 0;
-    char.posx = 235;
-    char.posy = balloons[1].posy + 80;
-    char.stay = true;
-
-    balloons[1].draw(ctx, char);
-
-    balloons.splice(0, 1);
-
-    shift();
+    afterJump();
   }
+}
+
+function afterJump() {
+  percent = 0;
+  character.posx = balloons[1].posx + 8;
+  character.posy = balloons[1].posy + 80;
+  character.stay = true;
+
+  balloons[1].draw(ctx, character);
+
+  balloons.splice(0, 1);
+
+  shift();
 }
 
 function shift() {
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
 
   balloons.forEach((balloon, i) => {
-    balloon.posx = (i + 1) * 220;
+    slide();
+    function slide() {
+      balloon.posx -= 10;
+
+      if (balloon.posx > (i + 1) * 220) requestAnimationFrame(slide);
+    }
   });
 
-  drawBalloons(ctx, balloons, char);
+  drawBalloons(ctx, balloons, character);
 }
 
 function moveBackground() {
@@ -184,10 +194,10 @@ function moveBackground() {
 
 function balloonDrop() {
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-  balloons[0].draw(ctx, char);
-  balloons[0].move(char);
+  balloons[0].draw(ctx, character);
+  balloons[0].move(character);
 
-  drawBalloons(ctx, balloons, char);
+  drawBalloons(ctx, balloons, character);
 
   if (balloons[0].posy + balloons[0].height <= constants.GAME_HEIGHT) {
     animationId = requestAnimationFrame(balloonDrop);
@@ -202,7 +212,7 @@ function collideWall() {
   life.textContent = `Lives: ${lives}`;
 
   resetPos();
-  drawBalloons(ctx, balloons, char);
+  drawBalloons(ctx, balloons, character);
 
   if (lives === 0) {
     clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
@@ -226,8 +236,7 @@ function resetVals() {
 
 function resetPos() {
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-  balloons[0].posx = 235;
   balloons[0].posy = 20;
-  char.posx = balloons[0].posx + 15;
-  char.posy = balloons[0].posy + 80;
+  character.posx = balloons[0].posx + 15;
+  character.posy = balloons[0].posy + 80;
 }

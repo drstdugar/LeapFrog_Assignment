@@ -1,11 +1,12 @@
 import {Balloon} from './balloon.js';
 import {getRandomInt} from '../utilities.js';
 
-export function setBackground(canvas) {
-  canvas.style.background =
-    "url('./assets/images/balloon-images/balloon_background.jpg')";
-  canvas.style.backgroundRepeat = 'repeat-x';
-  canvas.style.backgroundSize = 'contain';
+export function setBackground(canvas, play) {
+  canvas.style.background = play
+    ? "url('./assets/images/balloon-images/balloon_background.jpg')"
+    : "url('./assets/images/balloon-images/balloons_SS.png')";
+  canvas.style.backgroundRepeat = play ? 'repeat-x' : 'no-repeat';
+  canvas.style.backgroundSize = play ? 'contain' : 'cover';
 }
 
 export function createBalloons(gameSpeed, letters) {

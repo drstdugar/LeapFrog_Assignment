@@ -137,22 +137,40 @@ function specialChars(char) {
 
 function checkShift(letter) {
   if (constants.SHIFT_RIGHT.includes(letter)) {
-    rightHand.setAttribute('src', './assets/hand_positions/shift-right.svg');
+    rightHand.setAttribute(
+      'src',
+      './assets/images/hand_positions/shift-right.svg'
+    );
     return document.getElementById('shift-right');
   }
 
   if (constants.SHIFT_LEFT.includes(letter)) {
-    leftHand.setAttribute('src', './assets/hand_positions/shift-left.svg');
+    leftHand.setAttribute(
+      'src',
+      './assets/images/hand_positions/shift-left.svg'
+    );
     return document.getElementById('shift-left');
   }
 }
 
 function moveHand(currChar) {
   if (constants.LEFT.includes(currChar)) {
-    leftHand.setAttribute('src', `./assets/hand_positions/${currChar}.svg`);
-    rightHand.setAttribute('src', './assets/hand_positions/neutral-right.svg');
+    leftHand.setAttribute(
+      'src',
+      `./assets/images/hand_positions/${currChar}.svg`
+    );
+    rightHand.setAttribute(
+      'src',
+      './assets/images/hand_positions/neutral-right.svg'
+    );
   } else {
-    leftHand.setAttribute('src', './assets/hand_positions/neutral-left.svg');
-    rightHand.setAttribute('src', `./assets/hand_positions/${currChar}.svg`);
+    leftHand.setAttribute(
+      'src',
+      './assets/images/hand_positions/neutral-left.svg'
+    );
+    rightHand.setAttribute(
+      'src',
+      `./assets/images/hand_positions/${currChar}.svg`
+    );
   }
 }

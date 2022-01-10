@@ -33,7 +33,7 @@
 
         <div class="overlay">
             <div class="balloons">
-                <img class="screenshot-balloon" src="./assets/balloon-images/balloons_SS.png" alt="balloons">
+                <img class="screenshot-balloon" src="./assets/images/balloon-images/balloons_SS.png" alt="balloons">
                 <button id="balloon-btn">Balloons</button>
             </div>
             <div class="snowballs">
@@ -47,15 +47,17 @@
             <button id="hard-btn">Hard</button>
         </div>
 
-        <!-- <div class="overlay">
-            <div class="balloons">
-                <img class="screenshot-balloon" src="./assets/balloon-images/balloons_SS.png" alt="balloons">
-                <button id="balloon-btn">Balloons</button>
-            </div>
-            <div class="snowballs">
-                <button id="snowball-btn">Snowballs</button>
-            </div>
-        </div> -->
+        <div class="finish-overlay">
+            <h1>GAME OVER</h1>
+            <h2 id="best-speed">Best Speed</h2>
+            <h2 id="speed">Speed</h2>
+            <button id="reload-btn">Reload</button>
+        </div>
+
+        <div class="speed-lives">
+            <h4 id="type-speed">Speed: 0 LPM</h4>
+            <h4 id="lives">Lives: 3</h4>
+        </div>
     </div>
 
     <script src="./script/balloons/balloon_game.js" type="module"></script>

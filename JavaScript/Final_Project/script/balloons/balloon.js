@@ -14,7 +14,7 @@ export class Balloon {
 
   draw(ctx, char) {
     const balloonImage = new Image();
-    balloonImage.src = './assets/balloon-images/balloon.png';
+    balloonImage.src = './assets/images/balloon-images/balloon.png';
     balloonImage.onload = function () {
       clearCanvas(ctx, this.posx, 0, this.width + 30, constants.GAME_HEIGHT);
       ctx.drawImage(

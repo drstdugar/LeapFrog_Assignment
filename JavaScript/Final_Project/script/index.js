@@ -12,6 +12,7 @@ import {calcSpeed} from './utilities.js';
 const content = document.getElementById('content');
 const changePara = document.getElementById('change-para');
 const gameMode = document.getElementById('game-mode');
+const typeMode = document.getElementById('type-mode');
 const balloonBtn = document.getElementById('balloon-btn');
 
 const audio = new Audio('./assets/audio/key-click.wav');
@@ -31,6 +32,11 @@ gameMode.addEventListener(
   'click',
   () => (document.querySelector('.overlay').style.display = 'flex')
 );
+
+typeMode.addEventListener('click', () => {
+  document.querySelector('.overlay').style.display = 'none';
+  location.href = './index.html';
+});
 
 balloonBtn.addEventListener('click', () => {
   document.querySelector('.overlay').style.display = 'none';

@@ -1,8 +1,14 @@
-import {Balloon} from './balloon.js';
-import {getRandomInt, clearCanvas} from '../utilities.js';
+import {clearCanvas, calcSpeed} from '../utilities.js';
 import {generateLetters} from './words.js';
 import {constants} from '../constants.js';
 import {Character} from './character.js';
+import {
+  setBackground,
+  createBalloons,
+  drawBalloons,
+  manageDisplay,
+  checkScore,
+} from './balloon_utility.js';
 
 const canvas = document.getElementById('balloon-game');
 const gameMode = document.getElementById('game-mode');
@@ -11,20 +17,26 @@ const balloonBtn = document.getElementById('balloon-btn');
 const easyBtn = document.getElementById('easy-btn');
 const mediumBtn = document.getElementById('medium-btn');
 const hardBtn = document.getElementById('hard-btn');
+const reloadBtn = document.getElementById('reload-btn');
+const typeSpeed = document.getElementById('type-speed');
+const life = document.getElementById('lives');
 
 const ctx = canvas.getContext('2d');
-
-const balloons = [];
 
 const audio = new Audio('./assets/audio/key-click.wav');
 
 let index = 0;
 let percent = 0;
 let move = 0;
-let letters = [];
-let gameSpeed;
 let lives = 3;
+let letterCount = 0;
+let typingSpeed = 0;
 
+let letters = [];
+let balloons = [];
+
+let startTime;
+let gameSpeed;
 let animationId;
 let char;
 
@@ -33,6 +45,8 @@ canvas.height = constants.GAME_HEIGHT;
 
 gameMode.addEventListener('click', () => {
   document.querySelector('.overlay').style.display = 'flex';
+  document.querySelector('.speed-overlay').style.display = 'none';
+  document.querySelector('.finish-overlay').style.display = 'none';
 });
 
 typingMode.addEventListener('click', () => (location.href = './index.html'));
@@ -43,28 +57,35 @@ balloonBtn.addEventListener('click', () => {
 });
 
 easyBtn.addEventListener('click', () => {
-  document.querySelector('.speed-overlay').style.display = 'none';
   gameSpeed = 4;
+  manageDisplay();
   start();
 });
 
 mediumBtn.addEventListener('click', () => {
-  document.querySelector('.speed-overlay').style.display = 'none';
   gameSpeed = 7;
+  manageDisplay();
   start();
 });
 
 hardBtn.addEventListener('click', () => {
-  document.querySelector('.speed-overlay').style.display = 'none';
   gameSpeed = 10;
+  manageDisplay();
   start();
 });
 
-setBackground();
+reloadBtn.addEventListener('click', () => {
+  document.querySelector('.finish-overlay').style.display = 'none';
+  document.querySelector('.speed-overlay').style.display = 'flex';
+});
+
+setBackground(canvas);
 
 function start() {
+  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
+
   letters = generateLetters();
-  createBalloons();
+  balloons = createBalloons(gameSpeed, letters);
 
   char = new Character(
     balloons[0].posx + 15,
@@ -75,60 +96,35 @@ function start() {
     gameSpeed
   );
 
-  drawBalloons(balloons);
-}
-
-function createBalloons() {
-  balloons.push(
-    new Balloon(10, getRandomInt(5, 100), 150, 70, 'Start', gameSpeed, true)
-  );
-
-  for (let i = 0; i < letters.length; i++) {
-    let balloon = new Balloon(
-      (i + 1) * 160,
-      getRandomInt(5, 100),
-      150,
-      70,
-      letters[i],
-      gameSpeed
-    );
-
-    balloons.push(balloon);
-  }
-
-  balloons.push(
-    new Balloon(
-      (letters.length + 1) * 170,
-      getRandomInt(5, 100),
-      150,
-      60,
-      'Ends',
-      gameSpeed,
-      true
-    )
-  );
-}
-
-function drawBalloons() {
-  balloons.forEach((balloon, i) => {
-    if (i === 0) {
-      balloon.draw(ctx, char);
-    } else {
-      balloon.draw(ctx);
-    }
-  });
+  drawBalloons(ctx, balloons, char);
 }
 
 document.addEventListener('keypress', e => {
   audio.play();
 
   if (e.key === letters[index] || index == letters.length) {
+    letterCount++;
     cancelAnimationFrame(animationId);
     jump();
     moveBackground();
     if (e.key === letters[index]) balloonDrop();
 
     index++;
+
+    if (index == 1) startTime = new Date();
+
+    if (index >= 2) {
+      typingSpeed = calcSpeed(startTime, letterCount);
+      typeSpeed.textContent = `Speed: ${typingSpeed} LPM`;
+    }
+  }
+
+  if (index == letters.length + 1) {
+    document.querySelector('.finish-overlay').style.display = 'flex';
+    document.querySelector('#speed').textContent = `Speed: ${typingSpeed} LPM`;
+    document.querySelector(
+      '#best-speed'
+    ).textContent = `Best Speed: ${checkScore(typingSpeed)} LPM`;
   }
 });
 
@@ -155,14 +151,18 @@ function jump() {
 
     balloons.splice(0, 1);
 
-    clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-
-    balloons.forEach((balloon, index) => {
-      balloon.posx = (index + 1) * 220;
-    });
-
-    drawBalloons();
+    shift();
   }
+}
+
+function shift() {
+  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
+
+  balloons.forEach((balloon, i) => {
+    balloon.posx = (i + 1) * 220;
+  });
+
+  drawBalloons(ctx, balloons, char);
 }
 
 function moveBackground() {
@@ -179,13 +179,42 @@ function balloonDrop() {
   if (balloons[0].posy + balloons[0].height < constants.GAME_HEIGHT) {
     animationId = requestAnimationFrame(balloonDrop);
   } else {
-    lives--;
+    collideWall();
   }
 }
 
-function setBackground() {
-  canvas.style.background =
-    "url('./assets/balloon-images/balloon_background.jpg')";
-  canvas.style.backgroundRepeat = 'repeat-x';
-  canvas.style.backgroundSize = 'contain';
+function collideWall() {
+  lives--;
+
+  life.textContent = `Lives: ${lives}`;
+
+  resetPos();
+  drawBalloons(ctx, balloons, char);
+
+  if (lives === 0) {
+    clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
+
+    document.querySelector('.finish-overlay').style.display = 'flex';
+    document.querySelector('#speed').textContent = `Speed: ${typingSpeed} LPM`;
+    document.querySelector('#best-speed').style.display = 'none';
+
+    resetVals();
+  }
+}
+
+function resetVals() {
+  balloons = [];
+  letters = [];
+  index = 0;
+  lives = 3;
+  letterCount = 0;
+  move = 0;
+}
+
+function resetPos() {
+  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
+  balloons[0].posx = 235;
+  balloons[0].posy = 20;
+  char.posx = balloons[0].posx + 15;
+  char.posy = balloons[0].posy + 80;
 }

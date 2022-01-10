@@ -83,7 +83,8 @@ header {
 #snowball-btn,
 #easy-btn,
 #medium-btn,
-#hard-btn {
+#hard-btn,
+#reload-btn {
   border: none;
   background: #407ad6;
   color: aliceblue;
@@ -98,7 +99,8 @@ header {
 #snowball-btn:hover,
 #easy-btn:hover,
 #medium-btn:hover,
-#hard-btn:hover {
+#hard-btn:hover,
+#reload-btn:hover {
   background: #2c6acf;
 }
 
@@ -125,7 +127,16 @@ header {
 }
 
 .overlay,
-.speed-overlay {
+.speed-overlay,
+.finish-overlay {
   opacity: 1;
   background: rgba(175, 175, 175, 0.5);
+}
+
+.finish-overlay h1 {
+  color: rgb(153, 26, 26);
+}
+
+.speed-lives {
+  color: gray;
 }

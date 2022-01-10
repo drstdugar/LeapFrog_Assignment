@@ -10,6 +10,5 @@ export function clearCanvas(ctx, posx, posy, width, height) {
 
 export function calcSpeed(startTime, wordCount) {
   let time = (new Date() - startTime) / 1000;
-  console.log(new Date(), startTime, (new Date() - startTime) / 1000);
   return Math.floor((wordCount / time) * 60);
 }

@@ -13,15 +13,15 @@ export class Character {
   draw(ctx) {
     const characterImage = new Image();
     characterImage.src = this.stay
-      ? './assets/balloon-images/char_hang.png'
-      : './assets/balloon-images/char_jump.png';
+      ? './assets/images/balloon-images/char_hang.png'
+      : './assets/images/balloon-images/char_jump.png';
 
     characterImage.onload = function () {
       if (!this.stay)
         clearCanvas(
           ctx,
           this.posx - 10,
-          this.posy - 20,
+          this.posy - 10,
           this.width,
           this.height + 40
         );

@@ -134,7 +134,7 @@ function jump() {
 
   percent += 0.05;
   char.jumps(
-    {x: balloons[0].posx, y: balloons[0].posy},
+    {x: balloons[0].posx + 15, y: balloons[0].posy + 80},
     {x: balloons[1].posx + 15, y: balloons[1].posy + 80},
     percent
   );

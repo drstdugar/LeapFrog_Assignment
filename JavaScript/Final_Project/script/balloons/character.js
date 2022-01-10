@@ -21,7 +21,7 @@ export class Character {
         clearCanvas(
           ctx,
           this.posx - 10,
-          this.posy - 10,
+          this.posy - 20,
           this.width,
           this.height + 40
         );

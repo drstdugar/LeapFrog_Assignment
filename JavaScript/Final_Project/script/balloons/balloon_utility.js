@@ -57,11 +57,15 @@ export function manageDisplay() {
 }
 
 export function checkScore(currScore) {
-  let hScore = localStorage.getItem('balloonHighScore')
-    ? localStorage.getItem('balloonHighScore')
-    : currScore;
-  if (hScore < currScore) {
+  let hScore = localStorage.getItem('balloonHighScore');
+
+  if (hScore) {
+    if (hScore < currScore) {
+      localStorage.setItem('balloonHighScore', currScore);
+    }
+  } else {
     localStorage.setItem('balloonHighScore', currScore);
   }
-  return hScore;
+
+  return localStorage.getItem('balloonHighScore');
 }

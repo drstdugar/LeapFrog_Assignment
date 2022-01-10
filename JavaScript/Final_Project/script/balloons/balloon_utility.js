@@ -41,6 +41,7 @@ export function createBalloons(gameSpeed, letters) {
 
   return balloons;
 }
+
 export function drawBalloons(ctx, balloons, char) {
   balloons.forEach((balloon, i) => {
     if (i === 0) {

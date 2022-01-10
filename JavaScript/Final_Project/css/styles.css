@@ -126,11 +126,19 @@ header {
   opacity: 0.7;
 }
 
-.overlay,
+.overlay {
+  opacity: 1;
+  background: radial-gradient(
+    rgb(56, 219, 248),
+    rgb(108, 218, 252),
+    rgb(153, 240, 255)
+  );
+}
+
 .speed-overlay,
 .finish-overlay {
   opacity: 1;
-  background: rgba(175, 175, 175, 0.5);
+  background: rgb(155, 155, 155, 0.5);
 }
 
 .finish-overlay h1 {
@@ -138,5 +146,9 @@ header {
 }
 
 .speed-lives {
-  color: gray;
+  color: rgb(128, 128, 128);
+}
+
+.screenshot-balloon {
+  border-radius: 8px;
 }

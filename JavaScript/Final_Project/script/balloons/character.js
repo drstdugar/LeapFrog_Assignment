@@ -1,5 +1,3 @@
-import {clearCanvas} from '../utilities.js';
-
 export class Character {
   constructor(posx, posy, height, width, stay, speed) {
     this.posx = posx;
@@ -8,32 +6,43 @@ export class Character {
     this.width = width;
     this.stay = stay;
     this.speed = speed;
+    this.loaded = false;
   }
 
   draw(ctx) {
     const characterImage = new Image();
-    characterImage.src = this.stay
-      ? './assets/images/balloon-images/char_hang.png'
-      : './assets/images/balloon-images/char_jump.png';
+    characterImage.src = './assets/images/balloon-images/spritesheet.png';
 
-    characterImage.onload = function () {
-      if (!this.stay)
-        clearCanvas(
-          ctx,
-          this.posx - 10,
-          this.posy - 20,
+    let spritePos = this.stay ? 0 : 70;
+
+    ctx.drawImage(
+      characterImage,
+      spritePos,
+      0,
+      this.width,
+      this.height,
+      this.posx,
+      this.posy,
+      this.width,
+      this.height
+    );
+
+    if (!this.loaded) {
+      characterImage.onload = () => {
+        ctx.drawImage(
+          characterImage,
+          spritePos,
+          0,
           this.width,
-          this.height + 40
+          this.height,
+          this.posx,
+          this.posy,
+          this.width,
+          this.height
         );
-
-      ctx.drawImage(
-        characterImage,
-        this.posx,
-        this.posy,
-        this.width,
-        this.height
-      );
-    }.bind(this);
+      };
+      this.loaded = true;
+    }
   }
 
   move() {
@@ -41,8 +50,8 @@ export class Character {
   }
 
   jumps(start, end, percent) {
-    var dx = end.x - start.x;
-    var dy = end.y - start.y;
+    let dx = end.x - start.x;
+    let dy = end.y - start.y;
     this.posx = start.x + dx * percent;
     this.posy = start.y + dy * percent;
   }

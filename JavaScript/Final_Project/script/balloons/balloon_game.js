@@ -77,6 +77,9 @@ hardBtn.addEventListener('click', () => {
 reloadBtn.addEventListener('click', () => {
   document.querySelector('.finish-overlay').style.display = 'none';
   document.querySelector('.speed-overlay').style.display = 'flex';
+  life.textContent = 'Lives: 3';
+  typeSpeed.textContent = 'Speed: 0 LPM';
+  resetVals();
 });
 
 setBackground(canvas);
@@ -104,9 +107,11 @@ document.addEventListener('keypress', e => {
 
   if (e.key === letters[index] || index == letters.length) {
     letterCount++;
+
     cancelAnimationFrame(animationId);
     jump();
     moveBackground();
+
     if (e.key === letters[index]) balloonDrop();
 
     index++;
@@ -117,20 +122,22 @@ document.addEventListener('keypress', e => {
       typingSpeed = calcSpeed(startTime, letterCount);
       typeSpeed.textContent = `Speed: ${typingSpeed} LPM`;
     }
-  }
 
-  if (index == letters.length + 1) {
-    document.querySelector('.finish-overlay').style.display = 'flex';
-    document.querySelector('#speed').textContent = `Speed: ${typingSpeed} LPM`;
-    document.querySelector(
-      '#best-speed'
-    ).textContent = `Best Speed: ${checkScore(typingSpeed)} LPM`;
+    if (index == letters.length + 1) {
+      document.querySelector('.finish-overlay').style.display = 'flex';
+      document.querySelector(
+        '#speed'
+      ).textContent = `Speed: ${typingSpeed} LPM`;
+      document.querySelector(
+        '#best-speed'
+      ).textContent = `Best Speed: ${checkScore(typingSpeed)} LPM`;
+    }
   }
 });
 
 function jump() {
+  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
   char.stay = false;
-  char.draw(ctx);
 
   percent += 0.05;
   char.jumps(
@@ -138,6 +145,9 @@ function jump() {
     {x: balloons[1].posx + 15, y: balloons[1].posy + 80},
     percent
   );
+
+  char.draw(ctx);
+  drawBalloons(ctx, balloons);
 
   if (char.posx < balloons[1].posx + 15) {
     requestAnimationFrame(jump);
@@ -173,10 +183,13 @@ function moveBackground() {
 }
 
 function balloonDrop() {
+  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
   balloons[0].draw(ctx, char);
   balloons[0].move(char);
 
-  if (balloons[0].posy + balloons[0].height < constants.GAME_HEIGHT) {
+  drawBalloons(ctx, balloons, char);
+
+  if (balloons[0].posy + balloons[0].height <= constants.GAME_HEIGHT) {
     animationId = requestAnimationFrame(balloonDrop);
   } else {
     collideWall();

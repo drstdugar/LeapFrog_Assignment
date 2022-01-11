@@ -126,12 +126,13 @@ header {
   opacity: 0.7;
 }
 
-.overlay {
+.overlay,
+.overlay-games {
   opacity: 1;
   background: radial-gradient(
-    rgb(56, 219, 248),
-    rgb(108, 218, 252),
-    rgb(153, 240, 255)
+    rgb(165, 219, 255),
+    rgb(190, 224, 252),
+    rgb(204, 233, 250)
   );
 }
 
@@ -149,6 +150,23 @@ header {
   color: rgb(128, 128, 128);
 }
 
-.screenshot-balloon {
+.screenshot {
   border-radius: 8px;
+}
+
+.letters-snowball {
+  font-size: 30px;
+  min-width: 43px;
+  margin: 10px;
+  border: 1px solid white;
+  color: rgb(3, 47, 85);
+  background-color: rgb(169, 252, 252, 0.5);
+}
+
+.pressed {
+  opacity: 0.4;
+}
+
+.highlight {
+  background-color: white;
 }

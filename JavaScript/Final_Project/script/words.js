@@ -33,3 +33,7 @@ export function generateLetters() {
   }
   return letters;
 }
+
+export function getWord() {
+  return wordList[Math.floor(Math.random() * wordList.length)];
+}

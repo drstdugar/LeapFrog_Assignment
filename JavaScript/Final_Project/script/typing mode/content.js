@@ -1,7 +1,80 @@
-export const paragraphs = {
-  1: 'Typewriters, unlike modern keyboards, use large mechanical parts to press ink down on paper. If someone pressed down keys that were next to each other on the typewriter, the parts would sometimes get jammed.',
-  2: 'The giant panda, or panda, is a bear native to central western and southwestern China. It is easily recognized by its large, distinctive large patches around the eyes, over the ears, and across its round body.',
-  3: 'Lisbon, the capital of Portugal, is home to the longest bridge in Europe. The Vasco da Gama bridge in Lisbon is seventeen kilometers or ten and a half miles long.',
-  4: 'The solar system is the Sun and all the objects around it. The Sun is orbited by planets, asteroids, comets, and other things.',
-  5: 'Books are the quitest and most constant of friends; they are the most accessible and most wisest of counselors, and the most patient of teachers. Charles William Eliot',
-};
+import {paragraphs} from '../paragraphs.js';
+import {constants} from '../constants.js';
+import {getRandomInt} from '../utilities.js';
+
+export class Content {
+  constructor(content) {
+    this.content = content;
+    this.para = paragraphs[getRandomInt(1, 6)];
+    this.tokens = this.para.split(' ');
+    this.newLine = [];
+  }
+
+  createContent() {
+    let wordcount = 0;
+    let words = 0;
+    let classCount = 0;
+    let lines = Math.ceil(this.para.length / constants.LINE_SIZE);
+
+    for (let i = 0; i < lines; i++) {
+      const line = document.createElement('span');
+
+      line.style.display = 'block';
+      line.classList.add('lines');
+
+      for (let j = words; j < this.tokens.length; j++) {
+        for (let k = 0; k < this.tokens[j].length; k++) {
+          classCount++;
+          wordcount++;
+
+          const letters = document.createElement('span');
+
+          letters.textContent = this.tokens[j][k];
+          letters.classList.add('letters');
+          letters.setAttribute('id', `letter${classCount}`);
+
+          line.append(letters);
+        }
+
+        if (j != this.tokens.length - 1) {
+          classCount++;
+          const letters = document.createElement('span');
+
+          letters.textContent = ' ';
+          letters.classList.add('letters');
+          letters.setAttribute('id', `letter${classCount}`);
+
+          line.append(letters);
+        }
+
+        wordcount++;
+        if (
+          wordcount + this.tokens[words].length >= constants.LINE_SIZE ||
+          words === this.tokens.length - 1
+        ) {
+          words++;
+          wordcount = 0;
+          break;
+        }
+        words++;
+      }
+
+      this.content.appendChild(line);
+      this.newLine.push(classCount);
+    }
+
+    this.newLine.pop();
+  }
+
+  paragraphChange() {
+    this.resetVals();
+    this.createContent();
+  }
+
+  resetVals() {
+    this.para = paragraphs[getRandomInt(1, 6)];
+    this.tokens = this.para.split(' ');
+    this.content.innerHTML = '';
+    this.newLine = [];
+  }
+}

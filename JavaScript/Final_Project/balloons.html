@@ -19,11 +19,10 @@
                         <h1>TypeAway</h1>
                     </a>
                 </div>
-                <h4 class="new-para">Press Any Key to Change Paragraph</h2>
-                    <div class="switch-btn">
-                        <button id="type-mode">Typing Mode</button>
-                        <button id="game-mode">Gaming Mode</button>
-                    </div>
+                <div class="switch-btn">
+                    <button id="type-mode">Typing Mode</button>
+                    <button id="game-mode">Gaming Mode</button>
+                </div>
             </nav>
         </header>
 
@@ -31,12 +30,13 @@
             <canvas id="balloon-game"></canvas>
         </div>
 
-        <div class="overlay">
+        <div class="overlay-games">
             <div class="balloons">
-                <img class="screenshot-balloon" src="./assets/images/balloon-images/balloons_SS.png" alt="balloons">
+                <img class="screenshot" src="./assets/images/balloon-images/balloons_SS.png" alt="balloons">
                 <button id="balloon-btn">Balloons</button>
             </div>
             <div class="snowballs">
+                <img class="screenshot" src="./assets/images/snowballs_images/snowballs_SS.png" alt="snowballs">
                 <button id="snowball-btn">Snowballs</button>
             </div>
         </div>
@@ -60,6 +60,7 @@
         </div>
     </div>
 
+    <script src="./script/page_change.js"></script>
     <script src="./script/balloons/balloon_game.js" type="module"></script>
 </body>
 

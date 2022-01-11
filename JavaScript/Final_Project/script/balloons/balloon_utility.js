@@ -1,5 +1,6 @@
 import {Balloon} from './balloon.js';
 import {getRandomInt} from '../utilities.js';
+import {constants} from '../constants.js';
 
 export function setBackground(canvas, play) {
   canvas.style.background = play
@@ -12,15 +13,23 @@ export function setBackground(canvas, play) {
 export function createBalloons(gameSpeed, letters) {
   let balloons = [];
   balloons.push(
-    new Balloon(10, getRandomInt(5, 100), 150, 70, 'Start', gameSpeed, true)
+    new Balloon(
+      10,
+      getRandomInt(5, 100),
+      constants.BALLOON_WIDTH,
+      constants.BALLOON_HEIGHT,
+      'Start',
+      gameSpeed,
+      true
+    )
   );
 
   for (let i = 0; i < letters.length; i++) {
     let balloon = new Balloon(
       (i + 1) * 220,
       getRandomInt(5, 100),
-      150,
-      70,
+      constants.BALLOON_WIDTH,
+      constants.BALLOON_HEIGHT,
       letters[i],
       gameSpeed
     );
@@ -32,8 +41,8 @@ export function createBalloons(gameSpeed, letters) {
     new Balloon(
       (letters.length + 1) * 220,
       getRandomInt(5, 100),
-      150,
-      60,
+      constants.BALLOON_WIDTH,
+      constants.BALLOON_HEIGHT,
       'End',
       gameSpeed,
       true
@@ -46,9 +55,9 @@ export function createBalloons(gameSpeed, letters) {
 export function drawBalloons(ctx, balloons, char) {
   balloons.forEach((balloon, i) => {
     if (i === 0) {
-      balloon.draw(ctx, char);
+      balloon.set(ctx, char);
     } else {
-      balloon.draw(ctx);
+      balloon.set(ctx);
     }
   });
 }

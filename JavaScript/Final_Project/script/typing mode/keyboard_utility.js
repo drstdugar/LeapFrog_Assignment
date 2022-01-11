@@ -34,16 +34,16 @@ export function changeContent(content) {
   return [content.para, 0];
 }
 
-export function cursor(index, length) {
+export function cursor(index, length, className) {
   if (index < length) {
     let currId = '#letter' + (index + 1);
     let prevId;
 
-    document.querySelector(currId).classList.add('letters', 'cursor');
+    document.querySelector(currId).classList.add(className);
 
     if (index != 0) {
       prevId = '#letter' + index;
-      document.querySelector(prevId).classList.remove('cursor');
+      document.querySelector(prevId).classList.remove(className);
     }
   }
 }

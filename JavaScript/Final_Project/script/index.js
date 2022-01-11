@@ -1,4 +1,4 @@
-import {Content} from './typing mode/paragraph.js';
+import {Content} from './typing mode/content.js';
 import {
   match,
   clickEffect,
@@ -14,11 +14,11 @@ const changePara = document.getElementById('change-para');
 const gameMode = document.getElementById('game-mode');
 const typeMode = document.getElementById('type-mode');
 const balloonBtn = document.getElementById('balloon-btn');
+const snowballBtn = document.getElementById('snowball-btn');
 
-const audio = new Audio('./assets/audio/key-click.wav');
+const keyPressSound = new Audio('./assets/audio/key-click.wav');
 
 const contents = new Content(content);
-contents.createContent();
 
 let para = contents.para;
 let index = 0;
@@ -43,12 +43,19 @@ balloonBtn.addEventListener('click', () => {
   location.href = './balloons.html';
 });
 
-cursor(index, para.length);
+snowballBtn.addEventListener('click', () => {
+  document.querySelector('.overlay').style.display = 'none';
+  location.href = './snowballs.html';
+});
+
+contents.createContent();
+
+cursor(index, para.length, 'cursor');
 
 showHint(para, index, contents);
 
 document.addEventListener('keypress', e => {
-  audio.play();
+  keyPressSound.play();
 
   let pressedKey = e.code;
   let pressedVal = e.key;
@@ -82,7 +89,7 @@ document.addEventListener('keypress', e => {
   if (match(para[index], pressedVal, index)) correct++;
 
   index++;
-  cursor(index, para.length);
+  cursor(index, para.length, 'cursor');
 
   if (index === para.length) {
     document.querySelector('.new-para').style.display = 'inline-block';

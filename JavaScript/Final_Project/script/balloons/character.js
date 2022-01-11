@@ -9,12 +9,22 @@ export class Character {
     this.loaded = false;
   }
 
-  draw(ctx) {
+  set(ctx) {
     const characterImage = new Image();
     characterImage.src = './assets/images/balloon-images/spritesheet.png';
 
     let spritePos = this.stay ? 0 : 70;
+    this.draw(ctx, characterImage, spritePos);
 
+    if (!this.loaded) {
+      characterImage.onload = () => {
+        this.draw(ctx, characterImage, spritePos);
+      };
+      this.loaded = true;
+    }
+  }
+
+  draw(ctx, characterImage, spritePos) {
     ctx.drawImage(
       characterImage,
       spritePos,
@@ -26,33 +36,16 @@ export class Character {
       this.width,
       this.height
     );
-
-    if (!this.loaded) {
-      characterImage.onload = () => {
-        ctx.drawImage(
-          characterImage,
-          spritePos,
-          0,
-          this.width,
-          this.height,
-          this.posx,
-          this.posy,
-          this.width,
-          this.height
-        );
-      };
-      this.loaded = true;
-    }
   }
 
   move() {
     this.posy += this.speed;
   }
 
-  jumps(start, end, percent) {
+  jumps(start, end, jumpSpeed) {
     let dx = end.x - start.x;
     let dy = end.y - start.y;
-    this.posx = start.x + dx * percent;
-    this.posy = start.y + dy * percent;
+    this.posx = start.x + dx * jumpSpeed;
+    this.posy = start.y + dy * jumpSpeed;
   }
 }

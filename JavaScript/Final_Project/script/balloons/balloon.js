@@ -10,9 +10,22 @@ export class Balloon {
     this.loaded = false;
   }
 
-  draw(ctx, char) {
+  set(ctx, char) {
     const balloonImage = new Image();
     balloonImage.src = './assets/images/balloon-images/balloon.png';
+    this.draw(ctx, balloonImage);
+
+    if (!this.loaded) {
+      balloonImage.onload = () => {
+        this.draw(ctx, balloonImage);
+        this.loaded = true;
+      };
+    }
+
+    if (char) char.set(ctx);
+  }
+
+  draw(ctx, balloonImage) {
     ctx.drawImage(balloonImage, this.posx, this.posy, this.width, this.height);
 
     ctx.font = '27px Arial';
@@ -23,30 +36,6 @@ export class Balloon {
     } else {
       ctx.fillText(this.text, this.posx + 28, this.posy + 45);
     }
-
-    if (!this.loaded) {
-      balloonImage.onload = () => {
-        ctx.drawImage(
-          balloonImage,
-          this.posx,
-          this.posy,
-          this.width,
-          this.height
-        );
-
-        ctx.font = '27px Arial';
-        ctx.fillStyle = 'white';
-
-        if (this.start) {
-          ctx.fillText(this.text, this.posx + 4, this.posy + 45);
-        } else {
-          ctx.fillText(this.text, this.posx + 28, this.posy + 45);
-        }
-        this.loaded = true;
-      };
-    }
-
-    if (char) char.draw(ctx);
   }
 
   move(char) {

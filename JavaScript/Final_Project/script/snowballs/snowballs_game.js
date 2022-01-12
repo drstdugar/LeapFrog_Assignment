@@ -172,7 +172,7 @@ function animate() {
   if (monster.posx > character.posx + character.width) {
     monsterAnimation = requestAnimationFrame(animate);
   } else {
-    document.querySelector('.finish-overlay').style.display = 'flex';
+    gameOver();
   }
 }
 
@@ -258,19 +258,23 @@ function hitMonster() {
   monsterLife.setAttribute('value', life);
 
   if (life <= 0) {
-    words.innerHTML = '';
-    lifeBar.style.display = 'none';
-    cancelAnimationFrame(monsterAnimation);
-    clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-    setBackground(canvas, false);
-
-    document.querySelector('.finish-overlay').style.display = 'flex';
-    document.querySelector('#speed').textContent = `Speed: ${typingSpeed} WPM`;
-    document.querySelector(
-      '#best-speed'
-    ).textContent = `Best Speed: ${checkScore(
-      typingSpeed,
-      'snowballHighScore'
-    )} WPM`;
+    gameOver();
   }
+}
+
+function gameOver() {
+  words.innerHTML = '';
+  word = [];
+  lifeBar.style.display = 'none';
+  cancelAnimationFrame(monsterAnimation);
+  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
+  setBackground(canvas, false);
+
+  document.querySelector('.finish-overlay').style.display = 'flex';
+  document.querySelector('#speed').textContent = `Speed: ${typingSpeed} WPM`;
+  document.querySelector('#best-speed').textContent = `Best Speed: ${checkScore(
+    typingSpeed,
+    'snowballHighScore'
+  )} WPM`;
+  lifeBarPos = 470;
 }

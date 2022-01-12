@@ -156,8 +156,6 @@ header {
 
 .letters-snowball {
   font-size: 30px;
-  min-width: 43px;
-  margin: 10px;
   border: 1px solid white;
   border-radius: 5px;
   color: rgb(3, 47, 85);

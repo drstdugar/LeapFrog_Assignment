@@ -225,10 +225,10 @@ nav {
 }
 
 .words {
-  display: flex;
+  display: inline-block;
   position: absolute;
   top: 10%;
-  left: 35%;
+  width: 100%;
   text-align: center;
   margin: 0 auto;
 }
@@ -247,4 +247,11 @@ nav {
 
 .life-bar progress {
   width: 100px;
+}
+
+.letters-snowball {
+  width: 43px;
+  margin: 10px;
+  display: inline-block;
+  padding: 1px;
 }

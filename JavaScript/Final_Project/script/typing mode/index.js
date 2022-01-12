@@ -1,12 +1,12 @@
-import {Content} from './typing mode/content.js';
+import {Content} from './content.js';
 import {
   match,
   clickEffect,
   changeContent,
   showHint,
   claculateAccuracy,
-} from './typing mode/keyboard_utility.js';
-import {calcSpeed, cursor} from './utilities.js';
+} from './keyboard_utility.js';
+import {calcSpeed, cursor} from '../utilities.js';
 
 const content = document.getElementById('content');
 const changePara = document.getElementById('change-para');

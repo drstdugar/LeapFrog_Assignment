@@ -10,21 +10,23 @@ export function setBackground(canvas, play) {
   canvas.style.backgroundSize = play ? 'contain' : 'cover';
 }
 
-export function createBalloons(gameSpeed, letters) {
+export function createBalloons(gameSpeed, letters, length) {
   let balloons = [];
-  balloons.push(
-    new Balloon(
-      10,
-      getRandomInt(5, 100),
-      constants.BALLOON_WIDTH,
-      constants.BALLOON_HEIGHT,
-      'Start',
-      gameSpeed,
-      true
-    )
-  );
+  if (length === 0) {
+    balloons.push(
+      new Balloon(
+        10,
+        getRandomInt(5, 100),
+        constants.BALLOON_WIDTH,
+        constants.BALLOON_HEIGHT,
+        'Start',
+        gameSpeed,
+        true
+      )
+    );
+  }
 
-  for (let i = 0; i < letters.length; i++) {
+  for (let i = length; i < letters.length; i++) {
     let balloon = new Balloon(
       (i + 1) * 220,
       getRandomInt(5, 100),
@@ -36,18 +38,6 @@ export function createBalloons(gameSpeed, letters) {
 
     balloons.push(balloon);
   }
-
-  balloons.push(
-    new Balloon(
-      (letters.length + 1) * 220,
-      getRandomInt(5, 100),
-      constants.BALLOON_WIDTH,
-      constants.BALLOON_HEIGHT,
-      'End',
-      gameSpeed,
-      true
-    )
-  );
 
   return balloons;
 }

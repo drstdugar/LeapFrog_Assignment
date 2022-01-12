@@ -1,4 +1,4 @@
-import {clearCanvas, calcSpeed} from '../utilities.js';
+import {clearCanvas, calcSpeed, checkScore} from '../utilities.js';
 import {generateLetters} from '../words.js';
 import {constants} from '../constants.js';
 import {Character} from './character.js';
@@ -7,7 +7,6 @@ import {
   createBalloons,
   drawBalloons,
   manageDisplay,
-  checkScore,
 } from './balloon_utility.js';
 
 const canvas = document.getElementById('balloon-game');
@@ -25,6 +24,8 @@ const life = document.getElementById('lives');
 const ctx = canvas.getContext('2d');
 
 const keyPressSound = new Audio('./assets/audio/key-click.wav');
+const wrongKeyPressSound = new Audio('./assets/audio/wrong_key_press.wav');
+const balloonPop = new Audio('./assets/audio/balloon_popping.mp3');
 
 let index = 0;
 let jumpSpeed = 0;
@@ -36,10 +37,11 @@ let typingSpeed = 0;
 let letters = [];
 let balloons = [];
 
+let character;
 let startTime;
 let gameSpeed;
+let wordCount;
 let animationId;
-let character;
 
 canvas.width = constants.GAME_WIDTH;
 canvas.height = constants.GAME_HEIGHT;
@@ -48,6 +50,7 @@ gameMode.addEventListener('click', () => {
   document.querySelector('.overlay-games').style.display = 'flex';
   document.querySelector('.speed-overlay').style.display = 'none';
   document.querySelector('.finish-overlay').style.display = 'none';
+  document.querySelector('.speed-lives').style.display = 'none';
 });
 
 typingMode.addEventListener('click', () => (location.href = './index.html'));
@@ -63,19 +66,22 @@ snowballBtn.addEventListener('click', () => {
 });
 
 easyBtn.addEventListener('click', () => {
-  gameSpeed = 4;
+  gameSpeed = constants.BALLOON_EASY.speed;
+  wordCount = constants.BALLOON_EASY.words;
   manageDisplay();
   start();
 });
 
 mediumBtn.addEventListener('click', () => {
-  gameSpeed = 7;
+  gameSpeed = constants.BALLOON_MEDIUM.speed;
+  wordCount = constants.BALLOON_MEDIUM.words;
   manageDisplay();
   start();
 });
 
 hardBtn.addEventListener('click', () => {
-  gameSpeed = 10;
+  gameSpeed = constants.BALLOON_HARD.speed;
+  wordCount = constants.BALLOON_HARD.words;
   manageDisplay();
   start();
 });
@@ -91,17 +97,17 @@ reloadBtn.addEventListener('click', () => {
 setBackground(canvas, false);
 
 function start() {
-  letters = generateLetters();
+  letters = generateLetters(wordCount);
 
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
   setBackground(canvas, true);
   balloons = createBalloons(gameSpeed, letters);
 
   character = new Character(
-    balloons[0].posx + 20,
-    balloons[0].posy + 80,
-    120,
-    70,
+    balloons[0].posx + constants.BALLOON_CHARACTER_OFFSETX,
+    balloons[0].posy + constants.BALLOON_CHARACTER_OFFSETY,
+    constants.BALLOON_CHARACTER_HEIGHT,
+    constants.BALLOON_CHARACTER_WIDTH,
     true,
     gameSpeed
   );
@@ -110,9 +116,8 @@ function start() {
 }
 
 document.addEventListener('keypress', e => {
-  keyPressSound.play();
-
   if (e.key === letters[index] || index == letters.length) {
+    keyPressSound.play();
     letterCount++;
 
     cancelAnimationFrame(animationId);
@@ -137,8 +142,13 @@ document.addEventListener('keypress', e => {
       ).textContent = `Speed: ${typingSpeed} LPM`;
       document.querySelector(
         '#best-speed'
-      ).textContent = `Best Speed: ${checkScore(typingSpeed)} LPM`;
+      ).textContent = `Best Speed: ${checkScore(
+        typingSpeed,
+        'balloonHighScore'
+      )} LPM`;
     }
+  } else {
+    wrongKeyPressSound.play();
   }
 });
 
@@ -150,14 +160,20 @@ function jump() {
 
   jumpSpeed += 0.05;
   character.jumps(
-    {x: balloons[0].posx + 20, y: balloons[0].posy + 80},
-    {x: balloons[1].posx + 20, y: balloons[1].posy + 80},
+    {
+      x: balloons[0].posx + constants.BALLOON_CHARACTER_OFFSETX,
+      y: balloons[0].posy + constants.BALLOON_CHARACTER_OFFSETY,
+    },
+    {
+      x: balloons[1].posx + constants.BALLOON_CHARACTER_OFFSETX,
+      y: balloons[1].posy + constants.BALLOON_CHARACTER_OFFSETY,
+    },
     jumpSpeed
   );
 
   shift();
 
-  if (character.posx < balloons[1].posx + 20) {
+  if (character.posx < balloons[1].posx + constants.BALLOON_CHARACTER_OFFSETX) {
     requestAnimationFrame(jump);
   } else {
     afterJump();
@@ -170,8 +186,8 @@ function afterJump() {
   jumpSpeed = 0;
 
   character.stay = true;
-  character.posx = balloons[1].posx + 20;
-  character.posy = balloons[1].posy + 80;
+  character.posx = balloons[1].posx + constants.BALLOON_CHARACTER_OFFSETX;
+  character.posy = balloons[1].posy + constants.BALLOON_CHARACTER_OFFSETY;
 
   balloons.splice(0, 1);
 
@@ -209,6 +225,7 @@ function balloonDrop() {
   if (balloons[0].posy + balloons[0].height <= constants.GAME_HEIGHT + 20) {
     animationId = requestAnimationFrame(balloonDrop);
   } else {
+    balloonPop.play();
     collideScreen();
   }
 }
@@ -239,12 +256,12 @@ function resetVals() {
   index = 0;
   lives = 3;
   letterCount = 0;
-  move = 0;
+  moveBg = 0;
 }
 
 function resetPos() {
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
   balloons[0].posy = 20;
-  character.posx = balloons[0].posx + 20;
-  character.posy = balloons[0].posy + 80;
+  character.posx = balloons[0].posx + constants.BALLOON_CHARACTER_OFFSETX;
+  character.posy = balloons[0].posy + constants.BALLOON_CHARACTER_OFFSETY;
 }

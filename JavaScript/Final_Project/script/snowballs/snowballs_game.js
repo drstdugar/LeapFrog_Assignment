@@ -1,11 +1,11 @@
-import {clearCanvas, calcSpeed} from '../utilities.js';
+import {clearCanvas, calcSpeed, cursor, checkScore} from '../utilities.js';
 import {constants} from '../constants.js';
 import {Monster} from './monster.js';
 import {setBackground} from './snowballs_utility.js';
-import {cursor} from '../typing mode/keyboard_utility.js';
 import {Player} from './shooting_character.js';
 import {Snowball} from './snowball.js';
 import {getWord} from '../words.js';
+import {frameInfo} from './frames.js';
 
 const canvas = document.getElementById('snowball-game');
 
@@ -18,27 +18,33 @@ const mediumBtn = document.getElementById('medium-btn');
 const hardBtn = document.getElementById('hard-btn');
 const reloadBtn = document.getElementById('reload-btn');
 const words = document.getElementById('words');
-// const typeSpeed = document.getElementById('type-speed');
-// const life = document.getElementById('lives');
+const typeSpeed = document.getElementById('type-speed');
+const lifeBar = document.getElementById('life-bar');
+const monsterLife = document.getElementById('life');
 
 const ctx = canvas.getContext('2d');
 
 const keyPressSound = new Audio('./assets/audio/key-click.wav');
+const wrongKeyPressSound = new Audio('./assets/audio/wrong_key_press.wav');
+const snowballHit = new Audio('./assets/audio/snowball_hit.wav');
 
 let monster;
 let character;
 let snowball;
-let index = 0;
-// let letterCount = 0;
-// let typingSpeed = 0;
-
-// let letters = [];
-// let balloons = [];
-
-// let startTime;
+let word;
 let gameSpeed;
-// let animationId;
-// let character;
+let backShift;
+let damage;
+let startTime;
+let monsterAnimation;
+
+let throwBall = false;
+
+let index = 0;
+let wordCount = 0;
+let typingSpeed = 0;
+let lifeBarPos = 470;
+let life = 100;
 
 canvas.width = constants.GAME_WIDTH;
 canvas.height = constants.GAME_HEIGHT;
@@ -62,44 +68,34 @@ snowballBtn.addEventListener('click', () => {
 });
 
 easyBtn.addEventListener('click', () => {
-  gameSpeed = 0.3;
+  gameSpeed = constants.SNOWBALL_EASY.speed;
+  backShift = constants.SNOWBALL_EASY.back;
+  damage = constants.SNOWBALL_EASY.damage;
   document.querySelector('.speed-overlay').style.display = 'none';
-  //   document.querySelector('.speed-lives').style.display = 'block';
   start();
 });
 
 mediumBtn.addEventListener('click', () => {
-  gameSpeed = 0.6;
+  gameSpeed = constants.SNOWBALL_MEDIUM.speed;
+  backShift = constants.SNOWBALL_MEDIUM.back;
+  damage = constants.SNOWBALL_MEDIUM.damage;
   document.querySelector('.speed-overlay').style.display = 'none';
-  //   document.querySelector('.speed-lives').style.display = 'block';
   start();
 });
 
 hardBtn.addEventListener('click', () => {
-  gameSpeed = 0.9;
+  gameSpeed = constants.SNOWBALL_HARD.speed;
+  backShift = constants.SNOWBALL_HARD.back;
+  damage = constants.SNOWBALL_HARD.damage;
   document.querySelector('.speed-overlay').style.display = 'none';
-  //   document.querySelector('.speed-lives').style.display = 'block';
   start();
 });
-
-let word;
-
-let yetiFrames = 5;
-let currFrame = 0;
-let change = 0;
-
-let charFrames = 4;
-let charCurrFrame = 0;
-let charChange = 0;
-
-let throwBall = false;
 
 reloadBtn.addEventListener('click', () => {
   document.querySelector('.finish-overlay').style.display = 'none';
   document.querySelector('.speed-overlay').style.display = 'flex';
-  // life.textContent = 'Lives: 3';
-  // typeSpeed.textContent = 'Speed: 0 LPM';
-  // resetVals();
+  typeSpeed.textContent = 'Speed: 0 WPM';
+  index = 0;
 });
 
 setBackground(canvas, false);
@@ -108,7 +104,7 @@ function start() {
   setBackground(canvas, true);
 
   monster = new Monster(
-    950,
+    900,
     318,
     constants.MONSTER_WIDTH,
     constants.MONSTER_HEIGHT,
@@ -116,15 +112,17 @@ function start() {
   );
 
   character = new Player(
-    320,
+    270,
     380,
-    constants.CHARACTER_WIDTH,
-    constants.CHARACTER_HEIGHT
+    constants.SNOWBALL_CHARACTER_WIDTH,
+    constants.SNOWBALL_CHARACTER_HEIGHT
   );
 
   snowball = new Snowball(character.posx + 80, character.posy + 35, 20, 20);
-  generateWords();
 
+  lifeBar.style.display = 'block';
+
+  generateWords();
   animate();
 }
 
@@ -148,33 +146,39 @@ function generateWords() {
 function animate() {
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
 
-  monster.draw(ctx, yetiFrames, currFrame);
-  character.draw(ctx, charFrames, charCurrFrame);
+  monster.draw(ctx, frameInfo.monster.frames, frameInfo.monster.currFrame);
+  character.draw(
+    ctx,
+    frameInfo.character.frames,
+    frameInfo.character.currFrame
+  );
   if (throwBall) snowball.draw(ctx);
 
   monster.move();
-  if (change % 14 === 0) {
-    currFrame++;
-    change = 0;
+
+  lifeBar.style.right = `${(lifeBarPos += gameSpeed)}px`;
+
+  if (frameInfo.monster.change % 14 === 0) {
+    frameInfo.monster.currFrame++;
+    frameInfo.monster.change = 0;
   }
 
-  change++;
+  frameInfo.monster.change++;
 
-  if (currFrame % yetiFrames == 0) {
-    currFrame = 1;
+  if (frameInfo.monster.currFrame % frameInfo.monster.frames == 0) {
+    frameInfo.monster.currFrame = 1;
   }
 
   if (monster.posx > character.posx + character.width) {
-    requestAnimationFrame(animate);
+    monsterAnimation = requestAnimationFrame(animate);
   } else {
     document.querySelector('.finish-overlay').style.display = 'flex';
   }
 }
 
 document.addEventListener('keypress', e => {
-  keyPressSound.play();
-
   if (e.key === word[index]) {
+    keyPressSound.play();
     throwBall = true;
 
     shoot();
@@ -186,50 +190,21 @@ document.addEventListener('keypress', e => {
 
     cursor(index, word.length, 'highlight');
 
+    if (index === 1 && wordCount === 0) startTime = new Date();
+
     if (index === word.length) {
+      wordCount++;
       index = 0;
+
+      typingSpeed = calcSpeed(startTime, wordCount);
+      typeSpeed.textContent = `Speed: ${typingSpeed} WPM`;
+
       generateWords();
     }
-  }
-
-  //   if (e.key === letters[index] || index == letters.length) {
-  //     letterCount++;
-
-  //     cancelAnimationFrame(animationId);
-
-  //     index++;
-
-  //     if (index == 1) startTime = new Date();
-
-  //     if (index >= 2) {
-  //       typingSpeed = calcSpeed(startTime, letterCount);
-  //       typeSpeed.textContent = `Speed: ${typingSpeed} LPM`;
-  //     }
-
-  //     if (index == letters.length + 1) {
-  //       document.querySelector('.finish-overlay').style.display = 'flex';
-  //       document.querySelector(
-  //         '#speed'
-  //       ).textContent = `Speed: ${typingSpeed} LPM`;
-  //       document.querySelector(
-  //         '#best-speed'
-  //       ).textContent = `Best Speed: ${checkScore(typingSpeed)} LPM`;
-  //     }
-  //   }
-});
-
-function throwSnowball() {
-  snowball.draw(ctx);
-  snowball.move();
-
-  if (snowball.posx < monster.posx) {
-    requestAnimationFrame(throwSnowball);
   } else {
-    throwBall = false;
-    snowball.posx = character.posx + 80;
-    monster.posx += 20;
+    wrongKeyPressSound.play();
   }
-}
+});
 
 function shoot() {
   clearCanvas(
@@ -240,35 +215,62 @@ function shoot() {
     character.height
   );
 
-  character.draw(ctx, charFrames, charCurrFrame);
+  character.draw(
+    ctx,
+    frameInfo.character.frames,
+    frameInfo.character.currFrame
+  );
 
-  if (charChange % 7 === 0) {
-    charCurrFrame++;
-    charChange = 0;
+  if (frameInfo.character.change % 7 === 0) {
+    frameInfo.character.currFrame++;
+    frameInfo.character.change = 0;
   }
 
-  charChange++;
+  frameInfo.character.change++;
 
-  if (charCurrFrame % charFrames != 0) {
+  if (frameInfo.character.currFrame % frameInfo.character.frames != 0) {
     requestAnimationFrame(shoot);
   } else {
-    charCurrFrame = 0;
-    charChange = 0;
+    frameInfo.character.currFrame = 0;
+    frameInfo.character.change = 0;
   }
 }
 
-// function resetVals() {
-//   balloons = [];
-//   letters = [];
-//   index = 0;
-//   lives = 3;
-//   letterCount = 0;
-//   move = 0;
-// }
+function throwSnowball() {
+  snowball.draw(ctx);
+  snowball.move();
 
-// function resetPos() {
-//   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-//   balloons[0].posy = 20;
-//   character.posx = balloons[0].posx + 20;
-//   character.posy = balloons[0].posy + 80;
-// }
+  if (snowball.posx < monster.posx) {
+    requestAnimationFrame(throwSnowball);
+  } else {
+    hitMonster();
+  }
+}
+
+function hitMonster() {
+  snowballHit.play();
+  throwBall = false;
+  snowball.posx = character.posx + 80;
+  monster.posx += backShift;
+  lifeBar.style.right = `${(lifeBarPos -= backShift)}px`;
+
+  life -= damage;
+  monsterLife.setAttribute('value', life);
+
+  if (life <= 0) {
+    words.innerHTML = '';
+    lifeBar.style.display = 'none';
+    cancelAnimationFrame(monsterAnimation);
+    clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
+    setBackground(canvas, false);
+
+    document.querySelector('.finish-overlay').style.display = 'flex';
+    document.querySelector('#speed').textContent = `Speed: ${typingSpeed} WPM`;
+    document.querySelector(
+      '#best-speed'
+    ).textContent = `Best Speed: ${checkScore(
+      typingSpeed,
+      'snowballHighScore'
+    )} WPM`;
+  }
+}

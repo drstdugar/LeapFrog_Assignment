@@ -5,3 +5,7 @@ export function setBackground(canvas, play) {
   canvas.style.backgroundRepeat = play ? 'repeat-x' : 'no-repeat';
   canvas.style.backgroundSize = play ? 'contain' : 'cover';
 }
+
+// function difficulty(gameSpeed){
+
+// }

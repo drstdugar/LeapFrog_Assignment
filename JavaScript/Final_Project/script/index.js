@@ -3,11 +3,10 @@ import {
   match,
   clickEffect,
   changeContent,
-  cursor,
   showHint,
   claculateAccuracy,
 } from './typing mode/keyboard_utility.js';
-import {calcSpeed} from './utilities.js';
+import {calcSpeed, cursor} from './utilities.js';
 
 const content = document.getElementById('content');
 const changePara = document.getElementById('change-para');
@@ -17,6 +16,7 @@ const balloonBtn = document.getElementById('balloon-btn');
 const snowballBtn = document.getElementById('snowball-btn');
 
 const keyPressSound = new Audio('./assets/audio/key-click.wav');
+const wrongKeyPressSound = new Audio('./assets/audio/wrong_key_press.wav');
 
 const contents = new Content(content);
 
@@ -55,8 +55,6 @@ cursor(index, para.length, 'cursor');
 showHint(para, index, contents);
 
 document.addEventListener('keypress', e => {
-  keyPressSound.play();
-
   let pressedKey = e.code;
   let pressedVal = e.key;
 
@@ -86,7 +84,12 @@ document.addEventListener('keypress', e => {
     return;
   }
 
-  if (match(para[index], pressedVal, index)) correct++;
+  if (match(para[index], pressedVal, index)) {
+    correct++;
+    keyPressSound.play();
+  } else {
+    wrongKeyPressSound.play();
+  }
 
   index++;
   cursor(index, para.length, 'cursor');
@@ -111,6 +114,6 @@ function resetVals() {
   showHint(para, index, contents);
   cursor(index, para.length);
 
-  document.querySelector('.accuracy').textContent = 'Accuracy: 100%';
+  document.querySelector('.accuracy').textContent = 'Accuracy: 0%';
   document.querySelector('.speed').textContent = 'Speed: 0 WPM';
 }

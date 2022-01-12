@@ -159,6 +159,7 @@ header {
   min-width: 43px;
   margin: 10px;
   border: 1px solid white;
+  border-radius: 5px;
   color: rgb(3, 47, 85);
   background-color: rgb(169, 252, 252, 0.5);
 }
@@ -169,4 +170,8 @@ header {
 
 .highlight {
   background-color: white;
+}
+
+.speed-snowball h4 {
+  color: white;
 }

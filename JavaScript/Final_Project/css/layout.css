@@ -232,3 +232,19 @@ nav {
   text-align: center;
   margin: 0 auto;
 }
+
+.speed-snowball {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.life-bar {
+  position: absolute;
+  top: 45%;
+  display: none;
+}
+
+.life-bar progress {
+  width: 100px;
+}

@@ -66,17 +66,3 @@ export function manageDisplay() {
   document.querySelector('.speed-overlay').style.display = 'none';
   document.querySelector('.speed-lives').style.display = 'block';
 }
-
-export function checkScore(currScore) {
-  let hScore = localStorage.getItem('balloonHighScore');
-
-  if (hScore) {
-    if (hScore < currScore) {
-      localStorage.setItem('balloonHighScore', currScore);
-    }
-  } else {
-    localStorage.setItem('balloonHighScore', currScore);
-  }
-
-  return localStorage.getItem('balloonHighScore');
-}

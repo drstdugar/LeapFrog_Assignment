@@ -34,20 +34,6 @@ export function changeContent(content) {
   return [content.para, 0];
 }
 
-export function cursor(index, length, className) {
-  if (index < length) {
-    let currId = '#letter' + (index + 1);
-    let prevId;
-
-    document.querySelector(currId).classList.add(className);
-
-    if (index != 0) {
-      prevId = '#letter' + index;
-      document.querySelector(prevId).classList.remove(className);
-    }
-  }
-}
-
 export function claculateAccuracy(correct, typed) {
   document.querySelector('.accuracy').textContent = `Accuracy: ${Math.floor(
     (correct / typed) * 100

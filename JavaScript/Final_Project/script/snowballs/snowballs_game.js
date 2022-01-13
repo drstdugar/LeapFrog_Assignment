@@ -258,6 +258,7 @@ function hitMonster() {
   monsterLife.setAttribute('value', life);
 
   if (life <= 0) {
+    console.log('hello');
     gameOver();
   }
 }
@@ -265,7 +266,12 @@ function hitMonster() {
 function gameOver() {
   words.innerHTML = '';
   word = [];
+  lifeBarPos = 470;
+  life = 100;
+
+  monsterLife.setAttribute('value', life);
   lifeBar.style.display = 'none';
+
   cancelAnimationFrame(monsterAnimation);
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
   setBackground(canvas, false);
@@ -276,5 +282,4 @@ function gameOver() {
     typingSpeed,
     'snowballHighScore'
   )} WPM`;
-  lifeBarPos = 470;
 }

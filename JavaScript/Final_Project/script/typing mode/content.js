@@ -1,11 +1,9 @@
-import {paragraphs} from '../paragraphs.js';
 import {constants} from '../constants.js';
-import {getRandomInt} from '../utilities.js';
 
 export class Content {
-  constructor(content) {
+  constructor(content, para) {
     this.content = content;
-    this.para = paragraphs[getRandomInt(1, 6)];
+    this.para = para;
     this.tokens = this.para.split(' ');
     this.newLine = [];
   }
@@ -66,13 +64,13 @@ export class Content {
     this.newLine.pop();
   }
 
-  paragraphChange() {
+  paragraphChange(para) {
+    this.para = para;
     this.resetVals();
     this.createContent();
   }
 
   resetVals() {
-    this.para = paragraphs[getRandomInt(1, 6)];
     this.tokens = this.para.split(' ');
     this.content.innerHTML = '';
     this.newLine = [];

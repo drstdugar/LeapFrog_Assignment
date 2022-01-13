@@ -65,19 +65,19 @@ snowballBtn.addEventListener('click', () => {
 });
 
 easyBtn.addEventListener('click', () => {
-  gameSpeed = constants.BALLOON_EASY.speed;
+  gameSpeed = constants.BALLOON_EASY.SPEED;
   manageDisplay();
   start();
 });
 
 mediumBtn.addEventListener('click', () => {
-  gameSpeed = constants.BALLOON_MEDIUM.speed;
+  gameSpeed = constants.BALLOON_MEDIUM.SPEED;
   manageDisplay();
   start();
 });
 
 hardBtn.addEventListener('click', () => {
-  gameSpeed = constants.BALLOON_HARD.speed;
+  gameSpeed = constants.BALLOON_HARD.SPEED;
   manageDisplay();
   start();
 });
@@ -113,7 +113,7 @@ function start() {
 }
 
 document.addEventListener('keypress', e => {
-  if (e.key === letters[0] || index == letters.length) {
+  if (e.key === letters[0]) {
     keyPressSound.play();
     letterCount++;
 

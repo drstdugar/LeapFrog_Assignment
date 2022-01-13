@@ -84,7 +84,8 @@ header {
 #easy-btn,
 #medium-btn,
 #hard-btn,
-#reload-btn {
+#reload-btn,
+#lesson-btn {
   border: none;
   background: #407ad6;
   color: aliceblue;
@@ -100,7 +101,8 @@ header {
 #easy-btn:hover,
 #medium-btn:hover,
 #hard-btn:hover,
-#reload-btn:hover {
+#reload-btn:hover,
+#lesson-btn:hover {
   background: #2c6acf;
 }
 

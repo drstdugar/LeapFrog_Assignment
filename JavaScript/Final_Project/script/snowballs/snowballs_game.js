@@ -68,25 +68,25 @@ snowballBtn.addEventListener('click', () => {
 });
 
 easyBtn.addEventListener('click', () => {
-  gameSpeed = constants.SNOWBALL_EASY.speed;
-  backShift = constants.SNOWBALL_EASY.back;
-  damage = constants.SNOWBALL_EASY.damage;
+  gameSpeed = constants.SNOWBALL_EASY.SPEED;
+  backShift = constants.SNOWBALL_EASY.BACK;
+  damage = constants.SNOWBALL_EASY.DAMAGE;
   document.querySelector('.speed-overlay').style.display = 'none';
   start();
 });
 
 mediumBtn.addEventListener('click', () => {
-  gameSpeed = constants.SNOWBALL_MEDIUM.speed;
-  backShift = constants.SNOWBALL_MEDIUM.back;
-  damage = constants.SNOWBALL_MEDIUM.damage;
+  gameSpeed = constants.SNOWBALL_MEDIUM.SPEED;
+  backShift = constants.SNOWBALL_MEDIUM.BACK;
+  damage = constants.SNOWBALL_MEDIUM.DAMAGE;
   document.querySelector('.speed-overlay').style.display = 'none';
   start();
 });
 
 hardBtn.addEventListener('click', () => {
-  gameSpeed = constants.SNOWBALL_HARD.speed;
-  backShift = constants.SNOWBALL_HARD.back;
-  damage = constants.SNOWBALL_HARD.damage;
+  gameSpeed = constants.SNOWBALL_HARD.SPEED;
+  backShift = constants.SNOWBALL_HARD.BACK;
+  damage = constants.SNOWBALL_HARD.DAMAGE;
   document.querySelector('.speed-overlay').style.display = 'none';
   start();
 });

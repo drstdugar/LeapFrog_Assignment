@@ -109,7 +109,6 @@ nav {
 
 .speed-btn {
   display: flex;
-
   width: 80%;
   margin: 0 auto;
 }
@@ -120,7 +119,12 @@ nav {
 
 #change-para {
   padding: 1.5%;
-  margin: 0 32%;
+  margin: 1.5% 25%;
+}
+
+#lesson-btn {
+  padding: 1.5%;
+  margin: 1.5% 2%;
 }
 
 .accuracy,
@@ -128,6 +132,10 @@ nav {
   flex: 1;
   padding: 0.5%;
   text-align: center;
+}
+
+.lesson-plan {
+  flex: 1;
 }
 
 #left-hand,

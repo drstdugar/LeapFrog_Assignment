@@ -2,11 +2,11 @@ import {Content} from './content.js';
 import {
   match,
   clickEffect,
-  changeContent,
   showHint,
   claculateAccuracy,
 } from './keyboard_utility.js';
-import {calcSpeed, cursor} from '../utilities.js';
+import {calcSpeed, cursor, getRandomInt} from '../utilities.js';
+import {paragraphs, lessons} from '../paragraphs.js';
 
 const content = document.getElementById('content');
 const changePara = document.getElementById('change-para');
@@ -14,19 +14,27 @@ const gameMode = document.getElementById('game-mode');
 const typeMode = document.getElementById('type-mode');
 const balloonBtn = document.getElementById('balloon-btn');
 const snowballBtn = document.getElementById('snowball-btn');
+const dropDown = document.getElementById('lesson-option');
+const lessonBtn = document.getElementById('lesson-btn');
 
 const keyPressSound = new Audio('./assets/audio/key-click.wav');
 const wrongKeyPressSound = new Audio('./assets/audio/wrong_key_press.wav');
 
-const contents = new Content(content);
-
-let para = contents.para;
 let index = 0;
 let correct = 0;
 let wordCount = 0;
+
 let startTime;
 
-changePara.addEventListener('click', () => resetVals());
+let lessonMode = true;
+let lessonNos = 1;
+
+let para = lessonMode ? lessons[lessonNos] : paragraphs[getRandomInt(1, 6)];
+
+changePara.addEventListener('click', () => {
+  lessonMode = false;
+  resetVals();
+});
 
 gameMode.addEventListener(
   'click',
@@ -48,6 +56,13 @@ snowballBtn.addEventListener('click', () => {
   location.href = './snowballs.html';
 });
 
+lessonBtn.addEventListener('click', () => {
+  lessonMode = true;
+  lessonNos = dropDown.value;
+  resetVals();
+});
+
+const contents = new Content(content, para);
 contents.createContent();
 
 cursor(index, para.length, 'cursor');
@@ -59,6 +74,7 @@ document.addEventListener('keypress', e => {
   let pressedVal = e.key;
 
   if (index === para.length) {
+    if (lessonMode) lessonNos++;
     resetVals();
     document.querySelector('.new-para').style.display = 'none';
     return;
@@ -104,15 +120,18 @@ document.addEventListener('keypress', e => {
 });
 
 function resetVals() {
-  [para, index] = changeContent(contents);
+  para = lessonMode ? lessons[lessonNos] : paragraphs[getRandomInt(1, 6)];
+  contents.paragraphChange(para);
+
   correct = 0;
   wordCount = 0;
+  index = 0;
 
   let activeList = document.querySelectorAll('.active');
   activeList.forEach(element => element.classList.remove('active'));
 
   showHint(para, index, contents);
-  cursor(index, para.length);
+  cursor(index, para.length, 'cursor');
 
   document.querySelector('.accuracy').textContent = 'Accuracy: 0%';
   document.querySelector('.speed').textContent = 'Speed: 0 WPM';

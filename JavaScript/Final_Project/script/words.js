@@ -23,6 +23,16 @@ const wordList = [
   'free;',
   'polls',
   "zebra's",
+  '{have}',
+  'Try',
+  'joke',
+  'money',
+  'Quit',
+  'question',
+  'Rally',
+  'temperature',
+  'watch',
+  'fax',
 ];
 
 export function generateLetters() {

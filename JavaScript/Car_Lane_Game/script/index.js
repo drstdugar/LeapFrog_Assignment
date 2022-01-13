@@ -63,14 +63,6 @@ class Car {
           this.posx = pos[this.lane];
           this.draw();
         }
-      } else if (event.code === 'ArrowUp') {
-        console.log('bullet');
-        const bulletImage = new Image();
-        bulletImage.src = './images/bullet.png';
-        console.log(bulletImage);
-        bulletImage.onload = function () {
-          ctx.drawImage(bulletImage, 270, 520 + 20, 100, 100);
-        };
       }
     });
   }
@@ -85,7 +77,6 @@ class Car {
 
       score++;
       if (score % 4 == 0) gameSpeed = gameSpeed + 3;
-      console.log(score, gameSpeed);
     }
 
     this.checkCollision();

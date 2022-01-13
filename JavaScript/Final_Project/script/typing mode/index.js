@@ -7,6 +7,7 @@ import {
 } from './keyboard_utility.js';
 import {calcSpeed, cursor, getRandomInt} from '../utilities.js';
 import {paragraphs, lessons} from '../paragraphs.js';
+import {constants} from '../constants.js';
 
 const content = document.getElementById('content');
 const changePara = document.getElementById('change-para');
@@ -25,7 +26,9 @@ let startTime;
 let lessonMode = true;
 let lessonNos = 1;
 
-let para = lessonMode ? lessons[lessonNos] : paragraphs[getRandomInt(1, 6)];
+let para = lessonMode
+  ? lessons[lessonNos]
+  : paragraphs[getRandomInt(1, constants.PARAGRAPH_COUNT)];
 
 changePara.addEventListener('click', () => {
   lessonMode = false;
@@ -56,6 +59,7 @@ document.addEventListener('keypress', e => {
 
   if (index === para.length) {
     if (lessonMode) lessonNos++;
+    dropDown.value = lessonNos;
     resetVals();
     document.querySelector('.new-para').style.display = 'none';
     return;
@@ -99,7 +103,9 @@ document.addEventListener('keypress', e => {
 });
 
 function resetVals() {
-  para = lessonMode ? lessons[lessonNos] : paragraphs[getRandomInt(1, 6)];
+  para = lessonMode
+    ? lessons[lessonNos]
+    : paragraphs[getRandomInt(1, constants.PARAGRAPH_COUNT)];
   contents.paragraphChange(para);
 
   correct = 0;

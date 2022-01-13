@@ -4,6 +4,11 @@ export const paragraphs = {
   3: 'Lisbon, the capital of Portugal, is home to the longest bridge in Europe. The Vasco da Gama bridge in Lisbon is seventeen kilometers or ten and a half miles long.',
   4: 'The solar system is the Sun and all the objects around it. The Sun is orbited by planets, asteroids, comets, and other things.',
   5: 'Books are the quitest and most constant of friends; they are the most accessible and most wisest of counselors, and the most patient of teachers. Charles William Eliot',
+  6: 'Christmas is celebrated on 25 December. It is a holiday to celebrate the birth of Jesus Christ, who, according to the Christian religion, is the son of God. The name is a joining of “Christ” and “mass”.',
+  7: 'A holiday is a day set aside by custom or by law on which normal activities, especially business or work including school, are suspended or reduced. Generally, holidays are to allow individuals to celebrate.',
+  8: 'Someone can be your mate, your buddy, your partner, your comrade, your compatriot, your dude, and on and on and on. And this made us wonder: are there as many words for friends in other languages?',
+  9: 'Experiencing reality by interacting authentically with the environment and with others. Giving something back through to the world creativity, and, Changing our attitude when faced with obstacles.',
+  10: 'Freedom, generally, is having the ability to act without constraint. A person has the freedom to do things that will not, in theory or in practice, be prevented by other forces.',
 };
 
 export const lessons = {
@@ -15,7 +20,12 @@ export const lessons = {
   6: 'ruf frf uhj rfrf uju uslu ruru rufj furhg aku kjjr urru suru lur ;ru; fhgu fura dkur sukr kaur ;rush ullu ;llu ;lulu ralf rafr ulrur ljur uruf rurur urr dru sll s;u ruu skull laugh dull usual; sugar radar',
   7: 'eiei eed eki eeki eekk iidd eikki ssike kdkfe ;aek like eeki keie ske ddekk iikks eekki diek ssee kdfie slei lseke dkeik slke sldke eiei iedkl ;slei ire free sire; afraid lie scared dead deed kid alike',
   8: 'www oow oo owow wsws olol wsol ow lo wws sse ook oows ssoo eeloo ooro owow sllfo ios jllo wksl ;soe oolol sow uio olao wer wor oeo osoa lolol asilw skio order lows owls; sure will swear will saw road well',
-  9: 'qqa yyj qqj jqq yqq qqy aqq ilsq qyaj aqyj ajqy aqjy qualify sfsq oay y q oyse qqued iqio iyiw ss;y gh;lq pair queer oqyq queen qiu you yours qqop yyysh qyiu qhgq paoq lsya qsdy quire year queue why',
-  10: 'ttp tpt ptt ttf p;t; pfpt; iwpq tear awo;a pwa; quip dpp epre pity alwt poet hipq aoqt qpq hro;p hdft ftp totally two oept opt qpt tft p;ptf ten peyet p;p; ftft pt tp f;pt thirty yuop ipte part',
-  11: 'vmfj vvf fvv jvim mango fmvj mdfjv vjvff wove mjvma iwoma viek maeav move miev oven every avvem mave maam mimv mamiv mavlm lakvm mavell drive vmawe moved overhead',
+  9: 'qqa yyj qqj jqq yqq qqy aqq ilsq qyaj aqyj ajqy aqjy sfsq oay y q oyse qqued iqio iyiw ss;y gh;lq oqyq qiu qqop yyysh qyiu qhgq paoq lsya qsdy queen you yours quire pair queer year queue why qualify',
+  10: 'ttp tpt ptt ttf p;t; pfpt; iwpq awo;a pwa; dpp epre alwt hipq aoqt qpq hro;p hdft ftp oept qpt tft p;ptf peyet p;p; ftft pt tp f;pt yuop ipte opt two pity poet thirty totally ten tear part quip',
+  11: 'vmfj vvf fvv jvim fmvj mdfjv vjvff mjvma iwoma viek mae; miev avvem mave mimv mamiv mavlm lakvm vmawe mvell sflm kmv mavell valley mall wove drive moved oven maam every move overhead mango live',
+  12: 'c,,c ck,d k,cd cd,, ,kddc sc,kd d,ckd c,ak iee, ;a,d ce,d aemci sl,me ommc mvd, a;s, vdmc ,sd la,; ad,c ,s;d ewvc oicm ,e alic ci ,,sj c,ka, accept class touch could, cloud credit, card chair grace',
+  13: 'xs xxs. l.l. s.sl xlxs .xlxs .;,dx s.lx. se.p; a.e;e slqx acx, .sdx sle. p.w qikx ...w .w;la .xne, a.xo a,qx ya.v ta,x ..la.x .xaldk .lxs. exercise xmas fix. exit examinations. relaxed pox fox.',
+  14: 'za zza/; /a;a/ aza;/ z//z; ;a;a /z/z ;/;/ azaz ri/a a/e aa a/c z/r //zzel zel zoiw zpq zqp zoqp irez qpze pq zpzz qpzp pqh/ yezz reaz wptuz calk/ quiz amazed freeze/froze jazz lazy/crazy quizzical.',
+  15: 'bff nnj fnjb bfnj jnfb bv jfn eocb nfie sjbie qpb ubyw pq qbvn qunz. /aben vn ndn vvjb xnbc, ;adeb ./zb b.nd nvnb klwn bqov bbnn baby within new human infant young spring ball blow never/forever;',
+  16: 'Eberto PAC Lexi CCU QM Jason Pole Dalton AFB Goth Jacobs Issac Kinsey SST Harpy Letti TWX Natalie Ogdan MacArthur COBOLs Mitzi DC Khan McGovern Highlands Vichy Zambia Xmas Young Wesleyan NoDoz Ucayali',
 };

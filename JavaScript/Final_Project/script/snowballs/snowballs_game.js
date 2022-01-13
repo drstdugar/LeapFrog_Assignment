@@ -242,7 +242,6 @@ function hitMonster() {
   monsterLife.setAttribute('value', life);
 
   if (life <= 0) {
-    console.log('hello');
     gameOver();
   }
 }
@@ -258,7 +257,7 @@ function gameOver() {
 
   cancelAnimationFrame(monsterAnimation);
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-  setBackground(canvas, false);
+  setBackground(canvas, false, '');
 
   document.querySelector('.finish-overlay').style.display = 'flex';
   document.querySelector('#speed').textContent = `Speed: ${typingSpeed} WPM`;

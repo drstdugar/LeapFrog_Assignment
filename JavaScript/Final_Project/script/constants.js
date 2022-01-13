@@ -56,6 +56,8 @@ export const constants = {
     'b',
   ],
 
+  PARAGRAPH_COUNT: 11,
+
   GAME_HEIGHT: 630,
   GAME_WIDTH: 1450,
 

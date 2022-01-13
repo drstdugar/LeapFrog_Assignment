@@ -40,6 +40,7 @@ nav {
 }
 
 .paragraph-container {
+  display: flex;
   padding: 0 15px;
   width: 80%;
   margin: 2% auto;
@@ -257,4 +258,8 @@ nav {
   margin: 10px;
   display: inline-block;
   padding: 1px;
+}
+
+#lesson-option {
+  padding: 4px;
 }

@@ -11,14 +11,10 @@ import {paragraphs, lessons} from '../paragraphs.js';
 const content = document.getElementById('content');
 const changePara = document.getElementById('change-para');
 const gameMode = document.getElementById('game-mode');
-const typeMode = document.getElementById('type-mode');
-const balloonBtn = document.getElementById('balloon-btn');
-const snowballBtn = document.getElementById('snowball-btn');
 const dropDown = document.getElementById('lesson-option');
 const lessonBtn = document.getElementById('lesson-btn');
 
 const keyPressSound = new Audio('./assets/audio/key-click.wav');
-const wrongKeyPressSound = new Audio('./assets/audio/wrong_key_press.wav');
 
 let index = 0;
 let correct = 0;
@@ -38,23 +34,8 @@ changePara.addEventListener('click', () => {
 
 gameMode.addEventListener(
   'click',
-  () => (document.querySelector('.overlay').style.display = 'flex')
+  () => (location.href = './game_navigator.html')
 );
-
-typeMode.addEventListener('click', () => {
-  document.querySelector('.overlay').style.display = 'none';
-  location.href = './index.html';
-});
-
-balloonBtn.addEventListener('click', () => {
-  document.querySelector('.overlay').style.display = 'none';
-  location.href = './balloons.html';
-});
-
-snowballBtn.addEventListener('click', () => {
-  document.querySelector('.overlay').style.display = 'none';
-  location.href = './snowballs.html';
-});
 
 lessonBtn.addEventListener('click', () => {
   lessonMode = true;
@@ -103,8 +84,6 @@ document.addEventListener('keypress', e => {
   if (match(para[index], pressedVal, index)) {
     correct++;
     keyPressSound.play();
-  } else {
-    wrongKeyPressSound.play();
   }
 
   index++;

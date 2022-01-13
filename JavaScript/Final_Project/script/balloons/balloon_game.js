@@ -12,8 +12,6 @@ import {
 const canvas = document.getElementById('balloon-game');
 const gameMode = document.getElementById('game-mode');
 const typingMode = document.getElementById('type-mode');
-const balloonBtn = document.getElementById('balloon-btn');
-const snowballBtn = document.getElementById('snowball-btn');
 const easyBtn = document.getElementById('easy-btn');
 const mediumBtn = document.getElementById('medium-btn');
 const hardBtn = document.getElementById('hard-btn');
@@ -24,7 +22,6 @@ const life = document.getElementById('lives');
 const ctx = canvas.getContext('2d');
 
 const keyPressSound = new Audio('./assets/audio/key-click.wav');
-const wrongKeyPressSound = new Audio('./assets/audio/wrong_key_press.wav');
 const balloonPop = new Audio('./assets/audio/balloon_popping.mp3');
 
 let index = 0;
@@ -45,24 +42,12 @@ let animationId;
 canvas.width = constants.GAME_WIDTH;
 canvas.height = constants.GAME_HEIGHT;
 
-gameMode.addEventListener('click', () => {
-  document.querySelector('.overlay-games').style.display = 'flex';
-  document.querySelector('.speed-overlay').style.display = 'none';
-  document.querySelector('.finish-overlay').style.display = 'none';
-  document.querySelector('.speed-lives').style.display = 'none';
-});
+gameMode.addEventListener(
+  'click',
+  () => (location.href = './game_navigator.html')
+);
 
 typingMode.addEventListener('click', () => (location.href = './index.html'));
-
-balloonBtn.addEventListener('click', () => {
-  document.querySelector('.overlay-games').style.display = 'none';
-  location.href = './balloons.html';
-});
-
-snowballBtn.addEventListener('click', () => {
-  document.querySelector('.overlay-games').style.display = 'none';
-  location.href = './snowballs.html';
-});
 
 easyBtn.addEventListener('click', () => {
   gameSpeed = constants.BALLOON_EASY.SPEED;
@@ -137,8 +122,6 @@ document.addEventListener('keypress', e => {
       typingSpeed = calcSpeed(startTime, letterCount);
       typeSpeed.textContent = `Speed: ${typingSpeed} LPM`;
     }
-  } else {
-    wrongKeyPressSound.play();
   }
 });
 

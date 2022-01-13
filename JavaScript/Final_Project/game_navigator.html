@@ -26,30 +26,19 @@
             </nav>
         </header>
 
-        <div class="game">
-            <canvas id="balloon-game"></canvas>
-
-            <div class="speed-overlay">
-                <button id="easy-btn">Easy</button>
-                <button id="medium-btn">Medium</button>
-                <button id="hard-btn">Hard</button>
+        <div class="games-navigator">
+            <div class="balloons">
+                <img class="screenshot" src="./assets/images/balloon-images/balloons_SS.png" alt="balloons">
+                <button id="balloon-btn">Balloons</button>
             </div>
-
-            <div class="finish-overlay">
-                <h1>GAME OVER</h1>
-                <h2 id="best-speed">Best Speed</h2>
-                <h2 id="speed">Speed</h2>
-                <button id="reload-btn">Reload</button>
-            </div>
-
-            <div class="speed-lives">
-                <h4 id="lives">Lives: 3</h4>
-                <h4 id="type-speed">Speed: 0 LPM</h4>
+            <div class="snowballs">
+                <img class="screenshot" src="./assets/images/snowballs_images/snowballs_SS.png" alt="snowballs">
+                <button id="snowball-btn">Snowballs</button>
             </div>
         </div>
     </div>
 
-    <script src="./script/balloons/balloon_game.js" type="module"></script>
+    <script src="./script/game_navigator.js" type="module"></script>
 </body>
 
 </html>

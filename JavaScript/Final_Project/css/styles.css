@@ -128,8 +128,7 @@ header {
   opacity: 0.7;
 }
 
-.overlay,
-.overlay-games {
+.games-navigator {
   opacity: 1;
   background: radial-gradient(
     rgb(165, 219, 255),

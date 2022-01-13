@@ -29,37 +29,29 @@
         <div class="game">
             <canvas id="snowball-game"></canvas>
             <div class="words" id="words"> </div>
+
             <div class="speed-snowball">
                 <h4 id="type-speed">Speed: 0 WPM</h4>
             </div>
+
             <div class="life-bar" id="life-bar">
                 <progress value="100" max="100" id="life"></progress>
             </div>
-        </div>
 
-        <div class="overlay-games">
-            <div class="balloons">
-                <img class="screenshot" src="./assets/images/balloon-images/balloons_SS.png" alt="balloons">
-                <button id="balloon-btn">Balloons</button>
+            <div class="speed-overlay">
+                <button id="easy-btn">Easy</button>
+                <button id="medium-btn">Medium</button>
+                <button id="hard-btn">Hard</button>
             </div>
-            <div class="snowballs">
-                <img class="screenshot" src="./assets/images/snowballs_images/snowballs_SS.png" alt="snowballs">
-                <button id="snowball-btn">Snowballs</button>
+
+            <div class="finish-overlay">
+                <h1>GAME OVER</h1>
+                <h2 id="best-speed">Best Speed</h2>
+                <h2 id="speed">Speed</h2>
+                <button id="reload-btn">Reload</button>
             </div>
         </div>
 
-        <div class="speed-overlay">
-            <button id="easy-btn">Easy</button>
-            <button id="medium-btn">Medium</button>
-            <button id="hard-btn">Hard</button>
-        </div>
-
-        <div class="finish-overlay">
-            <h1>GAME OVER</h1>
-            <h2 id="best-speed">Best Speed</h2>
-            <h2 id="speed">Speed</h2>
-            <button id="reload-btn">Reload</button>
-        </div>
     </div>
 
     <script src="./script/snowballs/snowballs_game.js" type="module"></script>

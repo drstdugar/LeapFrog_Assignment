@@ -11,8 +11,6 @@ const canvas = document.getElementById('snowball-game');
 
 const gameMode = document.getElementById('game-mode');
 const typingMode = document.getElementById('type-mode');
-const balloonBtn = document.getElementById('balloon-btn');
-const snowballBtn = document.getElementById('snowball-btn');
 const easyBtn = document.getElementById('easy-btn');
 const mediumBtn = document.getElementById('medium-btn');
 const hardBtn = document.getElementById('hard-btn');
@@ -25,7 +23,6 @@ const monsterLife = document.getElementById('life');
 const ctx = canvas.getContext('2d');
 
 const keyPressSound = new Audio('./assets/audio/key-click.wav');
-const wrongKeyPressSound = new Audio('./assets/audio/wrong_key_press.wav');
 const snowballHit = new Audio('./assets/audio/snowball_hit.wav');
 
 let monster;
@@ -43,29 +40,18 @@ let throwBall = false;
 let index = 0;
 let wordCount = 0;
 let typingSpeed = 0;
-let lifeBarPos = 470;
+let lifeBarPos = 905;
 let life = 100;
 
 canvas.width = constants.GAME_WIDTH;
 canvas.height = constants.GAME_HEIGHT;
 
-gameMode.addEventListener('click', () => {
-  document.querySelector('.overlay-games').style.display = 'flex';
-  document.querySelector('.speed-overlay').style.display = 'none';
-  document.querySelector('.finish-overlay').style.display = 'none';
-});
+gameMode.addEventListener(
+  'click',
+  () => (location.href = './game_navigator.html')
+);
 
 typingMode.addEventListener('click', () => (location.href = './index.html'));
-
-balloonBtn.addEventListener('click', () => {
-  document.querySelector('.overlay-games').style.display = 'none';
-  location.href = './balloons.html';
-});
-
-snowballBtn.addEventListener('click', () => {
-  document.querySelector('.overlay-games').style.display = 'none';
-  location.href = './snowballs.html';
-});
 
 easyBtn.addEventListener('click', () => {
   gameSpeed = constants.SNOWBALL_EASY.SPEED;
@@ -156,7 +142,7 @@ function animate() {
 
   monster.move();
 
-  lifeBar.style.right = `${(lifeBarPos += gameSpeed)}px`;
+  lifeBar.style.paddingLeft = `${(lifeBarPos -= gameSpeed)}px`;
 
   if (frameInfo.monster.change % 14 === 0) {
     frameInfo.monster.currFrame++;
@@ -201,8 +187,6 @@ document.addEventListener('keypress', e => {
 
       generateWords();
     }
-  } else {
-    wrongKeyPressSound.play();
   }
 });
 
@@ -252,7 +236,7 @@ function hitMonster() {
   throwBall = false;
   snowball.posx = character.posx + 80;
   monster.posx += backShift;
-  lifeBar.style.right = `${(lifeBarPos -= backShift)}px`;
+  lifeBar.style.paddingLeft = `${(lifeBarPos += backShift)}px`;
 
   life -= damage;
   monsterLife.setAttribute('value', life);
@@ -266,7 +250,7 @@ function hitMonster() {
 function gameOver() {
   words.innerHTML = '';
   word = [];
-  lifeBarPos = 470;
+  lifeBarPos = 905;
   life = 100;
 
   monsterLife.setAttribute('value', life);

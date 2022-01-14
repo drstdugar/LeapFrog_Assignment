@@ -263,3 +263,9 @@ nav {
 #lesson-option {
   padding: 4px;
 }
+
+#click-content {
+  position: absolute;
+  top: 5px;
+  left: 47%;
+}

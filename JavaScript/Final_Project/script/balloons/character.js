@@ -1,3 +1,5 @@
+import {constants} from '../constants.js';
+
 export class Character {
   constructor(posx, posy, height, width, stay, speed) {
     this.posx = posx;
@@ -47,5 +49,11 @@ export class Character {
     let dy = end.y - start.y;
     this.posx = start.x + dx * jumpSpeed;
     this.posy = start.y + dy * jumpSpeed;
+  }
+
+  // after collision with screen
+  reset(balloon) {
+    this.posx = balloon.posx + constants.BALLOON_CHARACTER_OFFSETX;
+    this.posy = balloon.posy + constants.BALLOON_CHARACTER_OFFSETY;
   }
 }

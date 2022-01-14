@@ -14,6 +14,7 @@ const changePara = document.getElementById('change-para');
 const gameMode = document.getElementById('game-mode');
 const dropDown = document.getElementById('lesson-option');
 const lessonBtn = document.getElementById('lesson-btn');
+const contentText = document.getElementById('click-content');
 
 const keyPressSound = new Audio('./assets/audio/key-click.wav');
 
@@ -32,8 +33,12 @@ let para = lessonMode
 
 changePara.addEventListener('click', () => {
   lessonMode = false;
+  contentText.style.display = 'block';
+
   resetVals();
 });
+
+content.addEventListener('click', () => (contentText.style.display = 'none'));
 
 gameMode.addEventListener(
   'click',
@@ -43,6 +48,8 @@ gameMode.addEventListener(
 lessonBtn.addEventListener('click', () => {
   lessonMode = true;
   lessonNos = dropDown.value;
+  contentText.style.display = 'block';
+
   resetVals();
 });
 
@@ -53,7 +60,9 @@ cursor(index, para.length, 'cursor');
 
 showHint(para, index, contents);
 
-document.addEventListener('keypress', e => {
+content.addEventListener('keypress', e => {
+  keyPressSound.play();
+
   let pressedKey = e.code;
   let pressedVal = e.key;
 
@@ -87,11 +96,9 @@ document.addEventListener('keypress', e => {
 
   if (match(para[index], pressedVal, index)) {
     correct++;
-    keyPressSound.play();
   }
 
   index++;
-  cursor(index, para.length, 'cursor');
 
   if (index === para.length) {
     document.querySelector('.new-para').style.display = 'inline-block';
@@ -99,6 +106,7 @@ document.addEventListener('keypress', e => {
 
   if (index == 1) startTime = new Date();
 
+  cursor(index, para.length, 'cursor');
   claculateAccuracy(correct, index);
 });
 

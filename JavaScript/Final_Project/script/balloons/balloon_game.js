@@ -77,6 +77,7 @@ reloadBtn.addEventListener('click', () => {
 
 setBackground(canvas, false);
 
+// generate game entities
 function start() {
   letters = generateLetters();
 
@@ -98,8 +99,9 @@ function start() {
 }
 
 document.addEventListener('keypress', e => {
+  keyPressSound.play();
+
   if (e.key === letters[0]) {
-    keyPressSound.play();
     letterCount++;
 
     cancelAnimationFrame(animationId);
@@ -112,7 +114,7 @@ document.addEventListener('keypress', e => {
 
     if (index == 1) startTime = new Date();
 
-    if (index % 5 === 0) {
+    if (index % 4 === 0) {
       let length = letters.length;
       letters.push(...generateLetters());
       balloons.push(...createBalloons(gameSpeed, letters, length));
@@ -125,6 +127,7 @@ document.addEventListener('keypress', e => {
   }
 });
 
+// animates jump
 function jump() {
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
   character.stay = false;
@@ -168,6 +171,7 @@ function afterJump() {
   drawBalloons(ctx, balloons, character);
 }
 
+// shift balloons after jump
 function shift() {
   balloons.forEach((balloon, i) => {
     slide();
@@ -189,6 +193,7 @@ function moveBackground() {
   if (moveBg % 5 != 0) requestAnimationFrame(moveBackground);
 }
 
+// move balloons
 function balloonDrop() {
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
   balloons[0].set(ctx, character);
@@ -241,8 +246,6 @@ function resetVals() {
 }
 
 function resetPos() {
-  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-  balloons[0].posy = 20;
-  character.posx = balloons[0].posx + constants.BALLOON_CHARACTER_OFFSETX;
-  character.posy = balloons[0].posy + constants.BALLOON_CHARACTER_OFFSETY;
+  balloons[0].reset();
+  character.reset(balloons[0]);
 }

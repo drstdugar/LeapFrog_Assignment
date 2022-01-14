@@ -40,7 +40,7 @@ let throwBall = false;
 let index = 0;
 let wordCount = 0;
 let typingSpeed = 0;
-let lifeBarPos = 905;
+let lifeBarPos = 805;
 let life = 100;
 
 canvas.width = constants.GAME_WIDTH;
@@ -86,11 +86,12 @@ reloadBtn.addEventListener('click', () => {
 
 setBackground(canvas, false);
 
+// creates game entities
 function start() {
   setBackground(canvas, true);
 
   monster = new Monster(
-    900,
+    800,
     318,
     constants.MONSTER_WIDTH,
     constants.MONSTER_HEIGHT,
@@ -98,7 +99,7 @@ function start() {
   );
 
   character = new Player(
-    270,
+    450,
     380,
     constants.SNOWBALL_CHARACTER_WIDTH,
     constants.SNOWBALL_CHARACTER_HEIGHT
@@ -112,6 +113,7 @@ function start() {
   animate();
 }
 
+// generates words to be typed
 function generateWords() {
   words.innerHTML = '';
   word = getWord();
@@ -129,6 +131,7 @@ function generateWords() {
   cursor(index, word.length, 'highlight');
 }
 
+// starts animation of monster
 function animate() {
   clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
 
@@ -163,8 +166,9 @@ function animate() {
 }
 
 document.addEventListener('keypress', e => {
+  keyPressSound.play();
+
   if (e.key === word[index]) {
-    keyPressSound.play();
     throwBall = true;
 
     shoot();
@@ -190,6 +194,7 @@ document.addEventListener('keypress', e => {
   }
 });
 
+// animation of character shooting on keyPress
 function shoot() {
   clearCanvas(
     ctx,
@@ -220,6 +225,7 @@ function shoot() {
   }
 }
 
+// animation of snowball being launched
 function throwSnowball() {
   snowball.draw(ctx);
   snowball.move();
@@ -231,6 +237,7 @@ function throwSnowball() {
   }
 }
 
+// after snowball hits monster
 function hitMonster() {
   snowballHit.play();
   throwBall = false;

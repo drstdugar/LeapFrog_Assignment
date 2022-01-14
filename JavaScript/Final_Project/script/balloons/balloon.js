@@ -42,4 +42,10 @@ export class Balloon {
     this.posy += this.speed;
     if (char) char.move();
   }
+
+  // after collision with screen
+  reset() {
+    this.posy = 20;
+    this.text = '';
+  }
 }

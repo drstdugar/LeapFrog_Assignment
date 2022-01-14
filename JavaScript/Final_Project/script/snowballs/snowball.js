@@ -15,6 +15,6 @@ export class Snowball {
   }
 
   move() {
-    this.posx += 15;
+    this.posx += 10;
   }
 }

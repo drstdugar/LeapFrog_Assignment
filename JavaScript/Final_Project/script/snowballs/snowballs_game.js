@@ -80,8 +80,7 @@ hardBtn.addEventListener('click', () => {
 reloadBtn.addEventListener('click', () => {
   document.querySelector('.finish-overlay').style.display = 'none';
   document.querySelector('.speed-overlay').style.display = 'flex';
-  typeSpeed.textContent = 'Speed: 0 WPM';
-  index = 0;
+  resetVals();
 });
 
 setBackground(canvas, false);
@@ -253,23 +252,36 @@ function hitMonster() {
   }
 }
 
-function gameOver() {
-  words.innerHTML = '';
-  word = [];
-  lifeBarPos = 905;
+function resetVals() {
+  index = 0;
+  wordCount = 0;
+  lifeBarPos = 805;
   life = 100;
 
   monsterLife.setAttribute('value', life);
+
+  typeSpeed.textContent = 'Speed: 0 WPM';
+}
+
+function gameOver() {
+  word = [];
   lifeBar.style.display = 'none';
 
-  cancelAnimationFrame(monsterAnimation);
-  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
-  setBackground(canvas, false, '');
+  setTimeout(() => {
+    words.innerHTML = '';
 
-  document.querySelector('.finish-overlay').style.display = 'flex';
-  document.querySelector('#speed').textContent = `Speed: ${typingSpeed} WPM`;
-  document.querySelector('#best-speed').textContent = `Best Speed: ${checkScore(
-    typingSpeed,
-    'snowballHighScore'
-  )} WPM`;
+    cancelAnimationFrame(monsterAnimation);
+
+    document.querySelector('.finish-overlay').style.display = 'flex';
+    document.querySelector('#speed').textContent = `Speed: ${typingSpeed} WPM`;
+    document.querySelector(
+      '#best-speed'
+    ).textContent = `Best Speed: ${checkScore(
+      typingSpeed,
+      'snowballHighScore'
+    )} WPM`;
+
+    clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
+    setBackground(canvas, false, '');
+  }, 500);
 }

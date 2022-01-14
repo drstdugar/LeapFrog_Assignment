@@ -90,7 +90,7 @@ content.addEventListener('keypress', e => {
   if (contents.newLine.includes(index + 1)) {
     if (match(pressedVal, 'Enter', index)) correct++;
     index++;
-    cursor(index, para.length);
+    cursor(index, para.length, 'cursor');
     return;
   }
 
@@ -106,8 +106,8 @@ content.addEventListener('keypress', e => {
 
   if (index == 1) startTime = new Date();
 
-  cursor(index, para.length, 'cursor');
   claculateAccuracy(correct, index);
+  cursor(index, para.length, 'cursor');
 });
 
 function resetVals() {

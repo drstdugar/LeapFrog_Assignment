@@ -246,6 +246,7 @@ function resetVals() {
 }
 
 function resetPos() {
+  clearCanvas(ctx, 0, 0, constants.GAME_WIDTH, constants.GAME_HEIGHT);
   balloons[0].reset();
   character.reset(balloons[0]);
 }
